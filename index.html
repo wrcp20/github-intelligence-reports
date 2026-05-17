@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Reports</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .folder-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .folder-title { text-transform: capitalize; color: #0366d6; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin: 8px 0; }
+        a { text-decoration: none; color: #24292e; font-weight: 500; }
+        a:hover { color: #0366d6; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <h1>Repositorio de Reportes</h1>
+    <p>Listado dinámico de reportes Markdown.</p>
+
+    <!-- Aquí se inyectarán las carpetas y enlaces -->
+    <div id="contenedor-reportes">Cargando reportes...</div>
+
+    <script>
+        // 1. Configuración de tu repositorio y las carpetas que quieres leer
+        const usuario = 'wrcp20';
+        const repo = 'github-intelligence-reports';
+        // Si a futuro creas "reports-plandex" o "reports-openclaw", solo la agregas a esta lista:
+        const carpetas = ['reports', 'reports-claude']; 
+        
+        const contenedor = document.getElementById('contenedor-reportes');
+        contenedor.innerHTML = ''; // Limpiamos el texto de "Cargando..."
+
+        // 2. Función para buscar los archivos de cada carpeta
+        carpetas.forEach(carpeta => {
+            // URL de la API pública de GitHub para leer contenidos
+            const apiUrl = `https://api.github.com/repos/${usuario}/${repo}/contents/${carpeta}`;
+
+            fetch(apiUrl)
+                .then(respuesta => {
+                    if (!respuesta.ok) throw new Error(`No se pudo leer la carpeta ${carpeta}`);
+                    return respuesta.json();
+                })
+                .then(archivos => {
+                    // Crear la estructura visual para la carpeta
+                    let htmlCarpeta = `
+                        <div class="folder-section">
+                            <h2 class="folder-title">📁 ${carpeta}</h2>
+                            <ul>
+                    `;
+
+                    // Filtrar solo los archivos .md
+                    const archivosMd = archivos.filter(archivo => archivo.name.endsWith('.md'));
+
+                    if (archivosMd.length === 0) {
+                        htmlCarpeta += `<li>No hay reportes aquí todavía.</li>`;
+                    } else {
+                        // Crear un enlace por cada archivo
+                        archivosMd.forEach(archivo => {
+                            // html_url te lleva a la vista del archivo dentro de GitHub
+                            htmlCarpeta += `<li>📄 <a href="${archivo.html_url}" target="_blank">${archivo.name}</a></li>`;
+                        });
+                    }
+
+                    htmlCarpeta += `</ul></div>`;
+                    contenedor.innerHTML += htmlCarpeta;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    contenedor.innerHTML += `<div class="folder-section"><h2 class="folder-title">📁 ${carpeta}</h2><p>Error al cargar o carpeta no encontrada.</p></div>`;
+                });
+        });
+    </script>
+</body>
+</html>
