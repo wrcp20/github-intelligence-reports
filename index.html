@@ -5,13 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligence Reports</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
-        .folder-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
-        .folder-title { text-transform: capitalize; color: #0366d6; border-bottom: 2px solid #eee; padding-bottom: 5px; }
-        ul { list-style-type: none; padding-left: 0; }
-        li { margin: 8px 0; }
-        a { text-decoration: none; color: #24292e; font-weight: 500; }
-        a:hover { color: #0366d6; text-decoration: underline; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            padding: 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        .folder-section { 
+            margin-bottom: 30px; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+        }
+        .folder-title { 
+            text-transform: capitalize; 
+            color: #0366d6; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 5px; 
+        }
+        ul { 
+            list-style-type: none; 
+            padding-left: 0; 
+        }
+        li { 
+            margin: 8px 0; 
+        }
+        a { 
+            text-decoration: none; 
+            color: #24292e; 
+            font-weight: 500; 
+        }
+        a:hover { 
+            color: #0366d6; 
+            text-decoration: underline; 
+        }
     </style>
 </head>
 <body>
@@ -26,7 +54,7 @@
         // 1. Configuración de tu repositorio y las carpetas que quieres leer
         const usuario = 'wrcp20';
         const repo = 'github-intelligence-reports';
-        // Si a futuro creas "reports-plandex" o "reports-openclaw", solo la agregas a esta lista:
+        // Si a futuro creas nuevas carpetas, solo agrégalas a esta lista:
         const carpetas = ['reports', 'reports-claude']; 
         
         const contenedor = document.getElementById('contenedor-reportes');
@@ -51,15 +79,15 @@
                     `;
 
                     // Filtrar solo los archivos .md
-                    const archivosMd = archivos.filter(archivo => archivo.name.endsWith('.html'));
+                    const archivosMd = archivos.filter(archivo => archivo.name.endsWith('.md'));
 
                     if (archivosMd.length === 0) {
                         htmlCarpeta += `<li>No hay reportes aquí todavía.</li>`;
                     } else {
-                        // Crear un enlace por cada archivo
+                        // Crear un enlace por cada archivo apuntando a la versión compilada por GitHub Pages (.html)
                         archivosMd.forEach(archivo => {
-                            // html_url te lleva a la vista del archivo dentro de GitHub
-                            htmlCarpeta += `<li>📄 <a href="${archivo.html_url}" target="_blank">${archivo.name}</a></li>`;
+                            const urlPagina = `${carpeta}/${archivo.name.replace('.md', '.html')}`;
+                            htmlCarpeta += `<li>📄 <a href="${urlPagina}">${archivo.name}</a></li>`;
                         });
                     }
 
