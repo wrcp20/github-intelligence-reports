@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte Ecosistema Claude — 2026-05-23-140539</title>
+<style>
+  body { font-family: sans-serif; max-width: 1100px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fafafa; }
+  h1 { border-bottom: 3px solid #d97706; padding-bottom: 0.4rem; }
+  h2 { border-bottom: 1px solid #d97706; margin-top: 2rem; color: #92400e; }
+  h3 { color: #b45309; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.92rem; }
+  th { background: #fef3c7; color: #78350f; text-align: left; padding: 0.5rem 0.7rem; border: 1px solid #fcd34d; }
+  td { padding: 0.45rem 0.7rem; border: 1px solid #e5e7eb; vertical-align: top; }
+  tr:nth-child(even) td { background: #fff7ed; }
+  a { color: #b45309; }
+  code { background: #f3f4f6; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.88em; }
+  blockquote { border-left: 4px solid #fcd34d; margin: 0.5rem 0; padding: 0.5rem 1rem; background: #fffbeb; color: #78350f; }
+  ul { padding-left: 1.4rem; }
+  li { margin: 0.3rem 0; }
+  .highlight { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6px; padding: 1rem 1.2rem; margin: 1rem 0; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 0.85rem; }
+  .error-note { background: #fff1f2; border: 1px solid #fecdd3; border-radius: 4px; padding: 0.6rem 1rem; color: #9f1239; font-size: 0.9rem; margin: 0.5rem 0; }
+  .badge { display: inline-block; background: #d97706; color: white; border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.78rem; margin-left: 0.3rem; }
+  .badge-green { background: #059669; }
+  .badge-blue { background: #2563eb; }
+</style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude <span style="color:#d97706">2026-05-23</span></h1>
+<p style="color:#6b7280; font-size:0.9rem">Generado: 2026-05-23T14:05:39 UTC &nbsp;|&nbsp; Fuentes: GitHub API, CHANGELOG.md oficial, WebFetch</p>
+
+<h2>Highlights del Día</h2>
+<div class="highlight">
+<ul>
+  <li><strong>Claude Code v2.1.150</strong> publicado hoy (2026-05-23) con mejoras internas de infraestructura. El ciclo de releases es muy activo: 3 versiones en las últimas 48 horas (v2.1.148, v2.1.149, v2.1.150).</li>
+  <li><strong><code>/code-review</code> como nuevo comando central:</strong> desde v2.1.147, el antiguo <code>/simplify</code> fue renombrado a <code>/code-review</code> con soporte de niveles de esfuerzo (<code>/code-review high</code>) y opción <code>--comment</code> para publicar hallazgos como comentarios inline en PRs de GitHub.</li>
+  <li><strong>Thinking-token-count beta:</strong> Python SDK v0.104.0 y TypeScript SDK v0.98.0 añadieron soporte para conteo estimado de tokens de pensamiento en bloques delta de streaming.</li>
+  <li><strong>Seguridad mejorada en CI del Agent SDK:</strong> claude-agent-sdk-python v0.2.87 migró autenticación de CI de API keys estáticas a Workload Identity Federation (tokens de corta duración).</li>
+  <li><strong>Ritmo ultra-acoplado Agent SDK / Claude Code:</strong> ambos Agent SDKs publican versiones sincronizadas con cada release de Claude Code; hoy se publicaron v0.2.87 (Python) y v0.3.150 (TypeScript).</li>
+</ul>
+</div>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<div class="error-note">La URL <code>https://www.anthropic.com/news</code> devolvió HTTP 403 Forbidden en este entorno. No fue posible recuperar el listado de posts.</div>
+<table>
+  <thead><tr><th>Título</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr></thead>
+  <tbody><tr><td colspan="4" style="color:#9f1239">Fetch bloqueado — ver sección Errores de Fetch</td></tr></tbody>
+</table>
+
+<h2>Release Notes Oficiales (docs.claude.com)</h2>
+<div class="error-note">Las URLs de <code>docs.anthropic.com</code> devolvieron HTTP 403. Se usa el <code>CHANGELOG.md</code> del repositorio oficial como fuente primaria.</div>
+
+<h3>API</h3>
+<table>
+  <thead><tr><th>Fecha</th><th>Cambio</th><th>Notas</th></tr></thead>
+  <tbody><tr><td colspan="3" style="color:#9f1239">Fetch bloqueado (HTTP 403) — ver sección Errores de Fetch</td></tr></tbody>
+</table>
+
+<h3>Claude Code — desde CHANGELOG.md oficial</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Cambio Principal</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150">v2.1.150</a></td>
+      <td>2026-05-23</td>
+      <td>Mejoras internas de infraestructura (sin cambios visibles para el usuario)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.149">v2.1.149</a></td>
+      <td>2026-05-22</td>
+      <td><code>/usage</code> con desglose por categoría (skills, subagents, plugins, MCP); <code>/diff</code> con navegación por teclado; checkboxes GFM en Markdown; <code>allowAllClaudeAiMcps</code> para enterprise; correcciones de seguridad PowerShell y sandbox</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.148">v2.1.148</a></td>
+      <td>2026-05-22</td>
+      <td>Corrección crítica: Bash tool retornaba exit code 127 en todos los comandos (regresión de v2.1.147)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.147">v2.1.147</a></td>
+      <td>2026-05-21</td>
+      <td>Sesiones background persisten en idle y se reinician para actualizaciones; <code>/simplify</code> renombrado a <code>/code-review</code>; auto-updater mejorado; "usage credits" renombrado</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.146">v2.1.146</a></td>
+      <td>2026-05-21</td>
+      <td><code>/code-review</code> con nivel de esfuerzo; Auto mode no suprime <code>AskUserQuestion</code>; fix PowerShell en Windows via winget/Store</td>
+    </tr>
+    <tr>
+      <td>v2.1.145</td>
+      <td>—</td>
+      <td><code>claude agents --json</code> para scripting; plugin discovery mejorado; rendering terminal y reconexión MCP</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150">v2.1.150</a></td>
+      <td>2026-05-23</td>
+      <td>Mejoras internas de infraestructura, sin cambios visibles para el usuario</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python">anthropics/anthropic-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.104.1">v0.104.1</a></td>
+      <td>2026-05-22</td>
+      <td>Bug fix: <code>encrypted_content</code> propagado correctamente en streaming beta compaction accumulator</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript">anthropics/anthropic-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.98.0">sdk-v0.98.0</a></td>
+      <td>2026-05-21</td>
+      <td>Soporte para <code>thinking-token-count</code> beta: tokens estimados en bloques delta de streaming</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python">anthropics/claude-agent-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.87">v0.2.87</a></td>
+      <td>2026-05-23</td>
+      <td>CLI 2.1.150 incluido; CI migrado a Workload Identity Federation (tokens de corta duración) <span class="badge badge-green">seguridad</span></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript">anthropics/claude-agent-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.150">v0.3.150</a></td>
+      <td>2026-05-23</td>
+      <td>Actualizado a paridad con Claude Code v2.1.150</td>
+    </tr>
+    <tr>
+      <td>anthropics/anthropic-cookbook</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Sin releases recuperables (redirección de API sin datos)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Releases adicionales recientes (últimos 30 días)</h3>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>anthropic-sdk-python</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.104.0">v0.104.0</a></td>
+      <td>2026-05-21</td>
+      <td>Feature: soporte <code>thinking-token-count</code> beta para tokens estimados en streaming</td>
+    </tr>
+    <tr>
+      <td>anthropic-sdk-python</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.103.1">v0.103.1</a></td>
+      <td>2026-05-19</td>
+      <td>Fix: <code>SessionToolRunner</code> omite tool calls que no le pertenecen</td>
+    </tr>
+    <tr>
+      <td>anthropic-sdk-python</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.103.0">v0.103.0</a></td>
+      <td>2026-05-19</td>
+      <td>Feature: soporte sandboxes auto-hospedados en CMA con sandbox helpers</td>
+    </tr>
+    <tr>
+      <td>anthropic-sdk-typescript</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.16.1">vertex-sdk-v0.16.1</a></td>
+      <td>2026-05-19</td>
+      <td>Fix: alineación de <code>@types/node</code> en sub-paquetes para build de CI</td>
+    </tr>
+    <tr>
+      <td>anthropic-sdk-typescript</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.97.1">sdk-v0.97.1</a></td>
+      <td>2026-05-19</td>
+      <td>Fix: <code>SessionToolRunner</code> omite tool calls ajenas</td>
+    </tr>
+    <tr>
+      <td>anthropic-sdk-typescript</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.97.0">sdk-v0.97.0</a></td>
+      <td>2026-05-19</td>
+      <td>Feature: sandboxes auto-hospedados CMA; Fix <code>tsc-multi</code> compatible con Node 26</td>
+    </tr>
+    <tr>
+      <td>claude-agent-sdk-python</td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.86">v0.2.86</a></td>
+      <td>2026-05-22</td>
+      <td>CLI 2.1.149 incluido</td>
+    </tr>
+    <tr>
+      <td>claude-agent-sdk-python</td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.85">v0.2.85</a></td>
+      <td>2026-05-22</td>
+      <td>CLI 2.1.148 incluido</td>
+    </tr>
+    <tr>
+      <td>claude-agent-sdk-python</td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.84">v0.2.84</a></td>
+      <td>2026-05-21</td>
+      <td>CLI 2.1.147 incluido</td>
+    </tr>
+    <tr>
+      <td>claude-agent-sdk-typescript</td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.149">v0.3.149</a></td>
+      <td>2026-05-22</td>
+      <td>Fix: <code>options.env</code> ya no descarta <code>CLAUDE_AGENT_SDK_VERSION</code>; documentación corregida</td>
+    </tr>
+    <tr>
+      <td>claude-agent-sdk-typescript</td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.148">v0.3.148</a></td>
+      <td>2026-05-22</td>
+      <td>Paridad con Claude Code v2.1.148</td>
+    </tr>
+    <tr>
+      <td>claude-agent-sdk-typescript</td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.147">v0.3.147</a></td>
+      <td>2026-05-21</td>
+      <td>Paridad con Claude Code v2.1.147</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">modelcontextprotocol/specification</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25">2025-11-25</a></td>
+      <td>2025-11-25</td>
+      <td>Lanzamiento estable de la revisión 2025-11-25 de la especificación MCP. <em>Sin releases nuevos en los últimos 30 días.</em></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk">modelcontextprotocol/python-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.27.1">v1.27.1</a></td>
+      <td>2026-05-08</td>
+      <td>Fix: <code>PydanticUserError</code> al generar output schema (pydantic 2.13 compat); fix OAuth campos URL vacíos; restricción <code>httpx &lt;1.0.0</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk">modelcontextprotocol/typescript-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.0.0-alpha.2">server@2.0.0-alpha.2</a> <span class="badge">prerelease</span></td>
+      <td>2026-04-01</td>
+      <td>Fix de resolución de exports en tsdown. <em>Sin releases estables nuevos en los últimos 30 días.</em></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/servers/releases/tag/2026.1.26">2026.1.26</a></td>
+      <td>2026-01-27</td>
+      <td>Actualización de server-everything, server-memory y mcp-server-time. <em>Sin releases nuevos en los últimos 30 días.</em></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector">modelcontextprotocol/inspector</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2-hotfix-3">0.21.2</a></td>
+      <td>2026-04-14</td>
+      <td>Fix: tipado decimal en formularios de tools; DCR registra ambos redirect URIs; proxy fetch para evitar CORS; scroll horizontal en vista JSON. <em>Sin releases nuevos en los últimos 30 días.</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Nota: MCP TypeScript SDK 2.0.0-alpha.1 — Cambios Breaking</h3>
+<div class="highlight">
+<ul>
+  <li>Tools desconocidos ahora retornan errores JSON-RPC <code>-32602</code> en lugar de <code>CallToolResult</code> con <code>isError: true</code></li>
+  <li>Soporte para <strong>Standard Schema</strong> (Zod v4, Valibot, ArkType) en <code>registerTool</code> y <code>registerPrompt</code></li>
+  <li><code>taskStore</code>, <code>taskMessageQueue</code> y opciones de task movidos de <code>ProtocolOptions</code> a <code>capabilities.tasks</code></li>
+</ul>
+</div>
+
+<h2>Discusiones en Hacker News</h2>
+<div class="error-note">Host <code>hacker-news.firebaseio.com</code> no está en el listado de hosts permitidos por la política de red de este entorno.</div>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Link</th></tr></thead>
+  <tbody><tr><td colspan="4" style="color:#9f1239">Fetch bloqueado ("Host not in allowlist")</td></tr></tbody>
+</table>
+
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<div class="error-note">Host <code>reddit.com</code> no está en el listado de hosts permitidos por la política de red de este entorno.</div>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Autor</th><th>Link</th></tr></thead>
+  <tbody><tr><td colspan="5" style="color:#9f1239">Fetch bloqueado ("Host not in allowlist")</td></tr></tbody>
+</table>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Ciclo de releases ultra-rápido:</strong> 3 releases de Claude Code en 48 horas (v2.1.148, v2.1.149, v2.1.150), cada uno sincronizado con releases del Agent SDK en Python y TypeScript. Despliegue continuo muy agresivo.</li>
+  <li><strong><code>/code-review</code> como herramienta de primer orden:</strong> El renombre de <code>/simplify</code> a <code>/code-review</code> con niveles de esfuerzo y comentarios inline en PRs posiciona a Claude Code como herramienta central en flujos de revisión empresarial.</li>
+  <li><strong>Extended thinking más observable:</strong> La adición de <code>thinking-token-count</code> beta permite medir consumo de tokens en bloques de pensamiento durante streaming, facilitando optimización de costos en aplicaciones de extended thinking.</li>
+  <li><strong>MCP en fase de consolidación:</strong> 4 de 5 repositorios MCP sin releases en los últimos 30 días. La actividad se concentra en el python-sdk. El ecosistema parece en período de maduración antes de una próxima versión mayor.</li>
+  <li><strong>Seguridad en CI como tendencia:</strong> Migración del claude-agent-sdk-python a Workload Identity Federation refleja un hardening de seguridad en el ecosistema, eliminando credenciales de larga duración en pipelines de CI.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<table>
+  <thead><tr><th>URL</th><th>Código / Motivo</th></tr></thead>
+  <tbody>
+    <tr><td><code>https://www.anthropic.com/news</code></td><td>HTTP 403 Forbidden — requiere sesión de navegador autenticada</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/api</code></td><td>HTTP 403 Forbidden</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/claude-code</code></td><td>HTTP 403 Forbidden</td></tr>
+    <tr><td><code>https://hacker-news.firebaseio.com/v0/topstories.json</code></td><td>"Host not in allowlist" — bloqueado por política de red del entorno</td></tr>
+    <tr><td><code>https://www.reddit.com/r/ClaudeAI/top.json</code></td><td>"Host not in allowlist" — bloqueado por política de red del entorno</td></tr>
+    <tr><td><code>https://www.reddit.com/r/ClaudeAI/hot.json</code></td><td>"Host not in allowlist" — bloqueado por política de red del entorno</td></tr>
+    <tr><td><code>anthropics/anthropic-cookbook</code> releases</td><td>Redirección de API GitHub sin releases recuperables</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p><em>Reporte generado automáticamente el 2026-05-23-140539</em></p>
+</footer>
+
+</body>
+</html>
