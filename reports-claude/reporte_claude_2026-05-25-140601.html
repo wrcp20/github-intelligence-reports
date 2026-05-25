@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte Ecosistema Claude - 2026-05-25-140601</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 2rem; color: #1a1a2e; background: #f8f9fa; }
+    h1 { color: #2c3e6e; border-bottom: 3px solid #4a6fa5; padding-bottom: 0.5rem; }
+    h2 { color: #2c3e6e; margin-top: 2rem; border-left: 4px solid #4a6fa5; padding-left: 0.75rem; }
+    h3 { color: #3d5a80; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }
+    thead { background: #2c3e6e; color: white; }
+    th, td { border: 1px solid #cdd8e3; padding: 0.6rem 0.85rem; text-align: left; vertical-align: top; }
+    tr:nth-child(even) { background: #eef2f7; }
+    tr:hover { background: #d8e4f0; }
+    a { color: #2a6496; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    blockquote { background: #fff3cd; border-left: 4px solid #ffc107; margin: 1rem 0; padding: 0.75rem 1rem; border-radius: 4px; }
+    blockquote p { margin: 0; }
+    ul { padding-left: 1.5rem; }
+    li { margin: 0.4rem 0; }
+    .highlight-box { background: #e8f4f8; border: 1px solid #b8d9e8; border-radius: 6px; padding: 1rem 1.5rem; margin: 1rem 0; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #cdd8e3; color: #666; font-size: 0.85rem; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-05-25-140601</h1>
+
+<!-- HIGHLIGHTS -->
+<h2>Highlights del Día</h2>
+<div class="highlight-box">
+  <ul>
+    <li><strong>Claude Code v2.1.150</strong> publicado el 2026-05-23, con mejoras de infraestructura interna; el SDK de Agentes (Python y TypeScript) se sincronizó a la misma versión el mismo día.</li>
+    <li><strong>Anthropic SDK TypeScript sdk-v0.98.0</strong> añade soporte de <code>thinking-token-count</code> beta para tokens estimados en bloques delta de <em>thinking</em> durante streaming.</li>
+    <li><strong>Anthropic SDK Python v0.104.1</strong> corrige un bug en streaming: <code>encrypted_content</code> ahora se propaga correctamente a través del acumulador de compactación beta.</li>
+    <li><strong>Claude Agent SDK Python v0.2.87</strong> migra la autenticación de CI de API keys estáticas a Workload Identity Federation (tokens de corta duración).</li>
+    <li><strong>MCP Python SDK v1.27.1</strong> (2026-05-08) corrige compatibilidad con Pydantic 2.13 y restringe <code>httpx &lt; 1.0.0</code>.</li>
+  </ul>
+</div>
+
+<!-- ANUNCIOS OFICIALES -->
+<h2>Anuncios Oficiales Anthropic</h2>
+<blockquote><p><strong>Nota:</strong> La URL <code>https://www.anthropic.com/news</code> devolvió HTTP 403 al momento de generación. Consultar directamente el blog oficial.</p></blockquote>
+<table>
+  <thead><tr><th>Título</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td><em>(No disponible — ver Errores de Fetch)</em></td><td>—</td><td>anthropic.com/news</td><td><a href="https://www.anthropic.com/news" target="_blank">anthropic.com/news</a></td></tr>
+  </tbody>
+</table>
+
+<!-- RELEASE NOTES OFICIALES -->
+<h2>Release Notes Oficiales (docs.claude.com)</h2>
+<blockquote><p><strong>Nota:</strong> docs.anthropic.com devolvió HTTP 403. Los datos provienen del CHANGELOG oficial del repositorio GitHub de Claude Code.</p></blockquote>
+
+<h3>API</h3>
+<table>
+  <thead><tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td><em>(No disponible — HTTP 403)</em></td><td>Ver sección Errores de Fetch</td><td><a href="https://docs.anthropic.com/en/release-notes/api" target="_blank">release-notes/api</a></td></tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150" target="_blank">v2.1.150</a></td>
+      <td>2026-05-23</td>
+      <td>Mejoras de infraestructura interna (sin cambios para el usuario)</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150" target="_blank">GitHub</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.149" target="_blank">v2.1.149</a></td>
+      <td>2026-05-22</td>
+      <td>Comando <code>/usage</code> con desglose por categorías; mejora en scroll de <code>/diff</code>; renderizado de listas de tareas Markdown; configuración enterprise MCP; correcciones de seguridad en PowerShell y git</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.149" target="_blank">GitHub</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.148" target="_blank">v2.1.148</a></td>
+      <td>2026-05-22</td>
+      <td>Corrección: herramienta Bash retornaba exit code 127 en todos los comandos para algunos usuarios (regresión de v2.1.147)</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.148" target="_blank">GitHub</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.147" target="_blank">v2.1.147</a></td>
+      <td>2026-05-21</td>
+      <td>Mejoras en sesiones en segundo plano con pinning persistente; <code>/simplify</code> renombrado a <code>/code-review</code>; mejor rendimiento en auto-updater y renderizado de diffs</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.147" target="_blank">GitHub</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.145" target="_blank">v2.1.145</a></td>
+      <td>2026-05-20</td>
+      <td>Salida JSON para listado de agentes; descubrimiento de plugins mejorado; interfaz <code>/plugin</code> con visualización de comandos/skills/hooks; correcciones en permisos, MCP y UI</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.145" target="_blank">GitHub</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- RELEASES SDKS OFICIALES -->
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a></td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150" target="_blank">v2.1.150</a></td>
+      <td>2026-05-23</td>
+      <td>Mejoras de infraestructura interna, sin cambios visibles para el usuario</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python" target="_blank">anthropics/anthropic-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.104.1" target="_blank">v0.104.1</a></td>
+      <td>2026-05-22</td>
+      <td>Bug fix en streaming: <code>encrypted_content</code> propagado correctamente a través del acumulador de compactación beta</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript" target="_blank">anthropics/anthropic-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.98.0" target="_blank">sdk-v0.98.0</a></td>
+      <td>2026-05-21</td>
+      <td>Nueva feature: soporte de <code>thinking-token-count</code> beta para tokens estimados en deltas de <em>thinking</em> durante streaming</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python" target="_blank">anthropics/claude-agent-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.87" target="_blank">v0.2.87</a></td>
+      <td>2026-05-23</td>
+      <td>Claude CLI actualizado a v2.1.150; CI migrado de API key estática a Workload Identity Federation para mayor seguridad</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript" target="_blank">anthropics/claude-agent-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.150" target="_blank">v0.3.150</a></td>
+      <td>2026-05-23</td>
+      <td>Paridad con Claude Code v2.1.150; versión anterior v0.3.149 corrigió bug en <code>options.env</code> que descartaba <code>CLAUDE_AGENT_SDK_VERSION</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank">anthropics/anthropic-cookbook</a></td>
+      <td>—</td>
+      <td>—</td>
+      <td>Sin releases publicados en GitHub</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- RELEASES MCP -->
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol" target="_blank">modelcontextprotocol/specification</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25" target="_blank">2025-11-25</a></td>
+      <td>2025-11-25</td>
+      <td>Release estable de la revisión <code>2025-11-25</code>. <strong>Sin releases nuevos en los últimos 30 días.</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank">modelcontextprotocol/python-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.27.1" target="_blank">v1.27.1</a></td>
+      <td>2026-05-08</td>
+      <td>Compatibilidad con Pydantic 2.13; corrección OAuth en campos URL opcionales vacíos; restricción <code>httpx &lt; 1.0.0</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank">modelcontextprotocol/typescript-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.0.0-alpha.2" target="_blank">server@2.0.0-alpha.2</a></td>
+      <td>2026-04-01</td>
+      <td>Corrección en resolución de exports con tsdown. <strong>Sin releases nuevos en los últimos 30 días.</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers" target="_blank">modelcontextprotocol/servers</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/servers/releases/tag/2026.1.26" target="_blank">2026.1.26</a></td>
+      <td>2026-01-27</td>
+      <td>Actualización de packages: server-everything, server-memory, mcp-server-time. <strong>Sin releases nuevos en los últimos 30 días.</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector" target="_blank">modelcontextprotocol/inspector</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2-hotfix-3" target="_blank">0.21.2-hotfix-3</a></td>
+      <td>2026-04-14</td>
+      <td>Corrección de tipado decimal en formularios; URIs de redirección DCR; scroll horizontal en vista JSON. <strong>Sin releases nuevos en los últimos 30 días.</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- HACKER NEWS -->
+<h2>Discusiones en Hacker News</h2>
+<blockquote><p><strong>Nota:</strong> La URL <code>https://hacker-news.firebaseio.com</code> no está en la lista de hosts permitidos por la política de red del entorno. No se pudo obtener datos de HackerNews.</p></blockquote>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td><em>(No disponible — ver Errores de Fetch)</em></td><td>—</td><td>—</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- REDDIT -->
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<blockquote><p><strong>Nota:</strong> La URL <code>https://www.reddit.com</code> no está en la lista de hosts permitidos por la política de red del entorno. No se pudo obtener datos de Reddit.</p></blockquote>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Autor</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td><em>(No disponible — ver Errores de Fetch)</em></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- TENDENCIAS -->
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Cadencia de releases muy alta en Claude Code y Agent SDKs:</strong> En los últimos 5 días se publicaron 4+ versiones de Claude Code (v2.1.146–v2.1.150) y los Agent SDKs acompañan en paridad. Esto refleja un ciclo de desarrollo de gran velocidad con múltiples hotfixes y mejoras incrementales por semana.</li>
+  <li><strong>Mejora de seguridad significativa en CI/CD:</strong> La migración de API keys estáticas a Workload Identity Federation en <code>claude-agent-sdk-python</code> v0.2.87 reduce la superficie de ataque al eliminar secrets de larga duración de los workflows de CI.</li>
+  <li><strong>Streaming y extended thinking en foco:</strong> La feature <code>thinking-token-count</code> beta en <code>anthropic-sdk-typescript</code> v0.98.0 sugiere que Anthropic está madurando las capacidades de razonamiento extendido para que los desarrolladores monitoreen y optimicen el uso de tokens.</li>
+  <li><strong>MCP en modo de consolidación:</strong> El MCP Python SDK con v1.27.1 resuelve compatibilidad con Pydantic 2.13. Los demás repos MCP no tienen releases recientes (&gt;30 días), indicando una fase de estabilización post-especificación <code>2025-11-25</code>.</li>
+  <li><strong>Enterprise features emergiendo en Claude Code:</strong> La adición de "enterprise MCP settings" en v2.1.149, junto con mejoras en permisos y gestión de plugins, señala adopción en entornos corporativos con mayor control de acceso y configuración centralizada.</li>
+</ol>
+
+<!-- ERRORES -->
+<h2>Errores de Fetch</h2>
+<table>
+  <thead><tr><th>URL</th><th>Error</th><th>Motivo</th></tr></thead>
+  <tbody>
+    <tr><td><code>https://www.anthropic.com/news</code></td><td>HTTP 403 Forbidden</td><td>Acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/api</code></td><td>HTTP 403 Forbidden</td><td>Acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/claude-code</code></td><td>HTTP 403 Forbidden</td><td>Acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://hacker-news.firebaseio.com/v0/topstories.json</code></td><td>Host not in allowlist</td><td>Dominio no permitido por política de red del entorno</td></tr>
+    <tr><td><code>https://www.reddit.com/r/ClaudeAI/top.json</code></td><td>Host not in allowlist</td><td>Dominio no permitido por política de red del entorno</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p>Reporte generado automáticamente el 2026-05-25-140601</p>
+</footer>
+
+</body>
+</html>
