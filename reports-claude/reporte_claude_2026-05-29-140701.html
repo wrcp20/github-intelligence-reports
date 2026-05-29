@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte Ecosistema Claude - 2026-05-29-140701</title>
+  <style>
+    body { font-family: sans-serif; max-width: 1100px; margin: 0 auto; padding: 20px; color: #222; }
+    h1 { border-bottom: 3px solid #d97706; padding-bottom: 8px; }
+    h2 { border-bottom: 1px solid #ccc; padding-bottom: 4px; margin-top: 32px; }
+    h3 { color: #555; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th { background: #f3f4f6; text-align: left; padding: 8px 10px; border: 1px solid #ddd; }
+    td { padding: 7px 10px; border: 1px solid #ddd; vertical-align: top; }
+    tr:nth-child(even) td { background: #fafafa; }
+    a { color: #2563eb; }
+    .note { background: #fff7ed; border-left: 4px solid #f97316; padding: 8px 14px; margin: 10px 0; border-radius: 2px; }
+    .error-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 8px 14px; margin: 10px 0; border-radius: 2px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    footer { margin-top: 40px; font-size: 0.85em; color: #888; border-top: 1px solid #eee; padding-top: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-05-29-140701</h1>
+
+<h2>Highlights del Día</h2>
+<ul>
+  <li><strong>Claude Code v2.1.156 lanzado hoy</strong> — Corrección crítica para Opus 4.8: se solucionó un bug donde los thinking blocks eran modificados incorrectamente, causando errores de API.</li>
+  <li><strong>Lanzamiento de Claude Opus 4.8</strong> (v2.1.154, ayer) — El nuevo modelo flagship ya es el valor por defecto en modo high-effort. "Fast mode" disponible a 2× la tarifa estándar con 2.5× de velocidad.</li>
+  <li><strong>Dynamic Workflows en Claude Code</strong> — Nueva capacidad de orquestación que permite a Claude coordinar decenas o cientos de agentes en segundo plano. Comando <code>/workflows</code> para ver ejecuciones.</li>
+  <li><strong>MCP Specification Release Candidate 2026-07-28</strong> publicado hoy — El repositorio oficial de la especificación MCP publicó un RC que anticipa la próxima versión estable del protocolo.</li>
+  <li><strong>claude-agent-sdk-typescript v0.3.156</strong> y <strong>anthropic-sdk-python v0.105.2 / typescript sdk-v0.100.1</strong> publicados hoy, todos con soporte para Opus 4.8 y correcciones de streaming.</li>
+</ul>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<div class="note">
+  <strong>Nota:</strong> <code>https://www.anthropic.com/news</code> devolvió HTTP 403 Forbidden en el momento de generación de este reporte. Los datos de esta sección no están disponibles. Ver sección "Errores de Fetch".
+</div>
+
+<h2>Release Notes Oficiales (docs.anthropic.com)</h2>
+<div class="note">
+  <strong>Nota:</strong> Los endpoints <code>docs.anthropic.com/en/release-notes/*</code> y <code>docs.claude.com/en/release-notes/*</code> devolvieron HTTP 403 Forbidden. Se utiliza el <code>CHANGELOG.md</code> oficial de <code>anthropics/claude-code</code> como fuente alternativa.
+</div>
+
+<h3>API</h3>
+<table>
+  <thead><tr><th>Fecha</th><th>Cambio</th><th>Fuente</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>2026-05-28</td>
+      <td>Soporte para <code>claude-opus-4-8</code>, mid-conversation system blocks y <code>usage.output_tokens_details</code> en SDK Python v0.105.0 y TypeScript sdk-v0.100.0</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.105.0">GitHub SDK Python v0.105.0</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-21</td>
+      <td>Soporte para <code>thinking-token-count</code> beta: estimación de tokens en thinking block deltas durante streaming (SDK Python v0.104.0)</td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.104.0">GitHub SDK Python v0.104.0</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Cambio</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.156">v2.1.156</a></td>
+      <td>2026-05-29</td>
+      <td>Corregido bug donde thinking blocks de Opus 4.8 eran modificados, causando errores de API</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.154">v2.1.154</a></td>
+      <td>2026-05-28</td>
+      <td>Opus 4.8 como modelo por defecto (high effort); dynamic workflows (orquestación multi-agente); fast mode a 2× tarifa; lean system prompt como default; background shell via <code>!</code>; browser selection; <code>/simplify</code> rediseñado; esfuerzo slider "Faster/Smarter"</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.153">v2.1.153</a></td>
+      <td>2026-05-28</td>
+      <td>Opción <code>skipLfs</code> para repos git; aviso npm global install con diagnóstico (<code>/doctor</code>); env vars <code>COLUMNS</code>/<code>LINES</code> para status line; autocomplete mejorado en agent dispatch; fix reconexión MCP stateful; mejoras auth API gateway</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.152">v2.1.152</a></td>
+      <td>2026-05-27</td>
+      <td><code>/code-review --fix</code> aplica hallazgos automáticamente; skills pueden declarar herramientas prohibidas; <code>/reload-skills</code> sin reiniciar; SessionStart hooks pueden recargar skills y fijar título de sesión; MessageDisplay hook para transformar mensajes del asistente</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150">v2.1.150</a></td>
+      <td>2026-05-23</td>
+      <td>Mejoras internas de infraestructura (sin cambios visibles para el usuario)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.156">v2.1.156</a></td>
+      <td>2026-05-29</td>
+      <td>Fix: Opus 4.8 thinking blocks modificados causaban errores de API</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python">anthropics/anthropic-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.105.2">v0.105.2</a></td>
+      <td>2026-05-29</td>
+      <td>Patch release (3 versiones hoy); v0.105.0 agregó soporte <code>claude-opus-4-8</code>, mid-conversation system blocks, <code>output_tokens_details</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript">anthropics/anthropic-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.100.1">sdk-v0.100.1</a></td>
+      <td>2026-05-29</td>
+      <td>Fix: streaming lleva <code>encrypted_content</code> en beta compaction blocks; v0.100.0 agregó <code>claude-opus-4-8</code> y mid-conversation system blocks</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python">anthropics/claude-agent-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.87">v0.2.87</a></td>
+      <td>2026-05-23</td>
+      <td>CLI bundleado a v2.1.150; CI migrado a Workload Identity Federation para autenticación con tokens de corta duración</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript">anthropics/claude-agent-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.156">v0.3.156</a></td>
+      <td>2026-05-29</td>
+      <td>Paridad con Claude Code v2.1.156</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook">anthropics/anthropic-cookbook</a></td>
+      <td>—</td>
+      <td>—</td>
+      <td>Sin releases en el repositorio</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">modelcontextprotocol/specification</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC">2026-07-28-RC</a></td>
+      <td>2026-05-29</td>
+      <td><strong>Release Candidate</strong> para la próxima revisión estable del protocolo MCP. Spec en forma draft en modelcontextprotocol.io/specification/draft. Nota: no es final, pueden haber cambios antes de la versión estable.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk">modelcontextprotocol/python-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.27.1">v1.27.1</a></td>
+      <td>2026-05-08</td>
+      <td>Fix compatibilidad Pydantic 2.13; fix OAuth coerce campos URL opcionales a None; restricción <code>httpx &lt;1.0.0</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk">modelcontextprotocol/typescript-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.0.0-alpha.2">server@2.0.0-alpha.2</a></td>
+      <td>2026-04-01</td>
+      <td><strong>Pre-release alpha</strong>: fix tsdown exports resolution; alpha 1 incluyó Standard Schema support (Zod v4, Valibot, ArkType), TaskManager refactor, breaking changes en error handling</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/servers/releases/tag/2026.1.26">2026.1.26</a></td>
+      <td>2026-01-27</td>
+      <td><em>Sin releases nuevos en los últimos 30 días.</em> Última: server-everything, server-memory, mcp-server-time actualizados</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector">modelcontextprotocol/inspector</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2-hotfix-3">0.21.2-hotfix-3</a></td>
+      <td>2026-04-14</td>
+      <td><em>Sin releases nuevos en los últimos 30 días.</em> Última: fix decimal en number inputs, fix CORS con proxy fetch, scroll horizontal en JSON view, sanitización de errores para evitar stack trace exposure</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Discusiones en Hacker News</h2>
+<div class="note">
+  <strong>Nota:</strong> El servicio <code>hacker-news.firebaseio.com</code> no está en la lista de hosts permitidos del entorno de ejecución. No fue posible obtener datos. Ver sección "Errores de Fetch".
+</div>
+
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<div class="note">
+  <strong>Nota:</strong> El dominio <code>reddit.com</code> no está en la lista de hosts permitidos del entorno de ejecución. No fue posible obtener datos. Ver sección "Errores de Fetch".
+</div>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Opus 4.8 como hito central del día:</strong> El nuevo modelo flagship ya está integrado en todos los SDKs oficiales (Python, TypeScript, Agent SDK) y en Claude Code como default de high-effort. El fix de hoy (v2.1.156) corrige un bug crítico de thinking blocks que apareció con el lanzamiento de ayer, señal de un ciclo de releases muy rápido y reactivo.</li>
+  <li><strong>Dynamic Workflows marca una evolución en agentes:</strong> La capacidad de orquestar decenas o cientos de agentes en paralelo posiciona a Claude Code como una plataforma de automatización compleja. Esto contrasta con el MCP que evoluciona más lentamente (el último RC del spec fue publicado hoy pero viene de un desarrollo prolongado).</li>
+  <li><strong>MCP en transición crítica:</strong> La publicación de un Release Candidate de especificación (2026-07-28-RC) junto con el typescript-sdk aún en alpha (2.0.0-alpha.2) indica que el ecosistema MCP está en plena refactorización. Los servers y inspector no tienen releases recientes (&gt;30 días), lo que sugiere que los equipos están enfocados en la nueva versión del protocolo.</li>
+  <li><strong>Cadencia acelerada de releases en SDKs:</strong> anthropic-sdk-python publicó 3 versiones en 24 horas (v0.105.0, v0.105.1, v0.105.2) y anthropic-sdk-typescript publicó múltiples variantes simultáneamente (sdk, foundry-sdk, aws-sdk). Esto indica un proceso de release automatizado muy maduro (Stainless).</li>
+  <li><strong>Seguridad operacional en maduración:</strong> La migración del CI de claude-agent-sdk-python de API keys estáticas a Workload Identity Federation (tokens de corta duración) es una señal positiva de mejores prácticas de seguridad. La versión TypeScript SDK también corrigió lockfiles para dependencias standardwebhooks, señal de atención a la cadena de suministro.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<div class="error-box">
+<table>
+  <thead><tr><th>URL</th><th>Motivo</th></tr></thead>
+  <tbody>
+    <tr><td><code>https://www.anthropic.com/news</code></td><td>HTTP 403 Forbidden — acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/api</code></td><td>HTTP 403 Forbidden — acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/claude-code</code></td><td>HTTP 403 Forbidden — acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://docs.claude.com/en/release-notes/api</code></td><td>HTTP 403 Forbidden — acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://docs.claude.com/en/release-notes/claude-code</code></td><td>HTTP 403 Forbidden — acceso denegado por el servidor</td></tr>
+    <tr><td><code>https://hacker-news.firebaseio.com/v0/topstories.json</code></td><td>Host no permitido en el entorno de ejecución (red restringida)</td></tr>
+    <tr><td><code>https://www.reddit.com/r/ClaudeAI/top.json</code></td><td>Host no permitido en el entorno de ejecución (red restringida)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<footer>
+  Reporte generado automáticamente el 2026-05-29-140701
+</footer>
+
+</body>
+</html>
