@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte Ecosistema Claude — 2026-05-31-140705</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; color: #1a1a1a; line-height: 1.6; }
+    h1 { border-bottom: 3px solid #d97706; padding-bottom: 0.5rem; }
+    h2 { border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem; margin-top: 2.5rem; color: #1e3a5f; }
+    h3 { color: #374151; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    thead { background: #1e3a5f; color: #fff; }
+    thead th { padding: 0.6rem 0.8rem; text-align: left; }
+    tbody tr:nth-child(even) { background: #f9fafb; }
+    tbody tr:hover { background: #eff6ff; }
+    td, th { padding: 0.5rem 0.8rem; border: 1px solid #e5e7eb; vertical-align: top; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    blockquote { border-left: 4px solid #d97706; margin: 0; padding: 0.5rem 1rem; background: #fffbeb; color: #78350f; }
+    .highlight { background: #fef3c7; padding: 0.1rem 0.3rem; border-radius: 3px; }
+    .error-section { background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 1rem 1.5rem; }
+    .error-section li { color: #991b1b; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude &mdash; 2026-05-31-140705</h1>
+
+<h2>Highlights del D&iacute;a</h2>
+<ol>
+  <li><strong>Claude Opus 4.8 GA (28 mayo)</strong> &mdash; Lanzado el modelo m&aacute;s capaz de Anthropic: ventana de contexto 1M tokens por defecto, 128k tokens de salida m&aacute;ximos, bloques de sistema a mitad de conversaci&oacute;n (<code>role: "system"</code> en posiciones no iniciales), categor&iacute;as de rechazo en <code>stop_details</code>, y par&aacute;metro <code>effort</code> en <code>high</code> por defecto. El SDK Python v0.105.0 y SDK TypeScript v0.100.0 ya incluyen soporte completo.</li>
+  <li><strong>Dynamic Workflows en Claude Code v2.1.154</strong> &mdash; Claude puede crear y orquestar flujos din&aacute;micos de decenas a cientos de agentes en segundo plano para tareas complejas. Disponible v&iacute;a <code>/workflows</code>.</li>
+  <li><strong>Claude Code v2.1.157 &mdash; Sistema de plugins nativo</strong> &mdash; Los plugins en <code>.claude/skills</code> se cargan autom&aacute;ticamente sin necesidad de marketplace; nuevo comando <code>claude plugin init &lt;nombre&gt;</code> para scaffolding.</li>
+  <li><strong>Auto mode en Bedrock, Vertex y Foundry (v2.1.158)</strong> &mdash; El modo auto de Claude Code ahora funciona en plataformas de terceros para Opus 4.7 y 4.8 activando <code>CLAUDE_CODE_ENABLE_AUTO_MODE=1</code>.</li>
+  <li><strong>MCP Spec Release Candidate 2026-07-28</strong> &mdash; Publicado el 29 de mayo el RC de la pr&oacute;xima revisi&oacute;n mayor del Model Context Protocol; tambi&eacute;n MCP Python SDK v1.27.2 con autenticaci&oacute;n basada en principal y sesiones de transporte vinculadas.</li>
+</ol>
+
+<hr>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<blockquote>Fuente: <code>platform.claude.com/docs/en/release-notes/api</code></blockquote>
+<table>
+  <thead>
+    <tr><th>T&iacute;tulo</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claude Managed Agents en Claude Platform on AWS (webhooks, multiagent, sandboxes)</td>
+      <td>2026-05-29</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Lanzamiento Claude Opus 4.8 GA (1M ctx, mid-conv system msgs, refusal categories, adaptive thinking)</td>
+      <td>2026-05-28</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Fast mode en Claude Opus 4.8 (research preview en API)</td>
+      <td>2026-05-28</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Dynamic Workflows en Claude Code (research preview)</td>
+      <td>2026-05-28</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>MCP Tunnels disponible como Research Preview</td>
+      <td>2026-05-19</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Self-hosted sandboxes para Claude Managed Agents</td>
+      <td>2026-05-19</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Web search tool con datos SEC m&aacute;s ricos</td>
+      <td>2026-05-18</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Cache diagnostics en public beta (previous_message_id / cache_miss_reason)</td>
+      <td>2026-05-13</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Fast mode (research preview) para Claude Opus 4.7</td>
+      <td>2026-05-12</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>Claude Platform on AWS GA con IAM auth y endpoints nativos</td>
+      <td>2026-05-11</td>
+      <td>Release Notes API</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Release Notes Oficiales (platform.claude.com)</h2>
+
+<h3>API</h3>
+<table>
+  <thead>
+    <tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-05-29</td>
+      <td>Claude Managed Agents: webhooks, orquestaci&oacute;n multiagente y sandboxes auto-hospedados disponibles en Claude Platform on AWS</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-28</td>
+      <td><strong>Claude Opus 4.8 GA</strong>: 1M ctx por defecto, 128k output tokens, mid-conv system messages (sin beta header), refusal categories en stop_details, effort=high por defecto, adaptive thinking, computer use y advisor tool compatibles</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-28</td>
+      <td>Fast mode para Opus 4.8 (research preview): 2x coste est&aacute;ndar, 2.5x velocidad. Deprecated fast mode para Opus 4.6 (~30 d&iacute;as retire)</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-19</td>
+      <td>MCP Tunnels (Research Preview): conecta servidores MCP en redes privadas. Actualizaci&oacute;n de config MCP en sesiones activas de Managed Agents</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-18</td>
+      <td>Web search tool: datos SEC m&aacute;s ricos para agentes de investigaci&oacute;n financiera</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-13</td>
+      <td>Cache diagnostics (public beta): <code>diagnostics.previous_message_id</code> retorna <code>cache_miss_reason</code>. Header: <code>cache-diagnosis-2026-04-07</code></td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-12</td>
+      <td>Fast mode (research preview) para Claude Opus 4.7: <code>speed: "fast"</code> + header <code>fast-mode-2026-02-01</code></td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-11</td>
+      <td><strong>Claude Platform on AWS</strong> GA: Messages API, Files API, Batches API, Managed Agents, Agent Skills, tool use v&iacute;a endpoints AWS nativos con IAM auth</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+<blockquote>Fuente: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">CHANGELOG.md</a> (la URL oficial redirige al mismo archivo)</blockquote>
+<table>
+  <thead>
+    <tr><th>Versi&oacute;n</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v2.1.158</td>
+      <td>2026-05-30</td>
+      <td>Auto mode disponible en Bedrock, Vertex y Foundry para Opus 4.7/4.8. Activar con <code>CLAUDE_CODE_ENABLE_AUTO_MODE=1</code></td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.158">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.157</td>
+      <td>2026-05-29</td>
+      <td>Plugins en <code>.claude/skills</code> cargados autom&aacute;ticamente; <code>claude plugin init</code>; autocomplete para <code>/plugin</code>; <code>agent</code> field honrado en settings.json; <code>EnterWorktree</code> puede cambiar entre worktrees; telemetry con <code>tool_parameters</code>; m&uacute;ltiples bugfixes WSL, IDE, sandbox</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.157">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.156</td>
+      <td>2026-05-29</td>
+      <td>Correcci&oacute;n: bloques thinking modificados en Opus 4.8 causaban errores de API</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.156">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.154</td>
+      <td>2026-05-28</td>
+      <td><strong>Opus 4.8 GA</strong>; Dynamic workflows (<code>/workflows</code>); Fast mode en Opus 4.8 (2x coste, 2.5x velocidad); Lean system prompt como default; Auto mode sin opt-in; <code>claude agents</code> con shell en background; plugins con <code>defaultEnabled: false</code>; streaming siempre habilitado</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.154">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.153</td>
+      <td>2026-05-28</td>
+      <td><code>skipLfs</code> para fuentes git/github; aviso one-time para npm global install; <code>COLUMNS</code>/<code>LINES</code> en status line; autocomplete en <code>claude agents</code>; macOS permisos de privacy persistentes; correcci&oacute;n stateful MCP sin SSE stream</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.153">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.152</td>
+      <td>~2026-05-27</td>
+      <td><code>/code-review --fix</code> aplica hallazgos al working tree; <code>disallowed-tools</code> en frontmatter de skills; <code>/reload-skills</code>; hooks <code>SessionStart</code> con <code>reloadSkills</code> y <code>sessionTitle</code>; hook <code>MessageDisplay</code>; Auto mode sin consenso previo</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.150</td>
+      <td>~2026-05-26</td>
+      <td>Mejoras de infraestructura interna (sin cambios visibles para el usuario)</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.149</td>
+      <td>~2026-05-25</td>
+      <td><code>/usage</code> con desglose por categor&iacute;a; <code>/diff</code> navegable con teclado; checkboxes GFM en markdown; <code>allowAllClaudeAiMcps</code>; correcci&oacute;n PowerShell permission bypass; correcci&oacute;n <code>find</code> agotando vnodes en macOS</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Releases &mdash; Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Versi&oacute;n</th><th>Fecha</th><th>Resumen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.158">v2.1.158</a></td>
+      <td>2026-05-30</td>
+      <td>Auto mode en Bedrock/Vertex/Foundry para Opus 4.7 y 4.8 v&iacute;a <code>CLAUDE_CODE_ENABLE_AUTO_MODE=1</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python">anthropics/anthropic-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.105.2">v0.105.2</a></td>
+      <td>2026-05-29</td>
+      <td>Patch menor. v0.105.0 a&ntilde;adi&oacute; soporte claude-opus-4-8, mid-conversation system blocks y <code>usage.output_tokens_details</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript">anthropics/anthropic-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.100.1">sdk-v0.100.1</a></td>
+      <td>2026-05-29</td>
+      <td>Fix streaming: <code>encrypted_content</code> en beta compaction blocks. v0.100.0 a&ntilde;adi&oacute; soporte Opus 4.8 y mid-conv system blocks</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python">anthropics/claude-agent-sdk-python</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.87">v0.2.87</a></td>
+      <td>2026-05-23</td>
+      <td>Bundle Claude CLI v2.1.150; migraci&oacute;n CI a Workload Identity Federation (tokens de corta duraci&oacute;n en lugar de secrets est&aacute;ticos)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript">anthropics/claude-agent-sdk-typescript</a></td>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.158">v0.3.158</a></td>
+      <td>2026-05-30</td>
+      <td>Paridad con Claude Code v2.1.158</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook">anthropics/anthropic-cookbook</a></td>
+      <td>&mdash;</td>
+      <td>&mdash;</td>
+      <td>Sin releases publicados (repositorio sin tags de release)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Releases &mdash; Model Context Protocol</h2>
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Versi&oacute;n</th><th>Fecha</th><th>Resumen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">modelcontextprotocol/specification</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC">2026-07-28-RC</a></td>
+      <td>2026-05-29</td>
+      <td>Release Candidate de la revisi&oacute;n <code>2026-07-28</code> del MCP. Spec disponible en draft en modelcontextprotocol.io</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk">modelcontextprotocol/python-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.27.2">v1.27.2</a></td>
+      <td>2026-05-29</td>
+      <td>Agrega <code>subject</code> y <code>claims</code> a AccessToken; vincula sesiones de transporte al principal autenticado; scope de tareas experimentales a la sesi&oacute;n creadora</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk">modelcontextprotocol/typescript-sdk</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.0.0-alpha.2">@mcp/server@2.0.0-alpha.2</a></td>
+      <td>2026-04-01</td>
+      <td>Alpha v2: fix de resoluci&oacute;n de exports con tsdown. <em>Sin releases en los &uacute;ltimos 30 d&iacute;as</em></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/servers/releases/tag/2026.1.26">2026.1.26</a></td>
+      <td>2026-01-27</td>
+      <td>Actualiza server-everything, server-memory, mcp-server-time. <em>Sin releases en los &uacute;ltimos 30 d&iacute;as</em></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector">modelcontextprotocol/inspector</a></td>
+      <td><a href="https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2-hotfix-3">0.21.2-hotfix-3</a></td>
+      <td>2026-04-14</td>
+      <td>Fix tipado decimal en form de tools; fix DCR con ambos redirect URIs; fix scroll horizontal para valores largos en JSON view. <em>Sin releases en los &uacute;ltimos 30 d&iacute;as</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Discusiones en Hacker News</h2>
+<blockquote>Las APIs de Hacker News (hacker-news.firebaseio.com) y el sitio web (news.ycombinator.com) est&aacute;n bloqueadas en el entorno de ejecuci&oacute;n. Ver secci&oacute;n <strong>Errores de Fetch</strong>.</blockquote>
+<table>
+  <thead>
+    <tr><th>T&iacute;tulo</th><th>Score</th><th>Comentarios</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="4"><em>No disponible &mdash; ver Errores de Fetch</em></td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Reddit r/ClaudeAI &mdash; Top del D&iacute;a</h2>
+<blockquote>La API de Reddit est&aacute; bloqueada en el entorno de ejecuci&oacute;n. Ver secci&oacute;n <strong>Errores de Fetch</strong>.</blockquote>
+<table>
+  <thead>
+    <tr><th>T&iacute;tulo</th><th>Score</th><th>Comentarios</th><th>Autor</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="5"><em>No disponible &mdash; ver Errores de Fetch</em></td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li>
+    <strong>Opus 4.8 domina el ciclo de releases</strong>: El lanzamiento de Claude Opus 4.8 el 28 de mayo desencaden&oacute; actualizaciones sincronizadas en todos los SDKs (Python 0.105.0, TypeScript 0.100.0) y Claude Code (v2.1.154&ndash;v2.1.158 en 48 horas). La velocidad de propagaci&oacute;n del modelo a trav&eacute;s del ecosistema indica madurez operativa significativa en el pipeline de releases de Anthropic.
+  </li>
+  <li>
+    <strong>Agentic computing como eje central</strong>: Tres novedades clave apuntan en la misma direcci&oacute;n &mdash; Dynamic Workflows (orquestaci&oacute;n de cientos de agentes), Claude Managed Agents en AWS (GA con webhooks y sandboxes), y MCP Tunnels para redes privadas. El ecosistema Claude est&aacute; consolidando su posici&oacute;n como plataforma de agentes de producci&oacute;n.
+  </li>
+  <li>
+    <strong>Plugins y sistema de habilidades madurando en Claude Code</strong>: La carga autom&aacute;tica de plugins desde <code>.claude/skills</code>, el scaffolding con <code>claude plugin init</code>, y el soporte de <code>defaultEnabled: false</code> sugieren que Anthropic est&aacute; construyendo un ecosistema de extensiones an&aacute;logo a los marketplaces de IDE, con capacidad de distribuci&oacute;n organizacional v&iacute;a <code>pluginSuggestionMarketplaces</code>.
+  </li>
+  <li>
+    <strong>MCP Spec RC 2026-07-28 &mdash; cambio de transporte inminente</strong>: El RC publicado el 29 de mayo anticipa cambios importantes en la capa de transporte. Esto explica por qu&eacute; el TypeScript SDK a&uacute;n est&aacute; en <code>2.0.0-alpha</code>: los cambios del spec afectan la arquitectura subyacente y a&uacute;n no hay release estable de v2.
+  </li>
+  <li>
+    <strong>Seguridad y compliance como diferenciador enterprise</strong>: M&uacute;ltiples cambios en este ciclo apuntan a enterprise &mdash; migraci&oacute;n a Workload Identity Federation en Agent SDK Python, eliminaci&oacute;n de API keys de larga duraci&oacute;n, IAM nativo en AWS, y mejoras al auto-mode classifier para detectar exfiltraci&oacute;n de datos. La tendencia es clara: Anthropic prioriza la adopci&oacute;n empresarial con seguridad integrada por defecto.
+  </li>
+</ol>
+
+<hr>
+
+<h2>Errores de Fetch</h2>
+<div class="error-section">
+  <ul>
+    <li><strong><code>https://www.anthropic.com/news</code></strong> &mdash; HTTP 403 <code>host_not_allowed</code>: bloqueado por pol&iacute;tica de red del entorno de ejecuci&oacute;n. Imposible obtener anuncios del blog oficial.</li>
+    <li><strong><code>https://docs.anthropic.com/en/release-notes/api</code></strong> &mdash; HTTP 403 <code>host_not_allowed</code>: bloqueado. Se us&oacute; <code>platform.claude.com</code> (redirected) como alternativa con &eacute;xito.</li>
+    <li><strong><code>https://hacker-news.firebaseio.com/v0/topstories.json</code></strong> &mdash; HTTP 403 <code>host_not_allowed</code>: bloqueado por pol&iacute;tica de red. El host de WebFetch (<code>news.ycombinator.com</code>) tambi&eacute;n retorn&oacute; 403.</li>
+    <li><strong><code>https://www.reddit.com/r/ClaudeAI/top.json</code></strong> &mdash; HTTP 403 <code>host_not_allowed</code>: bloqueado por pol&iacute;tica de red.</li>
+    <li><strong><code>anthropics/anthropic-cookbook</code></strong> (releases) &mdash; La URL de redirecci&oacute;n de la API de GitHub no retorn&oacute; contenido. El repositorio no tiene releases publicados con tags.</li>
+  </ul>
+</div>
+
+<footer>
+  <p><em>Reporte generado autom&aacute;ticamente el 2026-05-31-140705</em></p>
+</footer>
+
+</body>
+</html>
