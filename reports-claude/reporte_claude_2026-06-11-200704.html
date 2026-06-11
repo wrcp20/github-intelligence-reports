@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte Ecosistema Claude - 2026-06-11-200704</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 20px; background: #f9f9f9; color: #222; }
+    h1 { background: #1a1a2e; color: #fff; padding: 20px; border-radius: 6px; }
+    h2 { border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; color: #1a1a2e; margin-top: 40px; }
+    h3 { color: #333; margin-top: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 24px 0; background: #fff; }
+    th { background: #1a1a2e; color: #fff; padding: 10px 12px; text-align: left; }
+    td { padding: 8px 12px; border: 1px solid #ddd; vertical-align: top; }
+    tr:nth-child(even) { background: #f4f4f8; }
+    a { color: #0056b3; }
+    ul { line-height: 1.8; }
+    li { margin-bottom: 6px; }
+    blockquote { border-left: 4px solid #aaa; margin: 0; padding: 8px 16px; color: #555; background: #fafafa; }
+    .error-table th { background: #8b0000; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+    code { background: #eee; padding: 1px 4px; border-radius: 3px; font-size: 0.92em; }
+    .highlight { background: #fff3cd; border: 1px solid #ffc107; padding: 12px 16px; border-radius: 4px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-06-11-200704</h1>
+
+<!-- ===================== HIGHLIGHTS ===================== -->
+<h2>Highlights del Día</h2>
+<ul>
+  <li class="highlight"><strong>Claude Fable 5 lanzado públicamente</strong> (9 jun 2026): Primer modelo de clase Mythos disponible para el público general. Supera en capacidades a cualquier modelo previamente publicado por Anthropic. Precio API: $10/MTok entrada y $50/MTok salida. Disponible gratis hasta el 22 de junio en planes Pro/Max/Team.</li>
+  <li><strong>Sub-agentes recursivos en Claude Code v2.1.172</strong>: Los sub-agentes ahora pueden crear sus propios sub-agentes hasta 5 niveles de profundidad, abriendo patrones de orquestación multi-agente avanzados directamente desde el CLI.</li>
+  <li><strong>MCP Python SDK v2.0.0a1 — primera alpha v2</strong>: El SDK MCP anuncia una reescritura mayor hacia protocolo stateless (request/response en vez de bidireccional con estado), alineado al borrador de especificación MCP 2026-07-28.</li>
+  <li><strong>Managed Agents con deploys programados y credenciales por variable de entorno</strong>: Claude Managed Agents suma soporte de cron scheduling y vault de credenciales vía variables de entorno (anunciado en API Release Notes del 9 de junio).</li>
+  <li><strong>Agent SDK Python v0.2.97 y TypeScript v0.3.173</strong> publicados hoy (11 jun) en sincronía con Claude Code v2.1.173, mostrando el ritmo acelerado de releases diarios del ecosistema.</li>
+</ul>
+
+<!-- ===================== ANUNCIOS ANTHROPIC ===================== -->
+<h2>Anuncios Oficiales Anthropic</h2>
+<blockquote>Fuente: API Release Notes (platform.claude.com/docs/en/release-notes) + búsquedas web. El acceso directo a www.anthropic.com/news retornó HTTP 403 durante la generación del reporte.</blockquote>
+<table>
+  <thead><tr><th>Título</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Fable 5 y Claude Mythos 5</td><td>2026-06-09</td><td>anthropic.com/news</td><td><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Ver anuncio</a></td></tr>
+    <tr><td>Lanzamiento Claude Opus 4.8</td><td>2026-05-28</td><td>API Release Notes</td><td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Ver docs</a></td></tr>
+    <tr><td>Claude Platform on AWS (disponibilidad general)</td><td>2026-05-11</td><td>API Release Notes</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws" target="_blank">Ver docs</a></td></tr>
+    <tr><td>Claude Managed Agents — beta pública</td><td>2026-04-08</td><td>API Release Notes</td><td><a href="https://platform.claude.com/docs/en/managed-agents/overview" target="_blank">Ver docs</a></td></tr>
+    <tr><td>Claude Opus 4.7</td><td>2026-04-16</td><td>anthropic.com/news</td><td><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank">Ver anuncio</a></td></tr>
+    <tr><td>Claude en Amazon Bedrock (open a todos los clientes)</td><td>2026-04-16</td><td>API Release Notes</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock" target="_blank">Ver docs</a></td></tr>
+    <tr><td>MCP Tunnels — research preview</td><td>2026-05-19</td><td>API Release Notes</td><td><a href="https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview" target="_blank">Ver docs</a></td></tr>
+    <tr><td>Claude Sonnet 4.6</td><td>2026-02-17</td><td>anthropic.com/news</td><td><a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">Ver anuncio</a></td></tr>
+    <tr><td>Claude Opus 4.6</td><td>2026-02-05</td><td>anthropic.com/news</td><td><a href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank">Ver anuncio</a></td></tr>
+    <tr><td>Managed Agents — Outcomes y multi-agent en beta pública</td><td>2026-05-06</td><td>API Release Notes</td><td><a href="https://platform.claude.com/docs/en/managed-agents/multi-agent" target="_blank">Ver docs</a></td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== RELEASE NOTES ===================== -->
+<h2>Release Notes Oficiales (docs.claude.com)</h2>
+
+<h3>API</h3>
+<blockquote>Fuente: platform.claude.com/docs/en/release-notes/api</blockquote>
+<table>
+  <thead><tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>2026-06-09</td>
+      <td>Lanzamiento <strong>Claude Fable 5</strong> (<code>claude-fable-5</code>) y <strong>Claude Mythos 5</strong> (<code>claude-mythos-5</code>). Contexto 1M tokens por defecto, 128k output máx, adaptive thinking siempre activo. Nuevo <code>stop_reason: "refusal"</code> sin cobro si no se genera output. Parámetro <code>fallbacks</code> (beta) para redirigir rechazos a otro modelo. Nuevo campo <code>stop_details.category: "reasoning_extraction"</code>.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-06-09</td>
+      <td><strong>Managed Agents</strong>: deployments programados (cron scheduling) y credenciales vía variables de entorno en vaults. Webhooks <code>session.thread_*</code> incluyen <code>session_thread_id</code>.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-06-05</td>
+      <td>Anuncio de <strong>deprecación de Claude Opus 4.1</strong> (<code>claude-opus-4-1-20250805</code>), retiro el 5 de agosto de 2026. Migrar a Claude Opus 4.8.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-06-02</td>
+      <td><strong>Advisor tool</strong>: nuevo parámetro <code>max_tokens</code>. Solicitudes con <code>stop_reason: "refusal"</code> sin output ya no se facturan.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-29</td>
+      <td>Webhooks, multi-agent orchestration y sandboxes auto-alojados en <strong>Claude Platform on AWS</strong>. Nuevas acciones IAM y política <code>AnthropicSelfHostedEnvironmentAccess</code>.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-28</td>
+      <td>Lanzamiento <strong>Claude Opus 4.8</strong>: contexto 1M tokens por defecto, 128k output máx, effort por defecto <code>high</code>, prompt caching desde 1,024 tokens, fast mode en research preview, mid-conversation system messages.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-19</td>
+      <td><strong>MCP Tunnels</strong> como research preview. Self-hosted sandboxes para Managed Agents. Actualización de config MCP en sesiones activas. Outputs de herramientas &gt;100K tokens derramados automáticamente a archivo.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+    <tr>
+      <td>2026-05-18</td>
+      <td><strong>Web search tool</strong> retorna datos enriquecidos de registros SEC para agentes de investigación financiera.</td>
+      <td><a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank">Release Notes</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+<blockquote>Fuente: CHANGELOG.md de anthropics/claude-code (raw.githubusercontent.com)</blockquote>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>v2.1.173</td>
+      <td>2026-06-11</td>
+      <td>Corrige normalización de nombres Fable 5 con sufijo <code>[1m]</code> (se elimina automáticamente). Elimina advertencia espuria "sandbox dependencies missing" en Windows.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.173" target="_blank">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.172</td>
+      <td>2026-06-10</td>
+      <td>Sub-agentes pueden crear sus propios sub-agentes (hasta 5 niveles). Amazon Bedrock lee región desde <code>~/.aws</code>. Barra de búsqueda en marketplace de plugins (<code>/plugin</code>). Atributo <code>model</code> en métrica OTEL.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.172" target="_blank">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.170</td>
+      <td>2026-06-09</td>
+      <td><strong>Claude Fable 5</strong> disponible en Claude Code. Fix: sesiones no guardaban transcripciones desde terminal integrado de VS Code.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.170" target="_blank">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.169</td>
+      <td>2026-06-08</td>
+      <td>Flag <code>--safe-mode</code> / <code>CLAUDE_CODE_SAFE_MODE</code>. Comando <code>/cd</code> para cambiar directorio. Setting <code>disableBundledSkills</code> y <code>CLAUDE_CODE_DISABLE_BUNDLED_SKILLS</code>.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.169" target="_blank">Release</a></td>
+    </tr>
+    <tr>
+      <td>v2.1.168</td>
+      <td>2026-06-06</td>
+      <td>Correcciones de bugs y mejoras de confiabilidad.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.168" target="_blank">Release</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== RELEASES ANTHROPICS ===================== -->
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a></td>
+      <td>v2.1.173</td>
+      <td>2026-06-11</td>
+      <td>Fix normalización nombres Fable 5 con sufijo [1m]; elimina advertencia sandbox en Windows</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python" target="_blank">anthropics/anthropic-sdk-python</a></td>
+      <td>v0.109.1</td>
+      <td>2026-06-09</td>
+      <td>Agrega categoría de rechazo <code>frontier_llm</code>; soporte para claude-fable-5/mythos-5 y Managed Agents (v0.108.0)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript" target="_blank">anthropics/anthropic-sdk-typescript</a></td>
+      <td>sdk-v0.104.1</td>
+      <td>2026-06-09</td>
+      <td>Agrega categoría de rechazo <code>frontier_llm</code>; soporte para claude-fable-5/mythos-5 y Managed Agents (v0.104.0)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python" target="_blank">anthropics/claude-agent-sdk-python</a></td>
+      <td>v0.2.97</td>
+      <td>2026-06-11</td>
+      <td>CLI bundled actualizado a Claude Code v2.1.173; dependencia <code>mcp</code> anclada &lt;2.0.0 (v0.2.96)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript" target="_blank">anthropics/claude-agent-sdk-typescript</a></td>
+      <td>v0.3.173</td>
+      <td>2026-06-11</td>
+      <td>Paridad con Claude Code v2.1.173; opción <code>skipMcpDiscovery</code> por plugin (v0.3.172); tipo fable añadido (v0.3.170)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank">anthropics/anthropic-cookbook</a></td>
+      <td>—</td>
+      <td>—</td>
+      <td>Sin releases publicados en GitHub (repositorio no publica releases formales)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Releases recientes adicionales — anthropic-sdk-python</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td>v0.109.0</td><td>2026-06-09</td><td>Soporte para Managed Agents deployments y credenciales vía variable de entorno</td></tr>
+    <tr><td>v0.108.0</td><td>2026-06-09</td><td>Soporte para claude-mythos-5 y claude-fable-5; fallbacks server-side y client-side middleware</td></tr>
+    <tr><td>v0.107.1</td><td>2026-06-07</td><td>Fix: envío de header <code>x-api-key</code> en autenticación Foundry</td></tr>
+    <tr><td>v0.107.0</td><td>2026-06-06</td><td>Actualizaciones menores de tipos para Managed Agents</td></tr>
+  </tbody>
+</table>
+
+<h3>Releases recientes adicionales — anthropic-sdk-typescript</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td>sdk-v0.104.0</td><td>2026-06-09</td><td>Soporte Managed Agents deployments y credenciales por env var</td></tr>
+    <tr><td>sdk-v0.103.0</td><td>2026-06-09</td><td>Soporte para claude-fable-5 y claude-mythos-5; middleware de fallbacks client-side</td></tr>
+    <tr><td>vertex-sdk-v0.17.1</td><td>2026-06-09</td><td>Fix: ordenamiento de middleware de terceros</td></tr>
+    <tr><td>foundry-sdk-v0.3.1</td><td>2026-06-09</td><td>Fix: ordenamiento de middleware de terceros</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== RELEASES MCP ===================== -->
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/modelcontextprotocol" target="_blank">mcp/specification</a></td>
+      <td>2026-07-28-RC</td>
+      <td>2026-05-29</td>
+      <td>Release Candidate: especificación MCP 2026-07-28 en draft; transición a protocolo stateless request/response; cambios significativos de protocolo</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank">mcp/python-sdk</a></td>
+      <td>v2.0.0a1</td>
+      <td>2026-06-11</td>
+      <td>Primera alpha v2: protocolo stateless; sin impacto para usuarios v1.x que no opten explícitamente</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank">mcp/typescript-sdk</a></td>
+      <td>@mcp/server@2.0.0-alpha.2</td>
+      <td>2026-04-01</td>
+      <td>Fix resolución de exports con tsdown. Última rama estable sin releases en últimos 30 días.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers" target="_blank">mcp/servers</a></td>
+      <td>2026.1.26</td>
+      <td>2026-01-27</td>
+      <td>Sin releases nuevos en los últimos 30 días. Última: actualización de server-everything, server-memory y mcp-server-time</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector" target="_blank">mcp/inspector</a></td>
+      <td>0.22.0</td>
+      <td>2026-06-04</td>
+      <td>Migración a publicación OIDC trusted en npm CI; corrección de campos <code>repository</code> en package.json de workspaces</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== HACKER NEWS ===================== -->
+<h2>Discusiones en Hacker News</h2>
+<blockquote>Nota: La API Firebase de HackerNews no estuvo disponible en el entorno de ejecución. Los datos provienen de búsqueda web con filtro por keywords relevantes. Los scores y comentarios no fueron recuperables directamente.</blockquote>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Fable 5</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=48463808" target="_blank">HN</a></td></tr>
+    <tr><td>Claude Code to be removed from Anthropic's Pro plan?</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=47854477" target="_blank">HN</a></td></tr>
+    <tr><td>Anthropic says OpenClaw-style Claude CLI usage is allowed again</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=47844269" target="_blank">HN</a></td></tr>
+    <tr><td>Anthropic installed a spyware bridge on my machine?</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=47829800" target="_blank">HN</a></td></tr>
+    <tr><td>Anthropic tries to hide Claude's AI actions. Devs hate it</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=47033622" target="_blank">HN</a></td></tr>
+    <tr><td>Claude is a space to think</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=46884883" target="_blank">HN</a></td></tr>
+    <tr><td>Anthropic blocks third-party use of Claude Code subscriptions</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=46549823" target="_blank">HN</a></td></tr>
+    <tr><td>Anthropic reduced usage quota for all Claude users</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=46514221" target="_blank">HN</a></td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== REDDIT ===================== -->
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<blockquote>Nota: El acceso directo a la API de Reddit fue bloqueado en el entorno de ejecución. Los datos que siguen reflejan tendencias generales del subreddit obtenidas vía búsqueda web.</blockquote>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Autor</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td colspan="5" style="text-align:center; color:#888;">No disponible — API Reddit bloqueada en entorno de ejecución</td></tr>
+  </tbody>
+</table>
+
+<h3>Contexto de la comunidad r/ClaudeAI (vía búsqueda web)</h3>
+<ul>
+  <li>El subreddit cuenta con más de <strong>911,000 miembros</strong> activos.</li>
+  <li>Las discusiones más frecuentes giran en torno a: errores de cuota/límites de uso, comparativas con otros modelos, workflows con Claude Code, y el <strong>cambio de facturación del 15 de junio</strong> (separación del pool de créditos para uso programático vía Agent SDK).</li>
+  <li>La comunidad de desarrolladores discute el costo-beneficio de los planes Pro vs Max y estrategias para optimizar el uso dentro de los límites de la suscripción.</li>
+  <li>El lanzamiento de Claude Fable 5 generó debate sobre la política de disponibilidad: gratuito hasta el 22 de junio, luego requiere créditos adicionales.</li>
+</ul>
+
+<!-- ===================== TENDENCIAS ===================== -->
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Claude Fable 5 marca un hito arquitectónico con los safety classifiers</strong>: Anthropic envía el mismo modelo base (<code>claude-fable-5</code> y <code>claude-mythos-5</code>) diferenciado únicamente por clasificadores de seguridad. Los classifiers rechazan menos del 5% de las sesiones en promedio, pero la percepción comunitaria muestra fricciones con rechazos en prompts inocuos.</li>
+  <li><strong>Ritmo de releases diarios en Claude Code y Agent SDK</strong>: En la semana del 6 al 11 de junio se publicaron 5 versiones de Claude Code (v2.1.168–v2.1.173), con los dos Agent SDK sincronizados en paralelo. Este ritmo refleja la madurez del pipeline de CI/CD y la prioridad de integrar Fable 5 rápidamente.</li>
+  <li><strong>MCP en transición hacia protocolo v2 (stateless)</strong>: Tanto el python-sdk (v2.0.0a1) como la especificación (RC 2026-07-28) apuntan a un cambio de paradigma mayor: de bidireccional con estado a request/response stateless. Esto requerirá migración de implementaciones existentes. Los SDKs v1.x siguen siendo la opción estable.</li>
+  <li><strong>Expansión de Managed Agents hacia infraestructura enterprise</strong>: Las releases de junio añaden scheduling por cron, credenciales seguras por env var, sandboxes auto-alojados y MCP privado, posicionando Claude Managed Agents como solución enterprise crítica.</li>
+  <li><strong>Cambio de facturación del 15 de junio genera ruido en la comunidad</strong>: La separación del pool de créditos para uso programático (Agent SDK) es el tema más discutido en junio 2026, con múltiples artículos explicativos y debates sobre el impacto en usuarios de planes individuales.</li>
+</ol>
+
+<!-- ===================== ERRORES ===================== -->
+<h2>Errores de Fetch</h2>
+<table class="error-table">
+  <thead><tr><th>URL / Recurso</th><th>Error</th><th>Motivo</th></tr></thead>
+  <tbody>
+    <tr><td>https://www.anthropic.com/news</td><td>HTTP 403 Forbidden</td><td>Bloqueo de acceso al scraping desde el entorno de ejecución</td></tr>
+    <tr><td>https://hacker-news.firebaseio.com/v0/topstories.json</td><td>Host no en allowlist</td><td>API Firebase bloqueada en el entorno de ejecución remoto</td></tr>
+    <tr><td>https://www.reddit.com/r/ClaudeAI/top.json</td><td>Bloqueado</td><td>Acceso a Reddit bloqueado en el entorno de ejecución remoto</td></tr>
+    <tr><td>https://old.reddit.com/r/ClaudeAI/top/</td><td>Bloqueado</td><td>Acceso a Reddit bloqueado en el entorno de ejecución remoto</td></tr>
+    <tr><td>https://hn.algolia.com/api/v1/search</td><td>HTTP 403 Forbidden</td><td>API de búsqueda de HN bloqueada en el entorno</td></tr>
+    <tr><td>anthropics/anthropic-cookbook (GitHub releases)</td><td>Sin releases</td><td>El repositorio no publica releases formales en GitHub</td></tr>
+    <tr><td>modelcontextprotocol/specification (ruta original)</td><td>301 Redirect</td><td>Repo movido a modelcontextprotocol/modelcontextprotocol — datos recuperados via redirect</td></tr>
+    <tr><td>platform.claude.com/docs/en/release-notes/claude-code</td><td>307 Redirect</td><td>Redirige al CHANGELOG.md en GitHub — datos obtenidos vía raw.githubusercontent.com</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p><em>Reporte generado automáticamente el 2026-06-11-200704</em></p>
+</footer>
+
+</body>
+</html>
