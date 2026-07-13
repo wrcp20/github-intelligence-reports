@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Reporte Ecosistema Claude - 2026-07-13-040054</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; color: #1a1a1a; background: #fff; line-height: 1.6; }
+  h1 { font-size: 1.8em; border-bottom: 3px solid #d97706; padding-bottom: 8px; color: #92400e; }
+  h2 { font-size: 1.3em; margin-top: 2em; border-left: 4px solid #d97706; padding-left: 12px; color: #1a1a1a; }
+  h3 { font-size: 1.1em; color: #374151; margin-top: 1.2em; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.9em; }
+  thead { background: #fef3c7; }
+  th { padding: 10px 12px; text-align: left; border: 1px solid #d1d5db; font-weight: 600; color: #92400e; }
+  td { padding: 8px 12px; border: 1px solid #d1d5db; vertical-align: top; }
+  tr:nth-child(even) { background: #fffbeb; }
+  a { color: #d97706; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .highlight-box { background: #fef9ee; border: 1px solid #fcd34d; border-radius: 6px; padding: 16px 20px; margin: 1em 0; }
+  .highlight-box ul { margin: 0; padding-left: 20px; }
+  .highlight-box li { margin-bottom: 8px; }
+  .note { background: #f0f9ff; border-left: 3px solid #0ea5e9; padding: 10px 14px; margin: 0.8em 0; font-size: 0.9em; color: #0c4a6e; border-radius: 0 4px 4px 0; }
+  .error-section { background: #fff1f2; border-left: 3px solid #f43f5e; padding: 10px 14px; margin: 0.8em 0; font-size: 0.88em; color: #881337; border-radius: 0 4px 4px 0; }
+  footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #e5e7eb; font-size: 0.82em; color: #6b7280; }
+  .overflow-table { overflow-x: auto; }
+  .tag { display: inline-block; background: #fef3c7; color: #92400e; border-radius: 4px; padding: 1px 7px; font-size: 0.8em; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude &mdash; 2026-07-13</h1>
+
+<h2>Highlights del D&iacute;a</h2>
+<div class="highlight-box">
+  <ul>
+    <li><strong>Claude Code v2.1.207 lanzado el 11 de julio</strong>: Auto mode ya disponible sin opt-in en Bedrock, Vertex AI y Foundry. Correcciones cr&iacute;ticas de terminal, sesiones remotas, git worktrees y agent view. Es la versi&oacute;n m&aacute;s reciente y estable.</li>
+    <li><strong>Controversia de seguridad: &ldquo;backdoor&rdquo; en Claude Code</strong>: El 8 de julio China advirti&oacute; sobre vulnerabilidades en Claude Code (versiones 2.1.91&ndash;2.1.196). Alibaba lo prohibi&oacute; el 10 de julio. Anthropic aclar&oacute; que era un experimento anti-distilaci&oacute;n que planea remover.</li>
+    <li><strong>Claude Science en beta</strong>: Workbench de IA para cient&iacute;ficos con 60+ habilidades y conectores para gen&oacute;mica, prote&oacute;mica y bioinform&aacute;tica. Disponible para usuarios Pro, Max, Team y Enterprise desde el 30 de junio.</li>
+    <li><strong>MCP 2026-07-28 Release Candidate</strong>: Arquitectura stateless, MCP Apps (UIs interactivas en iframe), extensi&oacute;n Tasks, autorizaci&oacute;n Enterprise-Managed (EMA) estable con SSO zero-touch.</li>
+    <li><strong>SDK TypeScript v0.111.0 a&ntilde;ade soporte para &ldquo;dreaming&rdquo;</strong>: Lanzado el 10 de julio con nueva capacidad `dreaming` y mejoras de control de sesiones.</li>
+  </ul>
+</div>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>T&iacute;tulo</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Claude Science &mdash; AI Workbench para Cient&iacute;ficos</td><td>2026-06-30</td><td>Anthropic News</td><td><a href="https://www.anthropic.com/news/claude-science-ai-workbench">anthropic.com/news</a></td></tr>
+    <tr><td>Claude Sonnet 5 lanzado</td><td>2026-06-30</td><td>SDK Changelog</td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>Claude Fable 5 restaurado tras levantar controles de exportaci&oacute;n EE.UU.</td><td>2026-07-01</td><td>The Hacker News</td><td><a href="https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html">thehackernews.com</a></td></tr>
+    <tr><td>TechCrunch: Claude Science apuesta por flujo de trabajo, no nuevo modelo</td><td>2026-06-30</td><td>TechCrunch</td><td><a href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/">techcrunch.com</a></td></tr>
+    <tr><td>Claude Opus 4.8 como modelo por defecto en Bedrock/Vertex/Foundry</td><td>2026-07-11</td><td>CHANGELOG.md</td><td><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>Nueva funci&oacute;n &ldquo;Reflect&rdquo;: resumen mensual de actividad con Claude</td><td>2026-07</td><td>TechCrunch</td><td><a href="https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/">techcrunch.com</a></td></tr>
+    <tr><td>China advierte sobre &ldquo;backdoor&rdquo; en Claude Code; Alibaba lo proh&iacute;be</td><td>2026-07-08</td><td>CBS News / CNBC</td><td><a href="https://www.cbsnews.com/news/china-security-backdoor-anthropic-ai-coding-tool/">cbsnews.com</a></td></tr>
+    <tr><td>Anthropic rechaza acusaci&oacute;n de backdoor en Claude Code</td><td>2026-07-08</td><td>GovInfoSecurity</td><td><a href="https://www.govinfosecurity.com/anthropic-rejects-chinas-claim-about-claude-code-backdoor-a-32184">govinfosecurity.com</a></td></tr>
+    <tr><td>Claude Developer Platform: l&iacute;mites de tasa igualados en todos los tiers (Start, Build, Scale)</td><td>2026-07</td><td>Releasebot</td><td><a href="https://releasebot.io/updates/anthropic/claude-developer-platform">releasebot.io</a></td></tr>
+    <tr><td>Claude Opus 4.1 deprecado &mdash; retiro programado para agosto 5, 2026</td><td>2026-07</td><td>Anthropic Platform</td><td><a href="https://platform.claude.com/docs/en/release-notes/overview">platform.claude.com</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Release Notes Oficiales (docs.claude.com)</h2>
+<div class="note">Los endpoints <code>docs.anthropic.com</code> con rutas de release notes devolvieron HTTP 403 desde este entorno. Los datos provienen de changelogs oficiales del repositorio y de <code>code.claude.com</code>.</div>
+
+<h3>API</h3>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2026-07-10</td><td>TS SDK v0.111.0: soporte para <code>dreaming</code>, gate de sesiones con <code>evaluated_permission</code></td><td><a href="https://github.com/anthropics/anthropic-sdk-typescript/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-07-02</td><td>Python v0.116.0 / TS v0.110.0: beta header <code>agent-memory-2026-07-22</code></td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-07-01</td><td>Python v0.115.1 / TS v0.109.1: limpieza de tipos no funcionales del API</td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-06-30</td><td>Python v0.115.0 / TS v0.109.0: Managed Agents event delta streaming, agent overrides, paginaci&oacute;n inversa, credential injection scoping y webhooks de agente/deployment</td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-06-30</td><td>Python v0.114.0 / TS v0.108.0: soporte para modelo <code>claude-sonnet-5</code></td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-06-29</td><td>Python v0.113.0: soporte para web fetch y support tools <code>20260318</code></td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-06-24</td><td>Python v0.112.0 / TS v0.106.0: soporte para eventos de streaming <code>system.message</code></td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td>2026-06-18</td><td>Python v0.110.0 / TS v0.105.0: soporte para herramienta <code>code_execution_20260120</code></td><td><a href="https://github.com/anthropics/anthropic-sdk-python/blob/main/CHANGELOG.md">GitHub</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Claude Code</h3>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>Versi&oacute;n</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="tag">2.1.207</span></td><td>2026-07-11</td><td>Auto mode GA en Bedrock/Vertex/Foundry; correcciones de terminal congelado, sesiones remotas, worktrees, agent view; Claude Opus 4.8 por defecto; auto-update streaming (&minus;400 MB RAM pico)</td><td><a href="https://code.claude.com/docs/en/changelog">code.claude.com</a></td></tr>
+    <tr><td><span class="tag">2.1.206</span></td><td>2026-07-09</td><td>Sugerencias de ruta en <code>/cd</code>; auto-allow <code>git push</code> en <code>/commit-push-pr</code>; fixes MCP timeout, OAuth, picker de modelos</td><td><a href="https://code.claude.com/docs/en/changelog">code.claude.com</a></td></tr>
+    <tr><td><span class="tag">2.1.205</span></td><td>2026-07-08</td><td>Regla auto mode anti-tamper de transcripciones; fixes worktrees Windows; auto-update en streaming</td><td><a href="https://code.claude.com/docs/en/changelog">code.claude.com</a></td></tr>
+    <tr><td><span class="tag">2.1.204</span></td><td>2026-07-08</td><td>Fix: hook events no transmit&iacute;an durante SessionStart hooks en sesiones headless</td><td><a href="https://code.claude.com/docs/en/changelog">code.claude.com</a></td></tr>
+    <tr><td><span class="tag">2.1.203</span></td><td>2026-07-07</td><td>Advertencia de login pr&oacute;ximo a expirar; badge visual de modo permiso; m&uacute;ltiples fixes en background agents, worktrees, MCP roots</td><td><a href="https://code.claude.com/docs/en/changelog">code.claude.com</a></td></tr>
+    <tr><td><span class="tag">2.1.202</span></td><td>2026-07-06</td><td>Configuraci&oacute;n &ldquo;Dynamic workflow size&rdquo; en <code>/config</code>; atributos OpenTelemetry para workflows; fixes en Remote Control</td><td><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td><span class="tag">2.1.201</span></td><td>~2026-07-05</td><td>Sesiones de Claude Sonnet 5 ya no usan system role mid-conversaci&oacute;n para recordatorios del harness</td><td><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">GitHub</a></td></tr>
+    <tr><td><span class="tag">2.1.200</span></td><td>~2026-07-04</td><td><code>AskUserQuestion</code> ya no auto-contin&uacute;a por defecto; modo &ldquo;Manual&rdquo; es el nuevo nombre del modo &ldquo;default&rdquo;</td><td><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">GitHub</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Releases &mdash; Claude Code y SDKs Oficiales (GitHub)</h2>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Versi&oacute;n</th><th>Fecha</th><th>Resumen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td>
+      <td><span class="tag">2.1.207</span></td>
+      <td>2026-07-11</td>
+      <td>Auto mode GA en Bedrock/Vertex/Foundry; correcciones cr&iacute;ticas de terminal, sesiones remotas, worktrees y agent view; actualizaci&oacute;n de modelo por defecto a Claude Opus 4.8; auto-update en streaming</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python">anthropics/anthropic-sdk-python</a></td>
+      <td><span class="tag">0.116.0</span></td>
+      <td>2026-07-02</td>
+      <td>A&ntilde;ade beta header <code>agent-memory-2026-07-22</code>; soporte claude-sonnet-5 en v0.114.0; Managed Agents streaming completo en v0.115.0; soporte para herramienta code_execution en v0.110.0</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript">anthropics/anthropic-sdk-typescript</a></td>
+      <td><span class="tag">0.111.0</span></td>
+      <td>2026-07-10</td>
+      <td>Soporte para <code>dreaming</code>; gate de tool calls con <code>evaluated_permission</code>; beta header <code>agent-memory-2026-07-22</code> en v0.110.0; soporte claude-sonnet-5 en v0.108.0</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python">anthropics/claude-agent-sdk-python</a></td>
+      <td><span class="tag">0.2.116</span></td>
+      <td>~2026-07-11</td>
+      <td>CLI bundled 2.1.207; fix de workspace trust en CI; en v0.2.111: correcci&oacute;n de zombie subprocesses, parser NDJSON y TypeError en content blocks; warning cuando <code>can_use_tool</code> es silenciado por <code>allowed_tools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript">anthropics/claude-agent-sdk-typescript</a></td>
+      <td><span class="tag">0.3.207</span></td>
+      <td>~2026-07-11</td>
+      <td>Fix de <code>canUseTool</code> sin <code>updatedInput</code>; tipo <code>AgentToolCompletedOutput</code> publicado; frames <code>command_lifecycle</code> en v0.3.206; control de interrupciones en v0.3.205; <code>terminal_reason</code> values en v0.3.204</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook">anthropics/anthropic-cookbook</a></td>
+      <td>N/A</td>
+      <td>&mdash;</td>
+      <td>Sin releases publicados en GitHub en los &uacute;ltimos 30 d&iacute;as (repo de ejemplos sin tags de versi&oacute;n formal)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Releases &mdash; Model Context Protocol</h2>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Versi&oacute;n</th><th>Fecha</th><th>Resumen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/specification">modelcontextprotocol/specification</a></td>
+      <td><span class="tag">RC 2026-07-28</span></td>
+      <td>Anunciado julio 2026</td>
+      <td>Release Candidate m&aacute;s grande desde el lanzamiento: arquitectura stateless (sin sticky sessions), MCP Apps (UIs HTML en iframe), extensi&oacute;n Tasks para trabajos de larga duraci&oacute;n, alineaci&oacute;n OAuth/OIDC, pol&iacute;tica formal de deprecaci&oacute;n. Fuente: <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">blog MCP</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk">modelcontextprotocol/python-sdk</a></td>
+      <td>Sin datos</td>
+      <td>&mdash;</td>
+      <td>CHANGELOG no disponible v&iacute;a raw GitHub (HTTP 404). Sin informaci&oacute;n de release reciente en los &uacute;ltimos 30 d&iacute;as encontrada.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk">modelcontextprotocol/typescript-sdk</a></td>
+      <td>Sin datos</td>
+      <td>&mdash;</td>
+      <td>CHANGELOG no disponible v&iacute;a raw GitHub (HTTP 404). Sin informaci&oacute;n de release reciente en los &uacute;ltimos 30 d&iacute;as encontrada.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td>
+      <td>Sin datos</td>
+      <td>&mdash;</td>
+      <td>Acceso bloqueado por proxy de egreso. No se pudo consultar v&iacute;a API de GitHub.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector">modelcontextprotocol/inspector</a></td>
+      <td>Sin datos</td>
+      <td>&mdash;</td>
+      <td>Acceso bloqueado por proxy de egreso. No se pudo consultar v&iacute;a API de GitHub.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="note">
+  <strong>MCP Enterprise-Managed Authorization (EMA) estable</strong> (anunciado ~2026-06-18): Permite a organizaciones controlar acceso a servidores MCP a trav&eacute;s de su IdP con SSO zero-touch. Adoptado por Anthropic, Microsoft, Asana, Atlassian, Canva, Figma, Linear y Supabase.
+  Fuente: <a href="https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/">blog.modelcontextprotocol.io</a>
+</div>
+
+<h2>Discusiones en Hacker News</h2>
+<div class="note">La API de HackerNews Firebase fue bloqueada por el proxy de egreso. Los items siguientes fueron encontrados v&iacute;a b&uacute;squeda web. Scores y conteos no disponibles.</div>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>T&iacute;tulo</th><th>Score</th><th>Comentarios</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Anthropic launches Claude Science: an AI workbench for scientists (2026)</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=48741218">HN #48741218</a></td></tr>
+    <tr><td>Claude Science (workbench de IA para investigadores)</td><td>N/D</td><td>N/D</td><td><a href="https://news.ycombinator.com/item?id=48735770">HN #48735770</a></td></tr>
+    <tr><td>MCP 2026-07-28 spec: what changed, what breaks</td><td>N/D</td><td>N/D</td><td><a href="https://stacktr.ee/blog/mcp-2026-spec-changes">stacktr.ee</a></td></tr>
+    <tr><td>Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls</td><td>N/D</td><td>N/D</td><td><a href="https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html">thehackernews.com</a></td></tr>
+    <tr><td>China warns of &ldquo;security backdoor&rdquo; in Anthropic AI coding tool</td><td>N/D</td><td>N/D</td><td><a href="https://www.cbsnews.com/news/china-security-backdoor-anthropic-ai-coding-tool/">cbsnews.com</a></td></tr>
+    <tr><td>Alibaba bans Claude Code after alleged China-detection backdoor uncovered</td><td>N/D</td><td>N/D</td><td><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens">tomshardware.com</a></td></tr>
+    <tr><td>Anthropic found Claude&rsquo;s hidden workspace (J-Space research)</td><td>N/D</td><td>N/D</td><td><a href="https://www.theneurondaily.com/p/anthropic-found-claude-s-hidden-workspace">theneurondaily.com</a></td></tr>
+    <tr><td>MCP Enterprise-Managed Authorization Goes Stable</td><td>N/D</td><td>N/D</td><td><a href="https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/">blog.modelcontextprotocol.io</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Reddit r/ClaudeAI &mdash; Top del D&iacute;a</h2>
+<div class="error-section">
+  La API de Reddit fue bloqueada por el proxy de egreso de este entorno (HTTP 000). No se pudieron obtener posts directamente. Los temas m&aacute;s probablemente activos hoy incluyen la controversia del backdoor de Claude Code, el lanzamiento de Claude Science, y Claude Opus 4.8 como nuevo modelo por defecto. Consultar directamente: <a href="https://www.reddit.com/r/ClaudeAI/top/?t=day">reddit.com/r/ClaudeAI</a>
+</div>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>T&iacute;tulo</th><th>Score</th><th>Comentarios</th><th>Autor</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="5" style="text-align:center; color:#6b7280; font-style:italic;">Sin datos directos disponibles &mdash; acceso a Reddit bloqueado por proxy de egreso</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Madurez del ecosistema ag&eacute;ntico</strong>: La semana del 7-13 de julio marca un hito: Claude Agent SDK Python v0.2.116 y TypeScript v0.3.207 mantienen paridad total con Claude Code v2.1.207. 7+ versiones de Claude Code en 7 d&iacute;as indican un ritmo acelerado orientado a estabilidad de sesiones background y Remote Control.</li>
+  <li><strong>Auto Mode como apuesta central</strong>: Hacer Auto Mode disponible por defecto en Bedrock/Vertex/Foundry sin opt-in (v2.1.207) se&ntilde;ala su madurez percibida. Simult&aacute;neamente, cambiar &ldquo;default&rdquo; a &ldquo;Manual&rdquo; refleja una estrategia de seguridad m&aacute;s conservadora para CLI vs. API.</li>
+  <li><strong>Controversia geopo&iacute;tica Claude Code vs. China</strong>: La acusaci&oacute;n de backdoor y la prohibici&oacute;n de Alibaba representa la mayor tensi&oacute;n geopo&iacute;tica para el ecosistema Claude. Anthropic reconoci&oacute; el c&oacute;digo pero lo encuadr&oacute; como anti-distilaci&oacute;n. Las versiones afectadas (2.1.91&ndash;2.1.196) ya est&aacute;n fuera del ciclo activo.</li>
+  <li><strong>MCP se vuelve infraestructura enterprise</strong>: La estabilizaci&oacute;n de EMA y el Release Candidate 2026-07-28 consolidan a MCP como protocolo de nivel empresarial. La eliminaci&oacute;n de sesiones persistentes (arquitectura stateless) es un cambio breaking significativo para implementaciones existentes.</li>
+  <li><strong>Claude Science abre un nuevo mercado vertical</strong>: Con 60+ conectores especializados y modelo de acceso tipo Jupyter Notebook, Claude Science posiciona a Anthropic directamente en el mercado de herramientas cient&iacute;ficas, compitiendo con Benchling, Schr&ouml;dinger y soluciones internas de Big Pharma.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<div class="overflow-table">
+<table>
+  <thead>
+    <tr><th>URL</th><th>M&eacute;todo</th><th>Error</th><th>Motivo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/api</code></td><td>WebFetch / curl</td><td>HTTP 403 / Host not in allowlist</td><td>Host no permitido por pol&iacute;tica de egreso del proxy</td></tr>
+    <tr><td><code>https://docs.anthropic.com/en/release-notes/claude-code</code></td><td>WebFetch</td><td>HTTP 403</td><td>Mismo motivo anterior</td></tr>
+    <tr><td><code>https://www.anthropic.com/news</code></td><td>WebFetch</td><td>HTTP 403</td><td>Mismo motivo anterior</td></tr>
+    <tr><td><code>https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/CHANGELOG.md</code></td><td>curl</td><td>HTTP 404</td><td>Archivo CHANGELOG.md no existe en esa ruta</td></tr>
+    <tr><td><code>https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/CHANGELOG.md</code></td><td>curl</td><td>HTTP 404</td><td>Archivo CHANGELOG.md no existe en esa ruta</td></tr>
+    <tr><td><code>https://hacker-news.firebaseio.com/v0/topstories.json</code></td><td>curl</td><td>HTTP 000 (sin conexi&oacute;n)</td><td>Host bloqueado por proxy de egreso</td></tr>
+    <tr><td><code>https://www.reddit.com/r/ClaudeAI/top.json</code></td><td>curl</td><td>HTTP 000 (sin conexi&oacute;n)</td><td>Host bloqueado por proxy de egreso</td></tr>
+    <tr><td><code>https://api.github.com/repos/anthropics/*/releases</code></td><td>curl con token</td><td>Bloqueado por proxy</td><td>Repos fuera del scope de sesi&oacute;n; se us&oacute; raw GitHub como fallback</td></tr>
+    <tr><td><code>https://api.github.com/repos/modelcontextprotocol/*/releases</code></td><td>curl con token</td><td>Bloqueado por proxy</td><td>Mismo motivo; datos complementados con b&uacute;squeda web</td></tr>
+  </tbody>
+</table>
+</div>
+
+<footer>
+  Reporte generado autom&aacute;ticamente el 2026-07-13-040054<br>
+  Fuentes: CHANGELOG.md oficial de anthropics/claude-code &middot; Changelogs de SDKs v&iacute;a raw.githubusercontent.com &middot; WebSearch &middot; code.claude.com
+</footer>
+
+</body>
+</html>
