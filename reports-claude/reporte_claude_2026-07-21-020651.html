@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte Ecosistema Claude - 2026-07-21-020651</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 20px; color: #222; background: #fff; }
+  h1 { color: #1a1a2e; border-bottom: 3px solid #e8692a; padding-bottom: 10px; }
+  h2 { color: #2d4a7a; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin-top: 36px; }
+  h3 { color: #3d6b9e; margin-top: 20px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 14px; }
+  th { background: #2d4a7a; color: #fff; padding: 8px 12px; text-align: left; }
+  td { padding: 7px 12px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+  a { color: #2d7dd2; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .highlight-box { background: #f0f7ff; border-left: 4px solid #2d7dd2; padding: 14px 18px; margin: 18px 0; border-radius: 4px; }
+  .highlight-box ul { margin: 0; padding-left: 20px; }
+  .highlight-box li { margin: 8px 0; line-height: 1.5; }
+  .note { background: #fff8e1; border-left: 4px solid #f5a623; padding: 10px 14px; margin: 10px 0; font-size: 13px; border-radius: 4px; }
+  .section-error { background: #fff2f2; border-left: 4px solid #e54444; padding: 10px 14px; margin: 10px 0; font-size: 13px; border-radius: 4px; }
+  .tag-new { background: #28a745; color: #fff; font-size: 11px; padding: 2px 7px; border-radius: 10px; margin-left: 6px; font-weight: 600; }
+  .tag-security { background: #dc3545; color: #fff; font-size: 11px; padding: 2px 7px; border-radius: 10px; margin-left: 6px; font-weight: 600; }
+  .tag-milestone { background: #6f42c1; color: #fff; font-size: 11px; padding: 2px 7px; border-radius: 10px; margin-left: 6px; font-weight: 600; }
+  footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid #ddd; font-size: 13px; color: #888; }
+  @media (max-width: 700px) { table { font-size: 12px; } td, th { padding: 5px 8px; } }
+</style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude <small style="font-size:55%;color:#888;">2026-07-21-020651</small></h1>
+
+<h2>Highlights del Día</h2>
+<div class="highlight-box">
+<ul>
+  <li><strong>MCP Inspector v1.0.0</strong> <span class="tag-milestone">MILESTONE</span> publicado el 18 de julio: la herramienta de inspección y depuración de servidores MCP alcanza su versión estable GA con protección SSRF y actualizaciones de seguridad críticas.</li>
+  <li><strong>Claude Code v2.1.216</strong> (20 jul) <span class="tag-security">SEGURIDAD</span>: añade <code>sandbox.filesystem.disabled</code> para desactivar aislamiento de filesystem, corrige bug grave de normalización cuadrática en sesiones largas, y cierra vulnerabilidades en Windows.</li>
+  <li><strong>anthropic-sdk-python v0.117.0</strong> (16 jul): soporte para "dreaming" (síntesis de memoria) y MCP Tunnels, más uso de <code>SecretStr</code> para mantener credenciales fuera de trazas de error.</li>
+  <li><strong>Workbench legacy en proceso de cierre:</strong> anunciado el 17 de julio, el Workbench clásico de Claude Console se cerrará el 17 de agosto 2026. Las APIs experimentales de prompt engineering (<code>/v1/experimental/generate_prompt</code>, <code>improve_prompt</code>, <code>templatize_prompt</code>) también se retiran en esa fecha.</li>
+  <li><strong>Mensajes de sistema a mitad de conversación</strong> disponibles sin beta header en Claude Fable 5, Mythos 5 y Opus 4.8 (15 jul) — corrección a notas previas de disponibilidad incorrectas.</li>
+</ul>
+</div>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<div class="note">⚠️ La página https://www.anthropic.com/news devolvió Error 403 en esta ejecución. Los anuncios a continuación se derivan de las release notes oficiales (platform.claude.com/docs/en/release-notes/api).</div>
+<table>
+  <thead><tr><th>Título</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>Workbench legacy se cierra el 17 ago 2026; APIs experimentales de prompt también se retiran</td><td>17 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver nota</a></td></tr>
+    <tr><td>Mid-conversation system messages disponibles en Fable 5, Mythos 5 y Opus 4.8 (sin beta header)</td><td>15 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages">Ver docs</a></td></tr>
+    <tr><td>Admin API beta para Claude Enterprise: gestión de miembros, grupos y roles</td><td>14 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/api/admin">Ver docs</a></td></tr>
+    <tr><td>Dreams soporta Claude Fable 5 y Claude Sonnet 5; documentación Access Transparency expandida</td><td>10 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/managed-agents/dreams">Ver docs</a></td></tr>
+    <tr><td>API keys con expiración configurable en Claude Console</td><td>8 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">Ver docs</a></td></tr>
+    <tr><td>Beta header <code>agent-memory-2026-07-22</code>: nuevo comportamiento de listado de memorias</td><td>2 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/api/beta-headers#endpoint-specific-headers">Ver docs</a></td></tr>
+    <tr><td>Claude Fable 5 y Mythos 5 restaurados</td><td>1 jul 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver nota</a></td></tr>
+    <tr><td>Claude Sonnet 5 lanzado — $2/$10 MTok (intro), contexto 1M, pensamiento adaptativo por defecto</td><td>30 jun 2026</td><td>Platform Docs</td><td><a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5">Ver docs</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Release Notes Oficiales (platform.claude.com/docs)</h2>
+
+<h3>API</h3>
+<table>
+  <thead><tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>17 jul 2026</td><td><strong>Workbench sunset:</strong> el Workbench legacy se cierra el 17 ago 2026. APIs experimentales <code>/v1/experimental/generate_prompt</code>, <code>improve_prompt</code> y <code>templatize_prompt</code> también se retiran. Exportar datos antes del cierre.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver nota</a></td></tr>
+    <tr><td>15 jul 2026</td><td><strong>Mid-conversation system messages</strong> disponibles sin beta header en Fable 5, Mythos 5 y Opus 4.8, en Claude API, Amazon Bedrock y Google Cloud.</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages">Ver docs</a></td></tr>
+    <tr><td>14 jul 2026</td><td><strong>Admin API beta (Claude Enterprise):</strong> gestión de miembros por email, cambio de roles, retiro de miembros, invitaciones, grupos y roles personalizados. Requiere <code>anthropic-beta: ce-user-management-2026-07-13</code>.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/user-management">Ver docs</a></td></tr>
+    <tr><td>10 jul 2026</td><td><strong>Dreams</strong> (research preview) soporta Claude Fable 5 y Claude Sonnet 5. Documentación de Access Transparency expandida con nuevos reason codes de <code>cmek_preserve</code>.</td><td><a href="https://platform.claude.com/docs/en/managed-agents/dreams">Ver docs</a></td></tr>
+    <tr><td>8 jul 2026</td><td><strong>Expiración de API keys:</strong> configuración en Claude Console con presets, duración personalizada o "Nunca". Email automático de alerta antes de expiración para keys de al menos 7 días.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">Ver docs</a></td></tr>
+    <tr><td>2 jul 2026</td><td><strong>Beta header <code>agent-memory-2026-07-22</code>:</strong> orden estable en listado de memorias, depth acepta solo 0/1, <code>path_prefix</code> debe terminar en <code>/</code>. SDKs Python 0.116.0, TS 0.110.0, Go 1.56.0, Java 2.48.0, Ruby 1.55.0, PHP 0.36.0, C# 12.35.0 actualizados.</td><td><a href="https://platform.claude.com/docs/en/api/beta-headers#endpoint-specific-headers">Ver docs</a></td></tr>
+    <tr><td>1 jul 2026</td><td><strong>Claude Fable 5 y Mythos 5 restaurados</strong> tras pausa por investigación interna.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">Ver nota</a></td></tr>
+    <tr><td>30 jun 2026</td><td><strong>Claude Sonnet 5</strong> (<code>claude-sonnet-5</code>): $2/$10 MTok intro hasta ago 2026. Contexto 1M, 128k output, adaptive thinking por defecto. Manual extended thinking removido (retorna 400). Nuevo tokenizador: ~30% más tokens.</td><td><a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5">Ver docs</a></td></tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+<div class="note">Las release notes de Claude Code en docs redirigen directamente al CHANGELOG.md en GitHub. Los datos provienen del repositorio oficial.</div>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td><strong>v2.1.216</strong> <span class="tag-security">SEGURIDAD</span></td><td>20 jul 2026</td><td>Setting <code>sandbox.filesystem.disabled</code> para omitir aislamiento de filesystem. Fix bug grave: normalización de mensajes con coste cuadrático en sesiones largas. Fix auto mode tras expiración OAuth. Fix <code>AskUserQuestion</code>. Fix sesiones web re-preguntando tras inactividad. Fix agentes background revirtiendo a agente default. Fix worktree-isolated subagentes redirigiendo git al checkout compartido.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td><strong>v2.1.215</strong></td><td>19 jul 2026</td><td>Claude ya no ejecuta automáticamente los skills <code>/verify</code> y <code>/code-review</code>. Deben invocarse explícitamente por el usuario.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td><strong>v2.1.214</strong> <span class="tag-security">SEGURIDAD</span></td><td>18 jul 2026</td><td>Fix bypass de permission-check en Windows PowerShell 5.1. Fix Bash permission checks para comandos largos (&gt;10k chars). Herramienta <code>EndConversation</code> para usuarios abusivos. Heartbeat periódico de progreso para tool calls largas. Múltiples fixes de PowerShell y sesiones background.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td><strong>v2.1.212</strong></td><td>17 jul 2026</td><td><code>/fork</code> refactorizado para crear sesiones background. Comando <code>claude auto-mode reset</code>. Límite de WebSearch por sesión (default: 200 llamadas). Cap de subagentes por sesión (default: 200). MCP tool calls &gt;2min pasan a background automáticamente. Picker <code>/resume</code> para sesiones pasadas. Fix plan mode auto-ejecutando Bash modificador de archivos.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td><strong>v2.1.211</strong></td><td>15 jul 2026</td><td>Flag <code>--forward-subagent-text</code> para output stream-json. Fix previews de permisos con caracteres bidireccionales. Fix auto mode sobreescribiendo decisiones <code>ask</code> del hook PreToolUse. Fix sesiones paralelas cerrando sesión tras wake-from-sleep. Fix plugin MCP servers sin reconectar tras inactividad.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/anthropics/claude-code/releases">anthropics/claude-code</a></td><td>v2.1.216</td><td>20 jul 2026</td><td><code>sandbox.filesystem.disabled</code>, fix normalización cuadrática, fixes OAuth, worktree y Windows</td></tr>
+    <tr><td><a href="https://github.com/anthropics/anthropic-sdk-python/releases">anthropics/anthropic-sdk-python</a></td><td>v0.117.0</td><td>16 jul 2026</td><td>Soporte para "dreaming" y MCP Tunnels; credenciales fuera de stack traces via <code>SecretStr</code></td></tr>
+    <tr><td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases">anthropics/anthropic-sdk-typescript</a></td><td>sdk-v0.112.4</td><td>20 jul 2026</td><td>Fix AWS options y preservación de auth mode en <code>withOptions()</code>; actualizaciones de documentación</td></tr>
+    <tr><td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases">anthropics/claude-agent-sdk-python</a></td><td>v0.2.124</td><td>20 jul 2026</td><td>Bloqueo de spawning <code>.bat</code>/<code>.cmd</code> en Windows, rechazo de metacaracteres cmd.exe; CLI bundled: v2.1.216</td></tr>
+    <tr><td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases">anthropics/claude-agent-sdk-typescript</a></td><td>v0.3.216</td><td>20 jul 2026</td><td>Campo <code>skippedLinks</code> en <code>rewindFiles</code>, <code>tool_result_meta</code> sidecar, campos de correlación de latencia cross-host</td></tr>
+    <tr><td><a href="https://github.com/anthropics/anthropic-cookbook">anthropics/anthropic-cookbook</a></td><td>—</td><td>—</td><td>Sin releases publicados en el repositorio</td></tr>
+  </tbody>
+</table>
+
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/modelcontextprotocol/specification/releases">modelcontextprotocol/specification</a></td><td>2026-07-28-RC</td><td>29 may 2026</td><td>Release candidate de la revisión <code>2026-07-28</code> del protocolo MCP. Protocolo sin estado; cambios posibles antes del release final.</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/python-sdk/releases">modelcontextprotocol/python-sdk</a></td><td>v2.0.0b2</td><td>14 jul 2025</td><td>Segunda beta v2: <code>httpx2</code> con SSE built-in, suscripciones/listen con eventos tipados, cancelación de requests en transportes 2026.</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases">modelcontextprotocol/typescript-sdk</a></td><td>@modelcontextprotocol/server@2.0.0-beta.4</td><td>13 jul 2025</td><td>Schemas consolidados en paquete core con lazy loading. <code>preloadSchemas()</code> para eager loading en plataformas isolate.</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/servers/releases">modelcontextprotocol/servers</a></td><td>2026.7.10</td><td>10 jul 2026</td><td>Actualización de paquetes: servidores filesystem, time, fetch y git.</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/inspector/releases">modelcontextprotocol/inspector</a></td><td>v1.0.0 <span class="tag-milestone">MILESTONE</span></td><td>18 jul 2026</td><td>Release estable v1.0.0 — Inspector MCP alcanza GA. Protección SSRF, correcciones de seguridad y actualizaciones de dependencias.</td></tr>
+  </tbody>
+</table>
+
+<h2>Discusiones en Hacker News</h2>
+<div class="section-error">⚠️ Las APIs de HackerNews (Firebase API y Algolia) devolvieron Error 403 en esta ejecución. No fue posible obtener datos en tiempo real.</div>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td colspan="4" style="text-align:center;color:#888;font-style:italic;">No disponible — ver sección Errores de Fetch</td></tr>
+  </tbody>
+</table>
+
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<div class="section-error">⚠️ Reddit bloqueó las conexiones desde este entorno (www.reddit.com y old.reddit.com). No fue posible obtener datos en tiempo real.</div>
+<table>
+  <thead><tr><th>Título</th><th>Score</th><th>Comentarios</th><th>Autor</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td colspan="5" style="text-align:center;color:#888;font-style:italic;">No disponible — ver sección Errores de Fetch</td></tr>
+  </tbody>
+</table>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>MCP Inspector v1.0.0: madurez del ecosistema de herramientas.</strong> El Inspector alcanzó su primera versión estable el 18 de julio, marcando un hito significativo: el ecosistema MCP ya tiene un debugging tool production-ready. Las correcciones SSRF en v1.0.0 indican uso real con amenazas reales, señal de adopción en entornos de producción.</li>
+  <li><strong>Seguridad como tema central de la semana.</strong> Claude Code v2.1.214 corrigió un bypass de permission-check en Windows PowerShell 5.1. El Agent SDK Python v0.2.124 bloqueó spawning de <code>.bat</code>/<code>.cmd</code> y rechaza metacaracteres de cmd.exe. El SDK Python v0.117.0 usa <code>SecretStr</code> para credenciales fuera de stack traces. Tres proyectos distintos con parches de seguridad en la misma semana — escrutinio creciente del ecosistema.</li>
+  <li><strong>Workbench legacy entrando en fase final.</strong> El cierre del Workbench clásico el 17 de agosto y la retirada de las APIs experimentales de prompt engineering dan aproximadamente 4 semanas a los equipos afectados para migrar. Los datos del Workbench pueden exportarse desde el banner o en Organizational Settings.</li>
+  <li><strong>Mid-conversation system messages: feature clave sin fricción.</strong> La disponibilidad sin beta header en Fable 5, Mythos 5 y Opus 4.8 simplifica un patrón muy demandado para sesiones largas (sin perder el prompt cache cuando cambian instrucciones). La remoción del beta header indica madurez y adopción general.</li>
+  <li><strong>"Dreaming" expandiéndose en el stack.</strong> El SDK Python v0.117.0 añade soporte directo para dreaming. Combinado con Dreams en Fable 5 y Sonnet 5 (10 julio), Anthropic integra activamente la síntesis de memoria en todos los niveles del stack — señal de que los agentes con memoria persistente y auto-organizada son prioridad estratégica.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<table>
+  <thead><tr><th>URL</th><th>Motivo</th></tr></thead>
+  <tbody>
+    <tr><td>https://www.anthropic.com/news</td><td>Error 403 — bloqueado por proxy del entorno de ejecución</td></tr>
+    <tr><td>https://anthropic.com/research</td><td>Error 403 — bloqueado por proxy del entorno de ejecución</td></tr>
+    <tr><td>https://api.github.com/repos/anthropics/*/releases</td><td>Error 403 — proxy bloquea GitHub API para repos fuera del scope de sesión</td></tr>
+    <tr><td>https://hacker-news.firebaseio.com/v0/topstories.json</td><td>Error 403 — Firebase API bloqueada por proxy</td></tr>
+    <tr><td>https://hn.algolia.com/api/v1/search</td><td>Error 403 — Algolia HN API bloqueada por proxy</td></tr>
+    <tr><td>https://hnrss.org/newest</td><td>Error 403 — RSS de HN bloqueado por proxy</td></tr>
+    <tr><td>https://www.reddit.com/r/ClaudeAI/*.json</td><td>Bloqueado — entorno no permite conexiones a www.reddit.com</td></tr>
+    <tr><td>https://old.reddit.com/r/ClaudeAI/*.json</td><td>Bloqueado — entorno no permite conexiones a old.reddit.com</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p>Reporte generado automáticamente el 2026-07-21-020651</p>
+</footer>
+
+</body>
+</html>
