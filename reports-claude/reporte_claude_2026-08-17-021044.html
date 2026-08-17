@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte Ecosistema Claude 2026-08-17</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.6; color: #1a1a1a; background: #f8f9fa; padding: 0 0 40px; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 32px 24px; }
+  .header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 6px; }
+  .header .sub { opacity: 0.7; font-size: 0.9rem; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  h2 { font-size: 1.2rem; font-weight: 700; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #e2e8f0; color: #1a1a2e; }
+  h3 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; color: #2d3748; }
+  .highlights { background: white; border-left: 4px solid #3b82f6; border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .highlights ol { padding-left: 18px; }
+  .highlights li { margin-bottom: 12px; }
+  .highlights li strong { color: #1a56db; }
+  .table-wrap { overflow-x: auto; margin: 12px 0 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  table { width: 100%; border-collapse: collapse; background: white; font-size: 0.88rem; }
+  thead { background: #1a1a2e; color: white; }
+  thead th { padding: 10px 14px; text-align: left; font-weight: 600; white-space: nowrap; }
+  tbody tr:nth-child(even) { background: #f7f9fc; }
+  tbody tr:hover { background: #eef2ff; }
+  td { padding: 9px 14px; vertical-align: top; border-bottom: 1px solid #e5e7eb; }
+  td a { color: #1a56db; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-blue { background: #dbeafe; color: #1e3a8a; }
+  .badge-orange { background: #fef3c7; color: #92400e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .note-box { background: #fffbeb; border: 1px solid #fbbf24; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.88rem; color: #78350f; }
+  .error-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.88rem; color: #7f1d1d; }
+  .trends { background: white; border-radius: 8px; padding: 20px 24px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .trends ol { padding-left: 18px; }
+  .trends li { margin-bottom: 14px; line-height: 1.55; }
+  .trends li strong { color: #1a1a2e; }
+  .footer { text-align: center; color: #6b7280; font-size: 0.82rem; margin-top: 40px; padding: 20px; border-top: 1px solid #e5e7eb; background: white; }
+  .section-card { background: white; border-radius: 8px; padding: 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 24px; overflow: hidden; }
+  .section-card h2 { margin: 0; padding: 16px 20px; font-size: 1.05rem; border-bottom: 1px solid #e5e7eb; border-bottom-width: 2px; border-color: #3b82f6; }
+  .section-card .table-wrap { margin: 0; border-radius: 0; box-shadow: none; }
+  .na-banner { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 8px; padding: 20px; text-align: center; color: #6b7280; font-size: 0.9rem; margin: 16px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <h1>🤖 Reporte Ecosistema Claude</h1>
+    <div class="sub">Generado automáticamente el 2026-08-17 a las 02:10:44 UTC</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- HIGHLIGHTS -->
+<h2>⭐ Highlights del Día</h2>
+<div class="highlights">
+  <ol>
+    <li><strong>Claude Code v2.1.233 lanzado</strong> — La versión más reciente trae soporte de GitLab para merge requests en el flag <code>--worktree</code>, soporte opt-in de memory cgroup para comandos Bash en Linux, y correcciones críticas de seguridad en Windows.</li>
+    <li><strong>SDK Python v0.122.0 y TypeScript v0.117.1</strong> — Ambos SDKs principales actualizados el 13 de agosto de 2026 con soporte a <code>output_behavior</code> en creación de Dreams, corrección de firma SigV4 en clientes Bedrock asíncronos, y mejoras en streaming.</li>
+    <li><strong>Precio de Claude Sonnet 5 congelado permanentemente</strong> — Anthropic anunció el 10 de agosto que el precio introductorio de $2/$10 por MTok se convierte en el precio estándar definitivo, cancelando el aumento previsto para septiembre 2026.</li>
+    <li><strong>MCP 2026-07-28 en versión estable</strong> — La especificación Model Context Protocol alcanzó release estable, con los SDKs Python (v2.0.0) y TypeScript (@modelcontextprotocol/server@2.0.0) publicados con soporte completo del nuevo protocolo.</li>
+    <li><strong>Inference Hooks en beta para Claude Enterprise</strong> — Nueva capacidad que permite a las organizaciones conectar servidores de seguridad de IA para aprobar o denegar prompts antes de la inferencia.</li>
+  </ol>
+</div>
+
+<!-- ANUNCIOS OFICIALES -->
+<h2>📢 Anuncios Oficiales Anthropic</h2>
+<div class="note-box">⚠️ <strong>Nota:</strong> La URL <code>https://www.anthropic.com/news</code> está bloqueada por el proxy de red. Los datos provienen de <code>platform.claude.com/docs/en/release-notes/api</code>.</div>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Título</th><th>Fecha</th><th>Fuente</th><th>Link</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Compliance API retorna transcripciones de sesiones locales de Claude Code/Cowork (beta Enterprise)</td><td>11 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/manage-claude/compliance-sessions#retrieve-local-sessions" target="_blank">Ver</a></td></tr>
+      <tr><td>Nuevo header <code>anthropic-workspace-id</code> en respuestas de API</td><td>11 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/manage-claude/workspaces#identify-the-workspace-behind-an-api-response" target="_blank">Ver</a></td></tr>
+      <tr><td>Precio de Claude Sonnet 5 permanece en $2/$10 por MTok (sin aumento en septiembre)</td><td>10 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">Ver</a></td></tr>
+      <tr><td>Session budgets para Managed Agents con stop reason <code>budget_reached</code></td><td>7 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/managed-agents/budgets" target="_blank">Ver</a></td></tr>
+      <tr><td>Skills auto-cargadas desde repos GitHub en sesiones de Managed Agents</td><td>7 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/managed-agents/skills#load-skills-from-a-github-repository" target="_blank">Ver</a></td></tr>
+      <tr><td><strong>Inference Hooks en beta</strong> para Claude Enterprise — servidores de seguridad IA pre-inferencia</td><td>5 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/manage-claude/inference-hooks" target="_blank">Ver</a></td></tr>
+      <tr><td>Claude Opus 4.1 retirado definitivamente; migrar a Claude Opus 5</td><td>5 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/about-claude/models/overview" target="_blank">Ver</a></td></tr>
+      <tr><td>Compliance API para sesiones remotas de Cowork (beta Enterprise)</td><td>3 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/manage-claude/compliance-sessions#retrieve-remote-sessions" target="_blank">Ver</a></td></tr>
+      <tr><td>Dreams (research preview) añade soporte a Claude Opus 5</td><td>1 ago 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/managed-agents/dreams#limits" target="_blank">Ver</a></td></tr>
+      <tr><td>Lanzamiento de Claude Opus 5 — 1M tokens contexto, 128k output, thinking activado por defecto, $5/$25 por MTok</td><td>24 jul 2026</td><td>Release Notes API</td><td><a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5" target="_blank">Ver</a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- RELEASE NOTES OFICIALES -->
+<h2>📋 Release Notes Oficiales (platform.claude.com)</h2>
+
+<h3>API</h3>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>11 ago 2026</td><td>Compliance API — transcripciones de sesiones locales de Claude Code/Cowork en beta Enterprise. Endpoints: <code>GET /v1/compliance/apps/sessions/local</code>.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/compliance-sessions#retrieve-local-sessions" target="_blank">Docs</a></td></tr>
+      <tr><td>11 ago 2026</td><td>Nuevo response header <code>anthropic-workspace-id</code> con el ID del workspace que resolvió la API key.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/workspaces" target="_blank">Docs</a></td></tr>
+      <tr><td>10 ago 2026</td><td>Precio de Claude Sonnet 5 fijado en $2/$10/MTok; se cancela el aumento programado para septiembre 2026.</td><td><a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">Docs</a></td></tr>
+      <tr><td>7 ago 2026</td><td>Session budgets para Managed Agents: límite de gasto por sesión con <code>budget_reached</code> stop reason; presupuesto configurable y modificable en tiempo de ejecución.</td><td><a href="https://platform.claude.com/docs/en/managed-agents/budgets" target="_blank">Docs</a></td></tr>
+      <tr><td>7 ago 2026</td><td>Advisor en Managed Agents: modelo consultor mid-turn configurado como <code>{"type": "advisor"}</code> en el roster multiagente.</td><td><a href="https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration#give-the-session-an-advisor" target="_blank">Docs</a></td></tr>
+      <tr><td>5 ago 2026</td><td><strong>Inference Hooks (beta Enterprise)</strong>: servidor externo de seguridad que aprueba/deniega cada prompt gobernado en claude.ai, Cowork y Claude Code antes de la inferencia.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/inference-hooks" target="_blank">Docs</a></td></tr>
+      <tr><td>5 ago 2026</td><td>Claude Opus 4.1 retirado — requests a <code>claude-opus-4-1-20250805</code> retornan error. Migrar a Claude Opus 5.</td><td><a href="https://platform.claude.com/docs/en/about-claude/models/overview" target="_blank">Docs</a></td></tr>
+      <tr><td>3 ago 2026</td><td>Compliance API — transcripciones de sesiones remotas de Cowork en la nube. Endpoints: <code>GET /v1/compliance/apps/sessions/remote</code>.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/compliance-sessions#retrieve-remote-sessions" target="_blank">Docs</a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Claude Code</h3>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="badge badge-green">v2.1.233</span></td><td>14 ago 2026</td><td>Soporte GitLab MR en <code>--worktree</code>; memory cgroup opt-in para Bash en Linux; env var <code>CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS</code>; fixes MCP v2, sesiones perdidas en cloud, y rendimiento de self-hosted runners.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.233" target="_blank">Release</a></td></tr>
+      <tr><td><span class="badge badge-blue">v2.1.232</span></td><td>13 ago 2026</td><td>Subagent forking habilitado por defecto; mensajería cross-session vía <code>@</code> + <code>SendMessage</code>; redacción de tokens GitLab; soporte GitLab en marketplaces; fixes de seguridad en Windows (PowerShell bypass, symlinks).</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.232" target="_blank">Release</a></td></tr>
+      <tr><td><span class="badge badge-blue">v2.1.231</span></td><td>13 ago 2026</td><td>Fix de redirect URI mismatch en MCP OAuth para clientes pre-registrados (ej. Slack).</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.231" target="_blank">Release</a></td></tr>
+      <tr><td><span class="badge badge-blue">v2.1.229</span></td><td>12 ago 2026</td><td><code>claude remote-control --continue</code> para retomar sesiones; hooks server-supplied en self-hosted runners; SSE keepalive pings; fuentes <code>command</code> en plugin marketplace; fix de streaming de respuestas largas.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.229" target="_blank">Release</a></td></tr>
+      <tr><td><span class="badge badge-orange">v2.1.228</span></td><td>11 ago 2026</td><td>Fix de redibujado de sesiones interactivas; resolución de Git/Git Bash en Windows; mejoras en cross-session messaging, Remote Control y credenciales Vertex AI.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.228" target="_blank">Release</a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- RELEASES SDK OFICIALES -->
+<h2>🛠️ Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a></td>
+        <td><span class="badge badge-green">v2.1.233</span></td>
+        <td>14 ago 2026</td>
+        <td>Soporte GitLab en worktree, memory cgroup para Bash en Linux, nueva variable de entorno para cache WebFetch, correcciones de seguridad y rendimiento.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/anthropics/anthropic-sdk-python" target="_blank">anthropics/anthropic-sdk-python</a></td>
+        <td><span class="badge badge-green">v0.122.0</span></td>
+        <td>13 ago 2026</td>
+        <td><code>output_behavior</code> en Dreams; fix SigV4 para Bedrock async; exposición de <code>beta.messages.parse/stream/tool_runner</code> en Bedrock/Vertex; mejoras de streaming y validación de paths.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/anthropics/anthropic-sdk-typescript" target="_blank">anthropics/anthropic-sdk-typescript</a></td>
+        <td><span class="badge badge-green">sdk v0.117.1</span></td>
+        <td>13 ago 2026</td>
+        <td>v0.117.1: mejoras CI para re-publicación manual. v0.117.0: <code>output_behavior</code> en Dreams, múltiples bug fixes de streaming, forward container ID en tool-runner, alignment de path resolution con otros SDKs.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/anthropics/claude-agent-sdk-python" target="_blank">anthropics/claude-agent-sdk-python</a></td>
+        <td><span class="badge badge-green">v0.2.139</span></td>
+        <td>14 ago 2026</td>
+        <td>Actualización del CLI bundled a Claude Code v2.1.233. v0.2.137 añadió <code>ConversationResetMessage</code>, campo <code>origin</code> en mensajes, y opciones <code>resume_session_at/resume_drops_turn</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript" target="_blank">anthropics/claude-agent-sdk-typescript</a></td>
+        <td><span class="badge badge-green">v0.3.233</span></td>
+        <td>14 ago 2026</td>
+        <td>Notification hooks para prompts de permisos pendientes; herramientas todo/task-tracking removidas del surface por defecto en modelos Opus 4.8, Sonnet 5, Fable 5, Mythos 5+.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank">anthropics/anthropic-cookbook</a></td>
+        <td>—</td>
+        <td>—</td>
+        <td>Sin releases publicados en GitHub.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- RELEASES MCP -->
+<h2>🔌 Releases — Model Context Protocol</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://github.com/modelcontextprotocol/specification" target="_blank">modelcontextprotocol/specification</a></td>
+        <td><span class="badge badge-green">2026-07-28</span></td>
+        <td>28 jul 2026</td>
+        <td>Release estable de la revisión de especificación 2026-07-28, disponible en el sitio oficial MCP.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank">modelcontextprotocol/python-sdk</a></td>
+        <td><span class="badge badge-green">v2.0.0</span></td>
+        <td>28 jul 2026</td>
+        <td>Soporte completo spec 2026-07-28; <code>MCPServer</code> reemplaza <code>FastMCP</code>; cliente unificado para todos los transportes; trazado OpenTelemetry integrado; tipos separados en <code>mcp-types</code>; v1.x en modo mantenimiento.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank">modelcontextprotocol/typescript-sdk</a></td>
+        <td><span class="badge badge-green">@server@2.0.0</span></td>
+        <td>27 jul 2026</td>
+        <td>Primera release beta con soporte spec MCP 2026-07-28; autenticación Bearer runtime-neutral; serving de discovery OAuth; esquemas consolidados en <code>@modelcontextprotocol/core</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank">modelcontextprotocol/typescript-sdk</a></td>
+        <td><span class="badge badge-blue">1.30.0</span></td>
+        <td>27 jul 2026</td>
+        <td>Fix en formato de errores Zod; mejora en lifecycle de SSE keep-alive timer; validación de Content-Type con tipo de media parseado; actualizaciones de seguridad en dependencias.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/modelcontextprotocol/servers" target="_blank">modelcontextprotocol/servers</a></td>
+        <td><span class="badge badge-blue">2026.7.10</span></td>
+        <td>10 jul 2026</td>
+        <td>Actualización de paquetes: filesystem, time, fetch y git servers a versión 2026.7.10.</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/modelcontextprotocol/inspector" target="_blank">modelcontextprotocol/inspector</a></td>
+        <td><span class="badge badge-green">2.2.0</span></td>
+        <td>12 ago 2026</td>
+        <td>Fix de carga del proxy del sandbox MCP Apps; mejor manejo de errores; keyring con lazy loading; corrección en Docker; actualización a TypeScript SDK v2.0.0 estable.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- HACKER NEWS -->
+<h2>🟠 Discusiones en Hacker News</h2>
+<div class="na-banner">
+  ⚠️ No disponible — Los dominios <code>hacker-news.firebaseio.com</code> y <code>news.ycombinator.com</code> están bloqueados por el proxy de red de este entorno de ejecución.
+</div>
+
+<!-- REDDIT -->
+<h2>🔴 Reddit r/ClaudeAI — Top del Día</h2>
+<div class="na-banner">
+  ⚠️ No disponible — El dominio <code>www.reddit.com</code> está bloqueado por el proxy de red de este entorno de ejecución.
+</div>
+
+<!-- TENDENCIAS -->
+<h2>📊 Tendencias y Observaciones</h2>
+<div class="trends">
+  <ol>
+    <li><strong>Cadencia de releases muy alta en Claude Code</strong>: En los últimos 4 días (11–14 agosto 2026) se lanzaron 5 versiones de Claude Code (v2.1.228–v2.1.233). Los Agent SDK Python y TypeScript siguen exactamente la misma cadencia, actualizándose automáticamente con el CLI bundled.</li>
+    <li><strong>Maduración del ecosistema MCP</strong>: La especificación MCP <code>2026-07-28</code> alcanzó release estable en julio, y los SDKs Python (v2.0.0) y TypeScript (@2.0.0) ya tienen soporte completo. El Inspector también fue actualizado a v2.2.0 con la SDK estable. El protocolo está listo para adopción amplia en producción.</li>
+    <li><strong>Foco en compliance y gobernanza enterprise</strong>: Las últimas releases de la API incluyen Inference Hooks, Compliance API para sesiones locales, y mejoras en Access Transparency. Anthropic está construyendo una capa de gobernanza robusta para despliegues empresariales.</li>
+    <li><strong>Estabilización de precios de Sonnet 5</strong>: El precio introductorio de Claude Sonnet 5 ($2/$10/MTok) se convirtió en permanente (vs. Opus 5 a $5/$25/MTok). Esto puede acelerar la adopción de Sonnet 5 para cargas de trabajo de producción que no requieren las capacidades máximas de Opus 5.</li>
+    <li><strong>Hardening de seguridad activo en SDKs</strong>: La versión vertex-sdk v0.19.2 del TypeScript SDK corrigió un bug crítico de filtración de credenciales ambient a endpoints de proveedores. El SDK Python v0.122.0 también corrigió validación de paths para symlink loops. Indica un ciclo activo de revisión de seguridad en todos los SDKs.</li>
+  </ol>
+</div>
+
+<!-- ERRORES -->
+<h2>⚠️ Errores de Fetch</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>URL / Fuente</th><th>Estado</th><th>Motivo</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>https://www.anthropic.com/news</code></td><td><span class="badge badge-red">❌ Bloqueada</span></td><td>EGRESS_BLOCKED — dominio bloqueado por proxy</td></tr>
+      <tr><td><code>https://docs.anthropic.com/en/release-notes/*</code></td><td><span class="badge badge-red">❌ Bloqueada</span></td><td>EGRESS_BLOCKED — dominio bloqueado por proxy</td></tr>
+      <tr><td><code>https://hacker-news.firebaseio.com/v0/topstories.json</code></td><td><span class="badge badge-red">❌ Bloqueada</span></td><td>EGRESS_BLOCKED — dominio bloqueado</td></tr>
+      <tr><td><code>https://news.ycombinator.com/</code></td><td><span class="badge badge-red">❌ Bloqueada</span></td><td>EGRESS_BLOCKED — dominio bloqueado</td></tr>
+      <tr><td><code>https://www.reddit.com/r/ClaudeAI/*</code></td><td><span class="badge badge-red">❌ Bloqueada</span></td><td>Acceso denegado por proxy</td></tr>
+      <tr><td><code>mcp__github__list_releases</code> (repos externos)</td><td><span class="badge badge-red">❌ Error 403</span></td><td>MCP configurado solo para wrcp20/github-intelligence-reports</td></tr>
+      <tr><td><code>https://api.github.com/repos/anthropics/*</code> (curl/WebFetch)</td><td><span class="badge badge-red">❌ Error 403</span></td><td>Proxy restringe acceso a API GitHub al repo autorizado únicamente</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="note-box">
+  <strong>Fuentes exitosas:</strong> <code>platform.claude.com/docs/en/release-notes/api</code>, <code>raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</code>, páginas web de GitHub releases para todos los repositorios solicitados.
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <div class="container">
+    Reporte generado automáticamente el <strong>2026-08-17-021044</strong> | Ecosistema Claude — Claude Code, SDKs Oficiales, Model Context Protocol
+  </div>
+</div>
+
+</body>
+</html>
