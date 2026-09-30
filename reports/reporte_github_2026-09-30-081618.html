@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Inteligencia GitHub - 2026-09-30</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --green: #16a34a;
+      --green-light: #dcfce7;
+      --yellow: #ca8a04;
+      --yellow-light: #fef9c3;
+      --header-bg: #1e293b;
+      --header-text: #f8fafc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --border: #334155;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --green: #4ade80;
+        --green-light: #14532d;
+        --yellow: #facc15;
+        --yellow-light: #422006;
+        --header-bg: #0f172a;
+        --header-text: #f1f5f9;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-light: #1e3a5f;
+      --green: #4ade80;
+      --green-light: #14532d;
+      --yellow: #facc15;
+      --yellow-light: #422006;
+      --header-bg: #0f172a;
+      --header-text: #f1f5f9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+    header p { font-size: 0.875rem; opacity: 0.7; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+    section { margin-bottom: 40px; }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      color: var(--text);
+    }
+    .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 0.875rem; }
+    thead th {
+      background: var(--header-bg);
+      color: var(--header-text);
+      text-align: left;
+      padding: 10px 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--accent-light); }
+    td { padding: 10px 12px; vertical-align: top; }
+    td a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    td a:hover { text-decoration: underline; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .lang-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+    .lang-ts { background: #dbeafe; color: #1d4ed8; }
+    .lang-py { background: #fef9c3; color: #854d0e; }
+    .lang-go { background: #d1fae5; color: #065f46; }
+    .lang-java { background: #ffe4e6; color: #9f1239; }
+    .lang-rs { background: #fff7ed; color: #c2410c; }
+    .lang-js { background: #fefce8; color: #713f12; }
+    :root[data-theme="dark"] .lang-ts,
+    @media(prefers-color-scheme:dark) .lang-ts { background: #1e3a5f; color: #60a5fa; }
+    .na { color: var(--text-muted); font-style: italic; font-size: 0.8rem; }
+    .key-points { display: flex; flex-direction: column; gap: 12px; }
+    .key-point {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .key-point strong { color: var(--accent); }
+    .release-note {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .release-note ul { padding-left: 20px; margin-top: 6px; }
+    .release-note li { margin-bottom: 4px; }
+    footer {
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    .stars { color: #f59e0b; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Reporte de Inteligencia GitHub</h1>
+  <p>30 de septiembre de 2026 &mdash; 08:16:18 UTC</p>
+</header>
+
+<div class="container">
+
+  <!-- REPOS MONITOREADOS -->
+  <section>
+    <h2>Repos Destacados (3 monitoreados)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Repo</th>
+            <th>Descripción</th>
+            <th class="num">Estrellas</th>
+            <th class="num">Forks</th>
+            <th>Lenguaje</th>
+            <th>Descargas Último Release</th>
+            <th>Último Push</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/<br>hermes-agent</a></td>
+            <td>El agente de auto-mejora de Nous Research. El único agente con bucle de aprendizaje integrado: crea habilidades desde la experiencia, las mejora durante el uso y construye un modelo profundo del usuario.</td>
+            <td class="num"><span class="stars">&#9733;</span> 250,200</td>
+            <td class="num">53,400</td>
+            <td><span class="lang-badge lang-py">Python</span></td>
+            <td class="na">No disponible</td>
+            <td class="na">No disponible</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/<br>paperclip</a></td>
+            <td>La app open-source que todos usan para gestionar agentes en el trabajo</td>
+            <td class="num"><span class="stars">&#9733;</span> 94,800</td>
+            <td class="num">16,100</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td class="na">No disponible</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/openclaw/openclaw" target="_blank">openclaw/<br>openclaw</a></td>
+            <td>La IA que realmente hace cosas. Cualquier SO. Cualquier plataforma. A la manera del langosta. 🦞</td>
+            <td class="num"><span class="stars">&#9733;</span> 391,000</td>
+            <td class="num">82,200</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td class="na">No disponible</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="release-note">
+      <strong>Notas de releases:</strong>
+      <ul>
+        <li><strong>hermes-agent</strong>: Último release <code>v2026.9.24</code> — 24 sep 2026</li>
+        <li><strong>paperclip</strong>: Último release <code>v2026.916.1</code> — 21 sep 2026</li>
+        <li><strong>openclaw</strong>: Último release <code>v2026.9.7</code> — 30 sep 2026 (mismo día del reporte)</li>
+      </ul>
+      Los conteos de descarga de assets no estuvieron disponibles al momento de la consulta (error de carga en GitHub).
+    </div>
+  </section>
+
+  <!-- TOP 15 -->
+  <section>
+    <h2>Top 15 Repos CLI+LLM+Agent (por estrellas)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Repo</th>
+            <th>Descripción</th>
+            <th class="num">Estrellas</th>
+            <th class="num">Forks</th>
+            <th>Lenguaje</th>
+            <th>Descargas</th>
+            <th>Último Push</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><a href="https://github.com/earendil-works/pi" target="_blank">earendil-works/pi</a></td>
+            <td>Kit de herramientas para agentes IA: API LLM unificada, bucle de agente, TUI, CLI de agente de codificación</td>
+            <td class="num"><span class="stars">&#9733;</span> 110,560</td>
+            <td class="num">14,052</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a href="https://github.com/OpenHands/OpenHands" target="_blank">OpenHands/OpenHands</a></td>
+            <td>🙌 OpenHands: Desarrollo impulsado por IA</td>
+            <td class="num"><span class="stars">&#9733;</span> 89,578</td>
+            <td class="num">11,823</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><a href="https://github.com/jeecgboot/JeecgBoot" target="_blank">jeecgboot/JeecgBoot</a></td>
+            <td>Plataforma empresarial IA low-code: genera código frontend y backend completo con IA, compatible con los principales modelos de lenguaje</td>
+            <td class="num"><span class="stars">&#9733;</span> 48,041</td>
+            <td class="num">16,198</td>
+            <td><span class="lang-badge lang-java">Java</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-22</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td>
+            <td>Un agente de codificación confiable para tareas complejas de ingeniería de software</td>
+            <td class="num"><span class="stars">&#9733;</span> 35,715</td>
+            <td class="num">2,431</td>
+            <td><span class="lang-badge lang-go">Go</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><a href="https://github.com/can1357/oh-my-pi" target="_blank">can1357/oh-my-pi</a></td>
+            <td>⌥ Agente de codificación con el IDE integrado. Desarrollado por Stencil Labs.</td>
+            <td class="num"><span class="stars">&#9733;</span> 33,807</td>
+            <td class="num">3,637</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank">mukul975/<br>Anthropic-Cybersecurity-Skills</a></td>
+            <td>817 habilidades de ciberseguridad para agentes IA · Mapeadas a 6 marcos (MITRE ATT&amp;CK, NIST CSF 2.0, etc.) · Compatible con Claude Code, Copilot, Codex CLI y 20+ plataformas</td>
+            <td class="num"><span class="stars">&#9733;</span> 33,599</td>
+            <td class="num">4,079</td>
+            <td><span class="lang-badge lang-py">Python</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-08-31</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><a href="https://github.com/iOfficeAI/AionUi" target="_blank">iOfficeAI/AionUi</a></td>
+            <td>App Cowork open-source 24/7 para OpenClaw, Hermes, Claude Code, Codex, OpenCode y 20+ agentes CLI</td>
+            <td class="num"><span class="stars">&#9733;</span> 33,239</td>
+            <td class="num">3,461</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-09</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><a href="https://github.com/QwenLM/qwen-code" target="_blank">QwenLM/qwen-code</a></td>
+            <td>Un agente de codificación IA open-source que vive en tu terminal</td>
+            <td class="num"><span class="stars">&#9733;</span> 28,231</td>
+            <td class="num">3,134</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><a href="https://github.com/plandex-ai/plandex" target="_blank">plandex-ai/plandex</a></td>
+            <td>Agente de codificación IA open-source. Diseñado para proyectos grandes y tareas del mundo real.</td>
+            <td class="num"><span class="stars">&#9733;</span> 15,686</td>
+            <td class="num">1,178</td>
+            <td><span class="lang-badge lang-go">Go</span></td>
+            <td class="na">No disponible</td>
+            <td>2025-10-03</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><a href="https://github.com/cobusgreyling/loop-engineering" target="_blank">cobusgreyling/<br>loop-engineering</a></td>
+            <td>Patrones prácticos, starters y herramientas CLI para loop engineering con agentes IA de codificación</td>
+            <td class="num"><span class="stars">&#9733;</span> 11,361</td>
+            <td class="num">1,527</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><a href="https://github.com/sigoden/aichat" target="_blank">sigoden/aichat</a></td>
+            <td>Herramienta CLI LLM todo-en-uno: Shell Assistant, Chat-REPL, RAG, Agentes IA, con acceso a OpenAI, Claude, Gemini, Ollama, Groq y más</td>
+            <td class="num"><span class="stars">&#9733;</span> 10,472</td>
+            <td class="num">745</td>
+            <td><span class="lang-badge lang-rs">Rust</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-02-23</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><a href="https://github.com/trailhq/Graft" target="_blank">trailhq/Graft</a></td>
+            <td>Potencia Claude Code, Cursor, Codex, Gemini y todos los agentes de codificación: más rápido, más económico, con comprensión contextual específica de tu base de código</td>
+            <td class="num"><span class="stars">&#9733;</span> 9,419</td>
+            <td class="num">863</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-30</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><a href="https://github.com/WenyuChiou/awesome-agentic-ai-zh" target="_blank">WenyuChiou/<br>awesome-agentic-ai-zh</a></td>
+            <td>Hoja de ruta de aprendizaje trilingüe (繁中/English/简中) para IA agéntica: desde fundamentos LLM hasta sistemas multi-agente, con 240+ recursos seleccionados</td>
+            <td class="num"><span class="stars">&#9733;</span> 7,230</td>
+            <td class="num">977</td>
+            <td><span class="lang-badge lang-py">Python</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-28</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><a href="https://github.com/anus-dev/ANUS" target="_blank">anus-dev/ANUS</a></td>
+            <td>Un agente de codificación gratuito en tu terminal. Funciona con el modelo gratuito más inteligente disponible</td>
+            <td class="num"><span class="stars">&#9733;</span> 6,546</td>
+            <td class="num">924</td>
+            <td><span class="lang-badge lang-js">JavaScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-09-29</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><a href="https://github.com/UfoMiao/zcf" target="_blank">UfoMiao/zcf</a></td>
+            <td>Zero-Config Code Flow para Claude code &amp; Codex</td>
+            <td class="num"><span class="stars">&#9733;</span> 6,081</td>
+            <td class="num">423</td>
+            <td><span class="lang-badge lang-ts">TypeScript</span></td>
+            <td class="na">No disponible</td>
+            <td>2026-08-31</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PUNTOS CLAVE -->
+  <section>
+    <h2>Puntos Clave</h2>
+    <div class="key-points">
+      <div class="key-point">
+        <strong>1. openclaw/openclaw domina con 391,000 estrellas.</strong>
+        Es el repo monitoreado con mayor adopción y publicó un nuevo release (<code>v2026.9.7</code>) el mismo 30 de septiembre, lo que indica un ciclo de lanzamiento extremadamente activo con actualizaciones casi diarias.
+      </div>
+      <div class="key-point">
+        <strong>2. NousResearch/hermes-agent lidera entre agentes especializados.</strong>
+        Con 250,200 estrellas y 53,400 forks, su propuesta diferenciadora de "bucle de auto-mejora con habilidades aprendidas" sigue generando alto interés. Último release hace apenas 6 días (<code>v2026.9.24</code>).
+      </div>
+      <div class="key-point">
+        <strong>3. earendil-works/pi encabeza el ranking con 110,560 estrellas.</strong>
+        Supera a OpenHands (89,578 ⭐) en el ecosistema de búsqueda CLI+LLM+Agent, reflejando el crecimiento de kits de herramientas unificados. Ambos proyectos tuvieron actividad el mismo día del reporte.
+      </div>
+      <div class="key-point">
+        <strong>4. TypeScript domina el ecosistema CLI+LLM+Agent.</strong>
+        8 de los 15 repos del ranking están escritos en TypeScript, consolidándolo como el lenguaje estándar de facto para herramientas de agentes IA en la terminal. Solo 2 usan Go, 2 Python, 1 Rust y 1 JavaScript.
+      </div>
+      <div class="key-point">
+        <strong>5. Alta actividad simultánea el 30 de septiembre.</strong>
+        Al menos 7 de los 15 repos del Top 15 (pi, OpenHands, DeepSeek-Reasonix, oh-my-pi, qwen-code, loop-engineering, Graft) recibieron pushes en las horas previas al reporte, señalando un ecosistema en desarrollo continuo muy activo.
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Datos obtenidos mediante la API de GitHub y páginas públicas &mdash; 30 sep 2026 &mdash;
+  Los conteos de descarga de releases no estuvieron disponibles al momento de la consulta.
+</footer>
+
+</body>
+</html>
