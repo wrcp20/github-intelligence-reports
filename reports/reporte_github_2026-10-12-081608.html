@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Inteligencia GitHub - 2026-10-12</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --yellow: #d29922;
+      --red: #f85149;
+      --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 24px 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 32px;
+    }
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--yellow);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    thead th {
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    tbody tr:hover { background: var(--surface); }
+    tbody td {
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .stars { color: var(--yellow); font-weight: 600; }
+    .forks { color: var(--muted); }
+    .lang {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .lang-ts { color: #3178c6; border-color: #3178c6; }
+    .lang-py { color: #3572a5; border-color: #3572a5; }
+    .lang-go { color: #00add8; border-color: #00add8; }
+    .lang-rs { color: #ce422b; border-color: #ce422b; }
+    .lang-nd { color: var(--muted); }
+    .release-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(63,185,80,0.1);
+      color: var(--green);
+      border: 1px solid rgba(63,185,80,0.3);
+    }
+    .na { color: var(--muted); font-style: italic; }
+    .rank-num {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 16px;
+      min-width: 28px;
+      display: inline-block;
+      text-align: right;
+    }
+    .key-points { list-style: none; padding: 0; }
+    .key-points li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .key-points li::before {
+      content: attr(data-num);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: 10px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>&#128202; Reporte de Inteligencia GitHub</h1>
+  <p>Generado automáticamente el <strong>2026-10-12</strong> a las <strong>08:16:08 UTC</strong></p>
+</header>
+
+<h2>&#127919; Repos Destacados (3 monitoreados)</h2>
+
+<div class="note">
+  &#9888; Los conteos de estrellas y forks provienen de las páginas públicas de GitHub (valores aproximados).
+  Las descargas del último release y <code>pushed_at</code> requieren acceso API autenticado, no disponible en esta sesión.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Repositorio</th>
+      <th>Descripción</th>
+      <th>&#11088; Estrellas</th>
+      <th>Forks</th>
+      <th>Lenguaje</th>
+      <th>Último Release</th>
+      <th>Último Push</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td>
+      <td>The agent that grows with you</td>
+      <td class="stars">~252,900</td>
+      <td class="forks">~54,800</td>
+      <td><span class="lang lang-nd">No determinado</span></td>
+      <td><span class="release-badge">v0.21.7</span></td>
+      <td class="na">No disponible</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></td>
+      <td>The open-source app everyone uses to manage agents at work</td>
+      <td class="stars">~100,600</td>
+      <td class="forks">~16,900</td>
+      <td><span class="lang lang-nd">No determinado</span></td>
+      <td><span class="release-badge">v2026.1005.0</span></td>
+      <td class="na">No disponible</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openclaw/openclaw" target="_blank">openclaw/openclaw</a></td>
+      <td>The AI that really does things. Any OS. Any Platform. The lobster way. 🦞</td>
+      <td class="stars">~391,700</td>
+      <td class="forks">~82,400</td>
+      <td><span class="lang lang-nd">No determinado</span></td>
+      <td><span class="release-badge">v2026.10.2</span></td>
+      <td class="na">No disponible</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>&#128269; Top CLI+LLM+Agent (por estrellas)</h2>
+
+<div class="note">
+  &#9888; La búsqueda pública de GitHub devolvió 10 resultados visibles en esta sesión (ordenados por estrellas descendente).
+  Los forks no están disponibles desde la interfaz de búsqueda web.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Repositorio</th>
+      <th>Descripción</th>
+      <th>&#11088; Estrellas</th>
+      <th>Lenguaje</th>
+      <th>Último Push</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="rank-num">1</span></td>
+      <td><a href="https://github.com/earendil-works/pi" target="_blank">earendil-works/pi</a></td>
+      <td>AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI</td>
+      <td class="stars">~114,000</td>
+      <td><span class="lang lang-ts">TypeScript</span></td>
+      <td>2026-10-12</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">2</span></td>
+      <td><a href="https://github.com/OpenHands/OpenHands" target="_blank">OpenHands/OpenHands</a></td>
+      <td>AI-driven development platform</td>
+      <td class="stars">~90,700</td>
+      <td><span class="lang lang-ts">TypeScript</span></td>
+      <td>2026-10-12</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">3</span></td>
+      <td><a href="https://github.com/campfirein/byterover-cli" target="_blank">campfirein/byterover-cli</a></td>
+      <td>Portable memory layer CLI for coding agents (archivo público)</td>
+      <td class="stars">~5,000</td>
+      <td><span class="lang lang-ts">TypeScript</span></td>
+      <td>2026-06-25</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">4</span></td>
+      <td><a href="https://github.com/SamurAIGPT/llm-wiki-agent" target="_blank">SamurAIGPT/llm-wiki-agent</a></td>
+      <td>Base de conocimiento auto-mantenida usando Claude, Codex o Gemini</td>
+      <td class="stars">~3,600</td>
+      <td><span class="lang lang-py">Python</span></td>
+      <td>2026-10-06</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">5</span></td>
+      <td><a href="https://github.com/cosmicstack-labs/mercury-agent" target="_blank">cosmicstack-labs/mercury-agent</a></td>
+      <td>Agente IA con herramientas de permisos robustos, presupuestos de tokens y acceso multicanal</td>
+      <td class="stars">~3,400</td>
+      <td><span class="lang lang-ts">TypeScript</span></td>
+      <td>2026-10-12</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">6</span></td>
+      <td><a href="https://github.com/keon/browser-control" target="_blank">keon/browser-control</a></td>
+      <td>CLI Rust para automatización de navegador vía Chrome DevTools Protocol</td>
+      <td class="stars">~3,200</td>
+      <td><span class="lang lang-rs">Rust</span></td>
+      <td>2026-08-27</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">7</span></td>
+      <td><a href="https://github.com/voocel/ainovel-cli" target="_blank">voocel/ainovel-cli</a></td>
+      <td>Sistema multi-agente para generación automatizada de novelas con IA</td>
+      <td class="stars">~2,100</td>
+      <td><span class="lang lang-go">Go</span></td>
+      <td>2026-10-11</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">8</span></td>
+      <td><a href="https://github.com/Prat011/awesome-llm-skills" target="_blank">Prat011/awesome-llm-skills</a></td>
+      <td>Lista curada de habilidades, recursos y herramientas para LLM y agentes IA</td>
+      <td class="stars">~1,800</td>
+      <td><span class="lang lang-py">Python</span></td>
+      <td>2026-07-14</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">9</span></td>
+      <td><a href="https://github.com/openonion/connectonion" target="_blank">openonion/connectonion</a></td>
+      <td>Harness CLI de agentes construido sobre la idea de que un CLI es todo lo que necesitas</td>
+      <td class="stars">~1,500</td>
+      <td><span class="lang lang-py">Python</span></td>
+      <td>2026-10-12</td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">10</span></td>
+      <td><a href="https://github.com/ConardLi/easy-llm-cli" target="_blank">ConardLi/easy-llm-cli</a></td>
+      <td>Agente IA open-source compatible con múltiples modelos LLM</td>
+      <td class="stars">~1,300</td>
+      <td><span class="lang lang-ts">TypeScript</span></td>
+      <td>2026-02-05</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>&#128161; Puntos Clave</h2>
+
+<ul class="key-points">
+  <li data-num="1">
+    <strong>openclaw/openclaw lanzó una nueva versión hoy</strong>: El último release cambió de v2026.10.1 (ayer) a <strong>v2026.10.2</strong>, confirmando un ciclo de releases diario. Con ~391,700 estrellas y ~82,400 forks sigue siendo el repositorio monitoreado más popular por amplio margen.
+  </li>
+  <li data-num="2">
+    <strong>paperclipai/paperclip superó las 100,000 estrellas</strong>: Ahora reporta ~100,600 estrellas (frente a ~99,900 ayer), cruzando el umbral de los 100k en gestión de agentes. Crecimiento notable en menos de 24 horas.
+  </li>
+  <li data-num="3">
+    <strong>NousResearch/hermes-agent actualizó su release</strong>: Pasó de v0.21.6 a <strong>v0.21.7</strong>, mostrando desarrollo activo continuo con ~252,900 estrellas y ~54,800 forks.
+  </li>
+  <li data-num="4">
+    <strong>Brecha pronunciada en el ranking de búsqueda</strong>: earendil-works/pi (~114,000 ⭐) y OpenHands/OpenHands (~90,700 ⭐) son outliers dominantes; el tercer puesto (byterover-cli) tiene solo ~5,000 estrellas, evidenciando una concentración extrema en los dos primeros proyectos del espacio CLI+LLM+agent.
+  </li>
+  <li data-num="5">
+    <strong>Actividad intensa el día del reporte</strong>: earendil-works/pi, OpenHands/OpenHands, cosmicstack-labs/mercury-agent y openonion/connectonion fueron todos actualizados el mismo 2026-10-12, señal de que el ecosistema de agentes IA sigue en pleno desarrollo activo.
+  </li>
+</ul>
+
+<footer>
+  Reporte generado automáticamente &mdash; 2026-10-12 08:16:08 UTC &mdash; github-intelligence-reports
+</footer>
+
+</body>
+</html>
