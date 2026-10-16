@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte Ecosistema Claude - 2026-10-15-020229</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 20px; color: #222; background: #fafafa; }
+  h1 { color: #1a1a2e; border-bottom: 3px solid #4f46e5; padding-bottom: 10px; }
+  h2 { color: #2d2d6b; border-bottom: 1px solid #ccc; padding-bottom: 6px; margin-top: 40px; }
+  h3 { color: #3b3b80; margin-top: 24px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.93em; }
+  thead { background: #4f46e5; color: #fff; }
+  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; vertical-align: top; }
+  tr:nth-child(even) { background: #f3f4ff; }
+  a { color: #4f46e5; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  .highlight-box { background: #eef2ff; border-left: 4px solid #4f46e5; padding: 14px 18px; margin: 18px 0; border-radius: 0 6px 6px 0; }
+  .error-box { background: #fff3cd; border-left: 4px solid #f59e0b; padding: 14px 18px; margin: 18px 0; border-radius: 0 6px 6px 0; }
+  .na-box { background: #f9fafb; border: 1px dashed #bbb; padding: 12px 18px; color: #666; border-radius: 4px; margin: 12px 0; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ccc; color: #888; font-size: 0.85em; }
+</style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-10-15-020229</h1>
+
+<h2>Highlights del Día</h2>
+<div class="highlight-box">
+<ul>
+  <li><strong>Claude Code v2.1.300</strong> publicado el 14 de octubre: soporte <code>/advisor</code> en Claude Platform on AWS, atributos OpenTelemetry GenAI en trace spans, nuevo hook <code>prompt.change</code> para mods y correcciones de worktrees/sesiones.</li>
+  <li><strong>OpenTelemetry en beta</strong>: SDK de Python (v1.14.0) y TypeScript (sdk-v0.134.0) lanzaron soporte de trazas para la API de Mensajes y Managed Agents, activado por defecto.</li>
+  <li><strong>Claude Haiku 5.5 disponible</strong>: Lanzado el 7 de octubre con ventana de contexto de 1M tokens, 128k de salida y adaptive thinking. Reducción de precio de cache reads en Sonnet 5.5 ($0.20 → $0.10 por millón de tokens).</li>
+  <li><strong>MCP Servers v1.0.0</strong>: Primera versión estable mayor el 11 de octubre, cubriendo servidores npm y PyPI con mejoras de suscripciones y rutas.</li>
+  <li><strong>Anthropic en Singapur</strong>: Apertura de oficina y MOU con el Gobierno de Singapur. Inversión de $100M para formar 10,000 ingenieros (Claude Frontier Academy).</li>
+</ul>
+</div>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<table>
+  <thead><tr><th>Título</th><th>Fecha</th><th>Categoría</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>Preparing for the 2026 US midterms</td><td>Oct 14, 2026</td><td>Política</td><td><a href="https://www.anthropic.com/news/2026-us-midterms">Ver</a></td></tr>
+    <tr><td>Anthropic opens Singapore office and signs MOU with the Government of Singapore</td><td>Oct 14, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/singapore-office-opening">Ver</a></td></tr>
+    <tr><td>2026 Usage Policy update</td><td>Oct 8, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/2026-usage-policy-update">Ver</a></td></tr>
+    <tr><td>Building on our commitment to American scientific discovery</td><td>Oct 8, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/genesis-mission-commitment">Ver</a></td></tr>
+    <tr><td>Introducing the Anthropic Cyber Mission</td><td>Oct 8, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Ver</a></td></tr>
+    <tr><td>Introducing Claude Haiku 5.5</td><td>Oct 7, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-haiku-5-5">Ver</a></td></tr>
+    <tr><td>Expanding the Cyber Verification Program</td><td>Oct 6, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/cyber-verification-program">Ver</a></td></tr>
+    <tr><td>Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap</td><td>Oct 2, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/claude-frontier-academy">Ver</a></td></tr>
+    <tr><td>Barclays scales Claude to upgrade operations and improve client experience</td><td>Oct 1, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/barclays-scales-claude">Ver</a></td></tr>
+    <tr><td>Introducing Claude Sonnet 5.5</td><td>Sep 28, 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-sonnet-5-5">Ver</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Release Notes Oficiales (platform.claude.com)</h2>
+
+<h3>API</h3>
+<table>
+  <thead><tr><th>Fecha</th><th>Cambio</th><th>Fuente</th></tr></thead>
+  <tbody>
+    <tr><td>Oct 14, 2026</td><td>OpenTelemetry export en beta: traza de llamadas a la API de Mensajes y sesiones de Managed Agents. SDKs en Python, TypeScript, C#, Go, Java, PHP y Ruby.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 14, 2026</td><td>Claude Managed Agents scheduled deployments disponible en Claude Platform on AWS.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 9, 2026</td><td>Workflows dinámicos en beta para Managed Agents (header <code>managed-agents-2026-04-01</code>): el agente puede ejecutar programas con muchos agentes en fases.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 8, 2026</td><td>Los endpoints de chat de la Compliance API también devuelven chats de la experiencia unificada de Claude, en beta para Claude Enterprise.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 8, 2026</td><td>La Compliance API puede descargar documentos de Claude Docs como archivos Word, en beta.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 7, 2026</td><td>Precio de prompt cache reads en Claude Sonnet 5.5 reducido de $0.20 a $0.10 por millón de tokens.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 7, 2026</td><td>Lanzamiento de Claude Haiku 5.5 (<code>claude-haiku-5-5</code>): ventana de 1M tokens, 128k tokens de salida, adaptive thinking.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+    <tr><td>Oct 7, 2026</td><td><strong>Breaking:</strong> Haiku 5.5 puede devolver error 400 con <code>budget_tokens</code>, <code>temperature</code>, <code>top_p</code>, <code>top_k</code> y prefill. Adaptive thinking activo por defecto; usar <code>thinking.display: "summarized"</code> para ver los pensamientos.</td><td><a href="https://platform.claude.com/docs/en/release-notes/api">API Notes</a></td></tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Fuente</th></tr></thead>
+  <tbody>
+    <tr><td>v2.1.300</td><td>Oct 14, 2026</td><td>Agrega <code>/advisor</code> en Claude Platform on AWS, OpenTelemetry GenAI attributes, hook <code>prompt.change</code> para mods. Correcciones en worktrees, resume de sesión, vista de agentes. Force-kill de background commands tras 1.5s.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.299</td><td>Oct 14, 2026</td><td>Idle compaction para conversaciones &gt;200K tokens inactivas ~54 min. Agrega <code>CLAUDE_CODE_DISABLE_FILE_MENTIONS</code>. Corrige bug de sandbox.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.296</td><td>Oct 9, 2026</td><td>Agrega <code>CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL</code>, opción <code>allow_large</code> para Read tool. Límite de descripción de tool MCP aumentado de 2048 a 4096 caracteres.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.295</td><td>Oct 8, 2026</td><td>Agrega <code>onFailure: "block"</code> para hooks. Soporte Program Status Protocol (OSC 7501). Backoff hasta 30s en reconexión MCP remota.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.294</td><td>Oct 8, 2026</td><td>Corrige hooks tipo instrucción <code>prompt</code>/<code>agent</code> que permitían acciones que debían bloquear. Mejora evaluación Stop/SubagentStop.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.293</td><td>Oct 7, 2026 (aprox.)</td><td>Claude Haiku 5.5 como modelo Haiku por defecto. Agrega <code>agentType</code> al payload de estado de subagentes.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.292</td><td>Oct 6, 2026 (aprox.)</td><td>Agrega <code>--marketplace</code> a <code>claude plugin install</code>, parámetro <code>effort</code> para tool Agent. MCP protocol 2026-07-28 como default para stdio locales.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+    <tr><td>v2.1.291</td><td>Oct 5, 2026 (aprox.)</td><td>Corrige regresión de sesiones en la nube que perdían respuestas a prompts de permisos. Corrige pérdida de mensajes al salir.</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code/releases">anthropics/claude-code</a></td>
+      <td>v2.1.300</td>
+      <td>Oct 14, 2026</td>
+      <td><code>/advisor</code> en AWS, OpenTelemetry GenAI attributes, hook <code>prompt.change</code>, correcciones worktrees/sesión.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python/releases">anthropics/anthropic-sdk-python</a></td>
+      <td>v1.14.0</td>
+      <td>Oct 14, 2026</td>
+      <td>OpenTelemetry tracing para API, streaming y tool runs. <code>execution_identity</code> para Managed Agents. Destinos de telemetría en Admin API.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases">anthropics/anthropic-sdk-typescript</a></td>
+      <td>sdk-v0.134.0</td>
+      <td>Oct 14, 2026</td>
+      <td>OpenTelemetry spans para API, streams y tool runs (activo por defecto). <code>execution_identity</code>. Correcciones de streaming y tipos.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases">anthropics/claude-agent-sdk-python</a></td>
+      <td>v0.2.167</td>
+      <td>Oct 14, 2026</td>
+      <td>Actualiza CLI bundled a v2.1.300. Tipos de hook y <code>SystemInitData</code> TypedDict completamente tipados.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases">anthropics/claude-agent-sdk-typescript</a></td>
+      <td>v0.3.300</td>
+      <td>Oct 14, 2026</td>
+      <td>Bundle de navegador 40% más pequeño. Correcciones para <code>importSessionToStore</code>, auto-mode, <code>rewind_conversation</code>. Paridad con Claude Code v2.1.300.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook">anthropics/anthropic-cookbook</a></td>
+      <td>—</td>
+      <td>—</td>
+      <td>Sin releases formales publicados. Actividad en issues y pull requests.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/specification/releases">modelcontextprotocol/specification</a></td>
+      <td>2026-07-28</td>
+      <td>Jul 28, 2026</td>
+      <td>Release estable de la revisión 2026-07-28 de la especificación MCP. <em>Sin releases nuevos en los últimos 30 días.</em></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk/releases">modelcontextprotocol/python-sdk</a></td>
+      <td>v2.3.0</td>
+      <td>Oct 2, 2026</td>
+      <td>Breaking: <code>httpx2&gt;=2.10.0</code> requerido. Nuevas opciones <code>max_sse_event_size</code> y <code>MCPServer(subscriptions=False)</code>. Validación estricta de headers.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases">modelcontextprotocol/typescript-sdk</a></td>
+      <td>2.3.1</td>
+      <td>Oct 5, 2026</td>
+      <td>Agrega <code>expectedResource</code> opcional a <code>requireBearerAuth</code>. Solo acepta tokens emitidos para este servidor específico.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers/releases">modelcontextprotocol/servers</a></td>
+      <td>v1.0.0</td>
+      <td>Oct 11, 2026</td>
+      <td>Primera versión estable mayor. Servidores npm: everything, filesystem, memory, sequential-thinking. Servidores PyPI: fetch, git, time. Limpieza de suscripciones, errores de puerto más claros.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector/releases">modelcontextprotocol/inspector</a></td>
+      <td>2.11.0</td>
+      <td>Oct 14, 2026</td>
+      <td>Actualiza MCP TypeScript SDK a 2.3.1. Contadores de tools/prompts/resources en listas. Cliente CLI experimental <code>mcpdo</code>. Pestañas Tasks y Subscriptions en TUI.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Discusiones en Hacker News</h2>
+<div class="na-box">No disponible — DNS de hacker-news.firebaseio.com y hn.algolia.com sin resolución desde el entorno de ejecución remoto. Ver sección "Errores de Fetch".</div>
+
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<div class="na-box">No disponible — www.reddit.com bloqueado por el proxy del entorno de ejecución. Ver sección "Errores de Fetch".</div>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Consolidación de observabilidad (OpenTelemetry):</strong> El lanzamiento simultáneo de trazas en Claude Code v2.1.300, anthropic-sdk-python v1.14.0 y anthropic-sdk-typescript sdk-v0.134.0 el 14 de octubre indica un empuje coordinado hacia observabilidad empresarial — clave para adopción en producción a escala.</li>
+  <li><strong>Haiku 5.5 y la cadencia de modelos:</strong> Con Sonnet 5.5 el 28 de septiembre y Haiku 5.5 el 7 de octubre, la cadencia mensual de modelos se mantiene. Los cambios breaking en Haiku 5.5 (parámetros de thinking manual que ahora lanzan 400) señalan el cambio a adaptive thinking como modo principal.</li>
+  <li><strong>MCP alcanza madurez v1.0:</strong> La publicación de <code>modelcontextprotocol/servers</code> v1.0.0 y la especificación estable 2026-07-28 marcan un hito de madurez del protocolo. El Inspector 2.11.0 con el CLI <code>mcpdo</code> facilita integración y prueba de servidores MCP.</li>
+  <li><strong>Expansión geográfica y empresarial:</strong> Apertura en Singapur con acuerdo gubernamental, inversión de $100M en Claude Frontier Academy y el caso de Barclays muestran aceleración de la expansión enterprise global.</li>
+  <li><strong>Claude Code como plataforma de mods:</strong> El creciente número de APIs para mods (<code>$.ui.view</code>, <code>$.prompt.media</code>, <code>$.session.identity()</code>, <code>$.ui.notify</code>, hook <code>prompt.change</code>) indica evolución hacia una plataforma extensible con ecosistema de plugins sofisticado.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<div class="error-box">
+<ul>
+  <li><strong>api.github.com</strong> (releases de todos los repos anthropics/* y modelcontextprotocol/*): Bloqueado por proxy con HTTP 403. Datos obtenidos via WebFetch sobre páginas web de GitHub.</li>
+  <li><strong>hacker-news.firebaseio.com</strong>: Error de resolución DNS (ENOTFOUND) — no accesible desde el entorno de ejecución remoto.</li>
+  <li><strong>hn.algolia.com</strong>: Error de resolución DNS (ENOTFOUND) — no accesible desde el entorno de ejecución remoto.</li>
+  <li><strong>www.reddit.com</strong>: Bloqueado por proxy del entorno de ejecución.</li>
+  <li><strong>anthropics/anthropic-cookbook</strong>: Sin releases formales publicados en el repositorio.</li>
+</ul>
+</div>
+
+<footer>
+  <p><em>Reporte generado automáticamente el 2026-10-15-020229</em></p>
+</footer>
+
+</body>
+</html>
