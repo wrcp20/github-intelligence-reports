@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte Ecosistema Claude - 2026-10-21-021548</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 20px; color: #1a1a1a; background: #f9f9f9; }
+    h1 { color: #2c2c2c; border-bottom: 3px solid #d97706; padding-bottom: 10px; }
+    h2 { color: #374151; border-bottom: 1px solid #d1d5db; padding-bottom: 6px; margin-top: 36px; }
+    h3 { color: #4b5563; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-radius: 6px; overflow: hidden; }
+    thead { background: #1f2937; color: #fff; }
+    thead th { padding: 10px 14px; text-align: left; font-size: 0.88rem; letter-spacing: 0.04em; }
+    tbody tr:nth-child(even) { background: #f3f4f6; }
+    tbody td { padding: 9px 14px; font-size: 0.9rem; vertical-align: top; border-bottom: 1px solid #e5e7eb; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight-box { background: #fffbeb; border-left: 4px solid #d97706; padding: 14px 18px; margin: 18px 0; border-radius: 0 6px 6px 0; }
+    .highlight-box ol { margin: 0; padding-left: 20px; }
+    .highlight-box li { margin-bottom: 8px; font-size: 0.95rem; }
+    .error-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 12px 16px; margin: 18px 0; border-radius: 0 6px 6px 0; font-size: 0.88rem; }
+    .note { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 0.88rem; color: #1e3a5f; }
+    footer { margin-top: 50px; border-top: 1px solid #d1d5db; padding-top: 14px; color: #6b7280; font-size: 0.82rem; }
+    code { background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-family: monospace; font-size: 0.88em; }
+  </style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-10-21-021548</h1>
+
+<!-- HIGHLIGHTS -->
+<h2>Highlights del Día</h2>
+<div class="highlight-box">
+  <ol>
+    <li><strong>Inference Hooks GA para Claude Enterprise</strong> (20 oct 2026): La funcionalidad de inference hooks sale de beta para todas las organizaciones Enterprise, permitiendo interceptar y transformar solicitudes de manera programática.</li>
+    <li><strong>Fast Mode para Claude Opus 5.5 disponible en general</strong> (15 oct 2026): Ya no se requiere el header beta <code>fast-mode-2026-02-01</code>; disponible en todas las instancias incluyendo Microsoft Foundry, con límites de tasa por defecto en los planes Start, Build y Scale.</li>
+    <li><strong>OpenTelemetry Export en beta</strong> (14 oct 2026): Trazabilidad completa de solicitudes de la Messages API y sesiones de Claude Managed Agents, disponible desde el SDK oficial en Python, TypeScript, C#, Go, Java, PHP y Ruby.</li>
+    <li><strong>Claude Haiku 5.5 lanzado</strong> (7 oct 2026): Nuevo modelo pequeño y rápido orientado a trabajos de alto volumen como resumen, subagentes y uso del navegador.</li>
+    <li><strong>Claude Code 2.1.305 disponible</strong>: Mejoras de sandbox en Linux, correcciones en Vertex/Bedrock/gateways, soporte de <code>allowNestedUserNamespaces</code>, y múltiples correcciones de confiabilidad.</li>
+  </ol>
+</div>
+
+<!-- ANUNCIOS OFICIALES -->
+<h2>Anuncios Oficiales Anthropic</h2>
+<table>
+  <thead>
+    <tr><th>Título</th><th>Fecha</th><th>Categoría</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Introducing Claude Haiku 5.5</td>
+      <td>7 oct 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Expanding the Cyber Verification Program</td>
+      <td>6 oct 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/news/cyber-verification-program" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Anthropic invests $100M to train 10,000 engineers (Claude Frontier Academy)</td>
+      <td>2 oct 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/news/claude-frontier-academy" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Barclays scales Claude to upgrade operations and improve client experience</td>
+      <td>1 oct 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/news/barclays-scales-claude" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Introducing Claude Sonnet 5.5</td>
+      <td>28 sep 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Introducing Claude Opus 5.5</td>
+      <td>22 sep 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/claude-opus-5-5" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Introducing the Life Sciences Verification Program</td>
+      <td>17 sep 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/news/life-sciences-verification-program" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Introducing Claude Mythos and Fable 5.1</td>
+      <td>15 sep 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Developing Enterprise Frontier Safeguards with our customers</td>
+      <td>1 sep 2026</td>
+      <td>Seguridad</td>
+      <td><a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank">Ver post</a></td>
+    </tr>
+    <tr>
+      <td>Expanding our support for scientists</td>
+      <td>27 ago 2026</td>
+      <td>Anuncios</td>
+      <td><a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank">Ver post</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- RELEASE NOTES OFICIALES -->
+<h2>Release Notes Oficiales (platform.claude.com)</h2>
+
+<h3>API</h3>
+<table>
+  <thead>
+    <tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20 oct 2026</td>
+      <td>Inference hooks salen de beta para organizaciones Claude Enterprise</td>
+      <td><a href="https://platform.claude.com/docs/en/manage-claude/inference-hooks" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>15 oct 2026</td>
+      <td>Añadido <code>capabilities.thinking.types.between_tools</code> a la Models API (<code>GET /v1/models</code>)</td>
+      <td><a href="https://platform.claude.com/docs/en/api/models/list" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>15 oct 2026</td>
+      <td>Compliance API retorna instrucciones guardadas por usuarios (beta Claude Enterprise) con scope <code>read:compliance_user_data</code></td>
+      <td><a href="https://platform.claude.com/docs/en/manage-claude/compliance-org-data" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>15 oct 2026</td>
+      <td>Fast mode para Claude Opus 5.5 sale de research preview; el header <code>fast-mode-2026-02-01</code> ya no es necesario</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>15 oct 2026</td>
+      <td>Fast mode para Claude Opus 5.5 disponible en Claude en Microsoft Foundry (Azure)</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>14 oct 2026</td>
+      <td>OpenTelemetry Export en beta: trazabilidad de Messages API y Managed Agents en SDKs Python, TS, C#, Go, Java, PHP, Ruby</td>
+      <td><a href="https://platform.claude.com/docs/en/manage-claude/opentelemetry" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>14 oct 2026</td>
+      <td>Claude Managed Agents: deployments programados disponibles en Claude Platform on AWS</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>9 oct 2026</td>
+      <td>Claude Managed Agents: dynamic workflows en beta con header <code>managed-agents-2026-04-01</code> — ejecución de agentes en fases con resultados combinados</td>
+      <td><a href="https://platform.claude.com/docs/en/managed-agents/workflow-runs" target="_blank">Docs</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Claude Code (desde CHANGELOG.md)</h3>
+<div class="note">Fuente: <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG.md</a> — versiones más recientes en orden descendente. Las fechas no están disponibles en el CHANGELOG.</div>
+<table>
+  <thead>
+    <tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2.1.305</td>
+      <td>—</td>
+      <td>Añadido <code>sandbox.allowNestedUserNamespaces</code> en Linux; modo retry desatendido detecta límite de uso levantado temprano; correcciones en Vertex/Bedrock/gateways que rechazaban tool search; correcciones de worktrees, screen reader, disk-full, Claude Tag y Code Review</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a></td>
+    </tr>
+    <tr>
+      <td>2.1.304</td>
+      <td>—</td>
+      <td>Nuevas funciones mod (<code>decider</code>, <code>isReadOnly</code>); <code>/auto-mode-setup</code> y <code>/claude-api managed-agents-secure</code>; aviso de uso en planes Pro/Max; correcciones de sandboxing, rm safety, Remote Control, subagents y worktrees; tool search on por defecto detrás de <code>ANTHROPIC_BASE_URL</code> custom</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a></td>
+    </tr>
+    <tr>
+      <td>2.1.303</td>
+      <td>—</td>
+      <td>Correcciones de bugs y mejoras de confiabilidad</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a></td>
+    </tr>
+    <tr>
+      <td>2.1.302</td>
+      <td>—</td>
+      <td>Nuevo <code>CLAUDE_CODE_AUTO_MODEL</code>; idle compaction en <code>/config</code>; aviso de cierre de Claude Design standalone (14 dic 2026); correcciones de memoria en Read tool con imágenes grandes, prompt cache y escritura en Windows (exFAT/FAT32); fork subagents on por defecto fuera del terminal</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a></td>
+    </tr>
+    <tr>
+      <td>2.1.301</td>
+      <td>—</td>
+      <td><code>CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS</code>; movimiento <code>%</code> en vim mode; <code>classifier_verdict</code>, <code>permission_mode</code> y <code>classifier_category</code> en OpenTelemetry <code>tool_decision</code>; renderizado LaTeX y enlace "Get more usage" en VS Code</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- RELEASES SDKS OFICIALES -->
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<div class="note"><strong>Nota:</strong> El acceso a la GitHub API está restringido en esta sesión a <code>wrcp20/github-intelligence-reports</code>. Los releases de GitHub no pudieron obtenerse. Se presentan versiones de los registros de paquetes (PyPI / npm) como alternativa.</div>
+<table>
+  <thead>
+    <tr><th>Paquete / Repo</th><th>Versión Más Reciente</th><th>Fuente</th><th>Notas</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>anthropic</code> (PyPI) — anthropic-sdk-python</td>
+      <td>1.17.0</td>
+      <td><a href="https://pypi.org/project/anthropic/" target="_blank">PyPI</a></td>
+      <td>Fecha de publicación no disponible (JSON truncado)</td>
+    </tr>
+    <tr>
+      <td><code>@anthropic-ai/sdk</code> (npm) — anthropic-sdk-typescript</td>
+      <td>0.137.0</td>
+      <td><a href="https://www.npmjs.com/package/@anthropic-ai/sdk" target="_blank">npm</a></td>
+      <td>Confirmado en <code>dist-tags.latest</code></td>
+    </tr>
+    <tr>
+      <td>anthropics/claude-agent-sdk-python</td>
+      <td>Error 403</td>
+      <td>GitHub API</td>
+      <td>Repo no accesible desde esta sesión</td>
+    </tr>
+    <tr>
+      <td>anthropics/claude-agent-sdk-typescript</td>
+      <td>Error 403</td>
+      <td>GitHub API</td>
+      <td>Repo no accesible desde esta sesión</td>
+    </tr>
+    <tr>
+      <td>anthropics/claude-code</td>
+      <td>Ver CHANGELOG</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG.md</a></td>
+      <td>GitHub releases no accesibles; CHANGELOG disponible arriba</td>
+    </tr>
+    <tr>
+      <td>anthropics/anthropic-cookbook</td>
+      <td>Error 403</td>
+      <td>GitHub API</td>
+      <td>Repo no accesible desde esta sesión</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- MCP RELEASES -->
+<h2>Releases — Model Context Protocol</h2>
+<div class="note"><strong>Nota:</strong> GitHub API restringido. Versiones obtenidas de registros de paquetes donde están disponibles.</div>
+<table>
+  <thead>
+    <tr><th>Paquete / Repo</th><th>Versión Más Reciente</th><th>Fuente</th><th>Notas</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>mcp</code> (PyPI) — python-sdk</td>
+      <td>2.3.0</td>
+      <td><a href="https://pypi.org/project/mcp/" target="_blank">PyPI</a></td>
+      <td>Versión anterior visible: 1.30.0 publicada 7 sep 2026</td>
+    </tr>
+    <tr>
+      <td><code>@modelcontextprotocol/sdk</code> (npm) — typescript-sdk</td>
+      <td>1.32.1</td>
+      <td><a href="https://www.npmjs.com/package/@modelcontextprotocol/sdk" target="_blank">npm</a></td>
+      <td>Confirmado en <code>dist-tags.latest</code></td>
+    </tr>
+    <tr>
+      <td>modelcontextprotocol/specification</td>
+      <td>Error 403</td>
+      <td>GitHub API</td>
+      <td>Repo no accesible desde esta sesión</td>
+    </tr>
+    <tr>
+      <td>modelcontextprotocol/servers</td>
+      <td>Error 403</td>
+      <td>GitHub API</td>
+      <td>Repo no accesible desde esta sesión</td>
+    </tr>
+    <tr>
+      <td>modelcontextprotocol/inspector</td>
+      <td>Error 403</td>
+      <td>GitHub API</td>
+      <td>Repo no accesible desde esta sesión</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- HACKER NEWS -->
+<h2>Discusiones en Hacker News</h2>
+<div class="error-box">Los datos de Hacker News no pudieron obtenerse. El dominio <code>hacker-news.firebaseio.com</code> y el alternativo <code>hn.algolia.com</code> no resuelven desde el entorno de ejecución remoto (ENOTFOUND). Ver sección "Errores de Fetch".</div>
+
+<!-- REDDIT -->
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<div class="error-box">Los datos de Reddit no pudieron obtenerse. <code>www.reddit.com</code> está bloqueado desde el entorno de ejecución remoto. Ver sección "Errores de Fetch".</div>
+
+<!-- TENDENCIAS -->
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Maduración del ecosistema agéntico:</strong> Las novedades de esta semana apuntan consistentemente hacia agentes más robustos — Dynamic Workflows para Managed Agents (9 oct), Scheduled Deployments en AWS (14 oct) y OpenTelemetry export (14 oct). Anthropic está construyendo la infraestructura de observabilidad y orquestación necesaria para agentes en producción.</li>
+  <li><strong>Expansión acelerada de modelos y programas de acceso especial:</strong> En pocas semanas se lanzaron Claude Haiku 5.5 (7 oct), Sonnet 5.5 (28 sep), Opus 5.5 (22 sep) y Mythos/Fable 5.1 (15 sep). Simultáneamente, Anthropic creó programas de verificación para seguridad y ciencias de la vida, indicando segmentación del mercado por casos de uso sensibles.</li>
+  <li><strong>Fast Mode como diferenciador competitivo:</strong> La salida de Fast Mode (Opus 5.5) de research preview y su disponibilidad en Microsoft Foundry/Azure es relevante para empresas que necesitan respuestas rápidas de modelos frontier. La eliminación del header beta simplifica la integración de developers.</li>
+  <li><strong>Inversión masiva en talento técnico:</strong> El anuncio de $100M para formar 10,000 "Frontier Deployed Engineers" hacia 2027 señala que Anthropic anticipa una demanda enorme de personas capaces de desplegar sistemas de IA en producción a escala empresarial.</li>
+  <li><strong>Claude Code: estabilización y sandbox:</strong> Las versiones 2.1.301–2.1.305 muestran un enfoque en mejorar el comportamiento en entornos Linux sandboxed, gateways de terceros (Vertex, Bedrock), y uso desatendido. El aviso de cierre de "Claude Design standalone" (dic 2026) indica consolidación del portafolio de productos.</li>
+</ol>
+
+<!-- ERRORES DE FETCH -->
+<h2>Errores de Fetch</h2>
+<table>
+  <thead>
+    <tr><th>Fuente</th><th>Error</th><th>Detalles</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GitHub API — todos los repos <code>anthropics/*</code></td>
+      <td>Error 403</td>
+      <td>La sesión está restringida al repositorio <code>wrcp20/github-intelligence-reports</code>. No es posible acceder a repos externos vía <code>gh</code> CLI ni vía WebFetch.</td>
+    </tr>
+    <tr>
+      <td>GitHub API — todos los repos <code>modelcontextprotocol/*</code></td>
+      <td>Error 403</td>
+      <td>Misma restricción de sesión.</td>
+    </tr>
+    <tr>
+      <td>Hacker News Firebase API (<code>hacker-news.firebaseio.com</code>)</td>
+      <td>ENOTFOUND</td>
+      <td>El dominio no resuelve desde el entorno de ejecución remoto.</td>
+    </tr>
+    <tr>
+      <td>Hacker News Algolia API (<code>hn.algolia.com</code>)</td>
+      <td>ENOTFOUND</td>
+      <td>El dominio no resuelve desde el entorno de ejecución remoto.</td>
+    </tr>
+    <tr>
+      <td>Reddit (<code>www.reddit.com</code>)</td>
+      <td>Conexión bloqueada</td>
+      <td>El entorno de ejecución remoto no tiene acceso a Reddit.</td>
+    </tr>
+    <tr>
+      <td><code>docs.claude.com/en/release-notes/claude-code</code></td>
+      <td>Redirige (307) a GitHub</td>
+      <td>Redirige a <code>github.com/anthropics/claude-code/blob/main/CHANGELOG.md</code>; datos obtenidos desde URL raw del CHANGELOG.</td>
+    </tr>
+    <tr>
+      <td>PyPI <code>anthropic</code> — fecha de versión latest</td>
+      <td>Datos truncados</td>
+      <td>El JSON de PyPI es demasiado extenso; la versión 1.17.0 aparece en <code>info.version</code> pero su fecha no estaba en el rango de texto procesado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<footer>
+  <p><em>Reporte generado automáticamente el 2026-10-21-021548</em></p>
+</footer>
+
+</body>
+</html>
