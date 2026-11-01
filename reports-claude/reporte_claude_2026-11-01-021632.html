@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte Ecosistema Claude - 2026-11-01-021632</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; background: #f9f9f9; color: #222; }
+  h1 { color: #1a1a2e; border-bottom: 3px solid #6c63ff; padding-bottom: 12px; }
+  h2 { color: #2d2d44; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin-top: 36px; }
+  h3 { color: #444; margin-top: 20px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  thead { background: #6c63ff; color: #fff; }
+  th, td { border: 1px solid #e0e0e0; padding: 10px 14px; text-align: left; vertical-align: top; }
+  th { font-weight: 600; }
+  tr:nth-child(even) { background: #f5f5ff; }
+  a { color: #6c63ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .highlight-box { background: #fff; border-left: 4px solid #6c63ff; padding: 12px 18px; margin: 8px 0; border-radius: 0 6px 6px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+  .highlight-box strong { color: #6c63ff; }
+  .error-box { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 12px 18px; margin: 8px 0; border-radius: 0 6px 6px 0; }
+  .na-box { background: #f3f4f6; border-left: 4px solid #9ca3af; padding: 12px 18px; margin: 8px 0; border-radius: 0 6px 6px 0; font-style: italic; color: #555; }
+  .footer { margin-top: 40px; border-top: 1px solid #ddd; padding-top: 12px; color: #888; font-size: 13px; }
+  .tag { display: inline-block; background: #e8e6ff; color: #5b52cc; font-size: 12px; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
+  .security-badge { display: inline-block; background: #fee2e2; color: #b91c1c; font-size: 12px; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>&#x1F4CA; Reporte Ecosistema Claude — <span style="color:#6c63ff">2026-11-01-021632</span></h1>
+
+<h2>&#x2728; Highlights del Día</h2>
+
+<div class="highlight-box">
+  <strong>1. Claude Code v2.1.316 (31 oct)</strong> — Nueva variable de entorno <code>CLAUDE_CODE_DISABLE_ULTRATHINK</code>, presupuestos grupales en el gateway, y depreciación confirmada de fast mode para Opus 4.8 con fecha límite del 30 de noviembre de 2026.
+</div>
+<div class="highlight-box">
+  <strong>2. Usage and Cost Analytics API en beta (29 oct)</strong> — Nuevos endpoints <code>/v1/organizations/analytics/usage</code> y <code>/v1/organizations/analytics/cost</code> con filtros por modelo, workspace y clave API; la API anterior queda en modo legado.
+</div>
+<div class="highlight-box">
+  <strong>3. Límite de solicitudes API elevado de 32 MB a 128 MB (28 oct)</strong> — Cambio crítico para flujos de trabajo con documentos o imágenes de gran tamaño.
+</div>
+<div class="highlight-box">
+  <strong>4. MCP TypeScript SDK v2.4.0 (23 oct)</strong> — Introduce <em>Skills over MCP</em> (SEP-2640): los servidores pueden publicar carpetas de skills que los clientes listan, leen y verifican.
+</div>
+<div class="highlight-box">
+  <strong>5. MCP Servers v2.2.0 (28 oct) con parches de seguridad urgentes</strong> — <span class="security-badge">&#x26A0; Seguridad</span> Corrige el compromiso de la CA de eMudhra de octubre de 2026; usuarios de Node.js deben actualizar a 24.22.1 o 26.12.1.
+</div>
+
+<h2>&#x1F4E2; Anuncios Oficiales Anthropic</h2>
+
+<table>
+  <thead>
+    <tr><th>Título</th><th>Fecha</th><th>Categoría</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Early progress on accelerating drug development with Claude</td><td>27 oct 2026</td><td>Ciencia</td><td><a href="https://www.anthropic.com/research/early-progress-drug-development" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Expanding our partnership with GSA to bring Claude to all levels of government</td><td>27 oct 2026</td><td>Partnerships</td><td><a href="https://www.anthropic.com/news/expanding-partnership-gsa" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Donating Agent Skills to the Agentic AI Foundation</td><td>22 oct 2026</td><td>Producto</td><td><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Strengthening our defenses against distillation attacks</td><td>12 oct 2026</td><td>Seguridad</td><td><a href="https://www.anthropic.com/news/distillation-defenses" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Introducing Claude Haiku 5.5</td><td>7 oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Expanding the Cyber Verification Program</td><td>6 oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/cyber-verification-program" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Anthropic invests $100M to train 10,000 engineers (Claude Frontier Academy)</td><td>2 oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/claude-frontier-academy" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Barclays scales Claude to upgrade operations and improve client experience</td><td>1 oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/barclays-scales-claude" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Introducing Claude Sonnet 5.5</td><td>28 sep 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>Introducing Claude Opus 5.5</td><td>22 sep 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-opus-5-5" target="_blank">Ver ↗</a></td></tr>
+  </tbody>
+</table>
+
+<h2>&#x1F4CB; Release Notes Oficiales (platform.claude.com)</h2>
+
+<h3>API</h3>
+
+<table>
+  <thead>
+    <tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>30 oct 2026</td><td><strong>Fast mode depreciado para Claude Opus 4.8</strong> — Las solicitudes con <code>speed: "fast"</code> retornarán error a partir del 30 de noviembre. Migrar a Opus 5.5.</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode#supported-models" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>29 oct 2026</td><td><strong>Usage and Cost Analytics API en beta</strong> — Header <code>analytics-usage-cost-2026-08-24</code>. Endpoints <code>/v1/organizations/analytics/usage</code> y <code>/v1/organizations/analytics/cost</code>.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>29 oct 2026</td><td><strong>Usage and Cost API marcada como legado</strong> — API anterior sigue soportada; guías de migración disponibles.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-usage-cost-api" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>28 oct 2026</td><td><strong>Tamaño máximo de solicitud: 32 MB → 128 MB</strong> — Aplica a Messages API y Token Counting API.</td><td><a href="https://platform.claude.com/docs/en/api/overview#request-size-limits" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>23 oct 2026</td><td><strong>Claude Tag API en beta</strong> — Header <code>experimental-claude-tag-2026-10-21</code> para organizaciones Claude Enterprise. Gestiona configuraciones en Slack.</td><td><a href="https://platform.claude.com/docs/en/manage-claude/claude-tag-api" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>22 oct 2026</td><td><strong>Claude Models on Google Cloud (Anthropic managed) lanzado</strong> — Acceso con Google Cloud IAM, billing por GCP Marketplace.</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>22 oct 2026</td><td><strong>Fast mode para Claude Opus 5.5 en Google Cloud</strong> — Disponible en Claude Models on Google Cloud (Anthropic managed).</td><td><a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode" target="_blank">Ver ↗</a></td></tr>
+    <tr><td>21 oct 2026</td><td><strong>API versión 2026-10-21 lanzada</strong> — Python SDK 2.0.0, TypeScript SDK 1.0.0, C# 13.0.0, Go 2.0.0, Java 3.0.0, PHP 1.0.0, Ruby 2.0.0 y CLI <code>ant</code> 2.0.0. Licencia migrada de MIT a Apache 2.0.</td><td><a href="https://platform.claude.com/docs/en/api/migration-2026-10-21" target="_blank">Ver ↗</a></td></tr>
+  </tbody>
+</table>
+
+<h3>Claude Code</h3>
+
+<table>
+  <thead>
+    <tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="tag">v2.1.316</span></td>
+      <td>31 oct 2026</td>
+      <td>Agrega <code>CLAUDE_CODE_DISABLE_ULTRATHINK</code>, presupuestos grupales en gateway, modo de política "layered". <strong>Depreciación de fast mode Opus 4.8 el 30 nov 2026.</strong> Corrige procesos shell huérfanos en macOS/Linux y bugs en herramienta Bash.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.316" target="_blank">Ver ↗</a></td>
+    </tr>
+    <tr>
+      <td><span class="tag">v2.1.314</span></td>
+      <td>30 oct 2026</td>
+      <td>Agrega <code>permissions.blockWritesOutsideWorkingDirectories</code> — bloquea Write/Edit/NotebookEdit fuera de directorios de trabajo en todos los modos. Enrutamiento IdP para grupos en gateway. Compactación inactiva en VS Code.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.314" target="_blank">Ver ↗</a></td>
+    </tr>
+    <tr>
+      <td><span class="tag">v2.1.312</span></td>
+      <td>27 oct 2026</td>
+      <td>Agrega <code>oidc.user_id_claim</code> en gateway para identificar usuarios por claims distintos a <code>sub</code>. Click para enviar mensajes encolados en pantalla completa. Corrige configuraciones administradas tras inicio de sesión en VS Code.</td>
+      <td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.312" target="_blank">Ver ↗</a></td>
+    </tr>
+    <tr>
+      <td><span class="tag">v2.1.311</span></td>
+      <td>Sin fecha</td>
+      <td>Agrega <code>--hold-idle-file</code> y <code>--max-hold-min</code> para self-hosted runner. <code>ultrathink</code> ahora corre a esfuerzo <code>xhigh</code> en modelos de la serie 5.5. Mejoras en tiempo de inicio.</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">Ver ↗</a></td>
+    </tr>
+    <tr>
+      <td><span class="tag">v2.1.310</span></td>
+      <td>Sin fecha</td>
+      <td>Lanza herramienta Monitor y plugin monitors en Bedrock, Vertex y Foundry. El sandbox de Linux explica la restricción AppArmor en Ubuntu. MCP timeout en elicitaciones sin respuesta ahora indica a Claude que no repita la llamada.</td>
+      <td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">Ver ↗</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>&#x1F4E6; Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a></td>
+      <td><span class="tag">v2.1.316</span></td>
+      <td>31 oct 2026</td>
+      <td>Nueva env var <code>CLAUDE_CODE_DISABLE_ULTRATHINK</code>, presupuestos de grupo en gateway, modo de política "layered". Depreciación de fast mode para Opus 4.8 el 30 nov 2026. Múltiples correcciones en Bash, PowerShell hooks y VS Code.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-python" target="_blank">anthropics/anthropic-sdk-python</a></td>
+      <td><span class="tag">v2.3.0</span></td>
+      <td>23 oct 2026</td>
+      <td>Añade endpoints de Claude Tag para organizaciones Claude Enterprise. Corrige envío de perfiles de usuario en Google Cloud. Limpieza interna de parámetros de query en rutas de endpoint.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-sdk-typescript" target="_blank">anthropics/anthropic-sdk-typescript</a></td>
+      <td><span class="tag">sdk-v1.3.0</span></td>
+      <td>23 oct 2026</td>
+      <td>Añade endpoints de Claude Tag para organizaciones Claude Enterprise. Mejora mensajes de error para solicitudes largas. Actualización de README y ejemplos del SDK.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-python" target="_blank">anthropics/claude-agent-sdk-python</a></td>
+      <td><span class="tag">v0.2.176</span></td>
+      <td>31 oct 2026</td>
+      <td>Actualiza el CLI de Claude empaquetado a la versión 2.1.316. Aumenta el límite de tamaño del proyecto PyPI de 50 GiB a 150 GiB.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/claude-agent-sdk-typescript" target="_blank">anthropics/claude-agent-sdk-typescript</a></td>
+      <td><span class="tag">v0.3.316</span></td>
+      <td>31 oct 2026</td>
+      <td>Añade <code>permissions.blockReadsExemptPaths</code> al tipo <code>Settings</code>. Agrega <code>prewarm()</code> (alpha) al entry point core. Paridad con Claude Code v2.1.316.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank">anthropics/anthropic-cookbook</a></td>
+      <td>—</td>
+      <td>—</td>
+      <td>Sin releases formales en el repositorio.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>&#x1F527; Releases — Model Context Protocol</h2>
+
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/specification" target="_blank">modelcontextprotocol/specification</a></td>
+      <td><span class="tag">2026-07-28</span></td>
+      <td>28 jul 2026</td>
+      <td>Release estable de la revisión 2026-07-28 del protocolo MCP. Más de 30 días desde la publicación; sin nuevas versiones de especificación desde entonces.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank">modelcontextprotocol/python-sdk</a></td>
+      <td><span class="tag">v2.3.0</span></td>
+      <td>2 oct 2026</td>
+      <td>Nuevo <code>max_sse_event_size</code>, opción <code>subscriptions=False</code> en <code>MCPServer</code>, reintento tras <code>HeaderMismatch</code>. Requiere httpx2 ≥ 2.10.0. Validación de anotaciones <code>x-mcp-header</code> al registrar herramientas.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank">modelcontextprotocol/typescript-sdk</a></td>
+      <td><span class="tag">v2.4.0</span></td>
+      <td>23 oct 2026</td>
+      <td><strong>Skills over MCP (SEP-2640):</strong> servidores publican carpetas de skills con <code>SkillsClient</code>. Opt-in <code>scopeForRefresh(tokens)</code> para OAuth (Microsoft Entra). Correcciones en resources, resource templates y <code>createMcpHandler</code>.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/servers" target="_blank">modelcontextprotocol/servers</a></td>
+      <td><span class="tag">v2.2.0</span> <span class="security-badge">&#x26A0; Seguridad</span></td>
+      <td>28 oct 2026</td>
+      <td>Parche crítico por compromiso de CA eMudhra. Actualiza <code>mcp-server-fetch</code> a certifi 2026.10.23. <code>server-filesystem</code> 2.1.0 y <code>server-everything</code> 2.1.0. Usuarios de Node.js deben actualizar a 24.22.1 o 26.12.1.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/modelcontextprotocol/inspector" target="_blank">modelcontextprotocol/inspector</a></td>
+      <td><span class="tag">2.13.0</span></td>
+      <td>28 oct 2026</td>
+      <td>Añade controles de pruebas de carga (umbral de tasa de errores y p99-latency) en CLI y <code>mcpdo</code>. Corrige OAuth para sellos de emisor estático. MCP TypeScript SDK actualizado a v2.4.0. Migración a <code>tsdown</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>&#x1F4AC; Discusiones en Hacker News</h2>
+
+<div class="na-box">
+  No disponible — El dominio <code>hacker-news.firebaseio.com</code> y <code>news.ycombinator.com</code> no son accesibles desde la política de red de esta sesión cloud. Ver sección "Errores de Fetch".
+</div>
+
+<h2>&#x1F4DD; Reddit r/ClaudeAI — Top del Día</h2>
+
+<div class="na-box">
+  No disponible — El dominio <code>www.reddit.com</code> no es accesible desde la política de red de esta sesión cloud. Ver sección "Errores de Fetch".
+</div>
+
+<h2>&#x1F4CA; Tendencias y Observaciones</h2>
+
+<ol>
+  <li><strong>Depreciación acelerada de modelos:</strong> La depreciación de fast mode para Opus 4.8 con solo ~30 días de aviso (anunciado el 30 oct, efectivo el 30 nov) sugiere un ciclo de vida más corto para versiones intermedias a medida que la familia 5.5 madura.</li>
+  <li><strong>Madurez empresarial de la API:</strong> El lanzamiento de la Usage/Cost Analytics API, el aumento del límite de requests a 128 MB y la integración con Google Cloud IAM apuntan a una estrategia deliberada de consolidar clientes enterprise de gran escala.</li>
+  <li><strong>Seguridad en el ecosistema MCP bajo presión:</strong> Tres releases de seguridad en una semana (servers v2.1.0 y v2.2.0, inspector v2.12.0 y v2.13.0) asociados al compromiso de la CA eMudhra revelan que el ecosistema MCP está madurando con un enfoque creciente en superficie de ataque y gestión de certificados.</li>
+  <li><strong>Skills over MCP como vector de expansión:</strong> La introducción de skills publicables en MCP TypeScript SDK v2.4.0 y la donación de Agent Skills a la Agentic AI Foundation apuntan a una estrategia de ecosistema abierto donde los agentes comparten capacidades de manera estandarizada.</li>
+  <li><strong>Claude Code como producto de ritmo rápido:</strong> Con tres releases en cinco días (v2.1.312 a v2.1.316) y el agent SDK sincronizado al mismo número (v0.3.316 ↔ v2.1.316), el equipo opera a una cadencia de desarrollo muy alta, incorporando features y correcciones críticas en ciclos cortos.</li>
+</ol>
+
+<h2>&#x26A0; Errores de Fetch</h2>
+
+<div class="error-box">
+  <ul>
+    <li><strong>HackerNews</strong> (<code>hacker-news.firebaseio.com</code>, <code>news.ycombinator.com</code>): Dominio no permitido en la política de red de la sesión cloud. Se requiere habilitarlo en la configuración de entorno.</li>
+    <li><strong>Reddit</strong> (<code>www.reddit.com</code>): Conexión rechazada por la política de red (connect_rejected en egress proxy). Se requiere habilitarlo en la configuración de entorno.</li>
+    <li><strong>GitHub API vía curl</strong> (<code>api.github.com</code> para repos externos): Bloqueado por el proxy de sesión para repositorios fuera del alcance configurado (<code>wrcp20/github-intelligence-reports</code>). Datos de releases obtenidos mediante WebFetch a páginas HTML públicas de GitHub.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <em>Reporte generado automáticamente el 2026-11-01-021632</em>
+</div>
+
+</body>
+</html>
