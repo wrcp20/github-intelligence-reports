@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte Ecosistema Claude - 2026-11-11-021529</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px 16px; color: #1a1a1a; background: #fff; }
+    h1 { font-size: 1.7em; border-bottom: 3px solid #c17c3c; padding-bottom: 8px; color: #1a1a1a; }
+    h2 { font-size: 1.25em; margin-top: 2em; border-bottom: 1px solid #ddd; padding-bottom: 4px; color: #2c2c2c; }
+    h3 { font-size: 1.05em; margin-top: 1.5em; color: #444; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
+    thead { background: #f5f1eb; }
+    th { text-align: left; padding: 8px 10px; border: 1px solid #ddd; font-weight: 600; }
+    td { padding: 7px 10px; border: 1px solid #ddd; vertical-align: top; }
+    tr:nth-child(even) { background: #fafafa; }
+    a { color: #c17c3c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin: 0; padding-left: 1.4em; }
+    li { margin: 4px 0; }
+    .highlight-box { background: #fff8f0; border-left: 4px solid #c17c3c; padding: 12px 16px; margin: 10px 0; border-radius: 2px; }
+    .highlight-box ul { margin: 0; }
+    .error-section { background: #fff5f5; border-left: 4px solid #c0392b; padding: 10px 14px; }
+    .note { color: #666; font-style: italic; font-size: 0.9em; margin: 6px 0; }
+    footer { margin-top: 2em; border-top: 1px solid #ddd; padding-top: 10px; color: #888; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-11-11-021529</h1>
+
+<h2>Highlights del Día</h2>
+<div class="highlight-box">
+  <ul>
+    <li><strong>Claude Fable 5.2 y Claude Mythos 5.2 lanzados (9 Nov):</strong> Anthropic anunció dos nuevos modelos flagship para trabajo técnico, con ventana de contexto de 1M tokens. Claude Code v2.1.321 adopta Fable 5.2 como modelo Fable por defecto.</li>
+    <li><strong>Claude Code v2.1.322 (10 Nov):</strong> Agrega soporte de fast mode en Vertex en regiones global, us y eu; fallback automático si Vertex lo rechaza.</li>
+    <li><strong>SDKs Python y TypeScript actualizados (10 Nov):</strong> anthropic-sdk-python v2.8.0 y sdk-v1.8.0 incorporan métricas Claude Tag y agregan los modelos <code>claude-fable-5-2</code> y <code>claude-mythos-5-2</code> a la API.</li>
+    <li><strong>MCP Servers v2.3.0 (4 Nov):</strong> Release coordinado con nuevas herramientas para filesystem (<code>append_file</code>, <code>copy_file</code>, <code>--read-only</code>), git (<code>git_merge</code>, <code>git_remote</code>) y servidor fetch con allowlist de hosts.</li>
+    <li><strong>Correcciones de seguridad críticas en MCP:</strong> Versiones v2.1.0–v2.3.0 de MCP Servers y el Inspector 2.14.0 parcharon múltiples vulnerabilidades, incluyendo validación de headers <code>Origin</code>, escrituras de filesystem fuera de directorio, y regex desde servidores no confiables.</li>
+  </ul>
+</div>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<table>
+  <thead><tr><th>Título</th><th>Fecha</th><th>Categoría</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>Introducing Claude Fable 5.2 and Claude Mythos 5.2</td><td>09 Nov 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank">Ver</a></td></tr>
+    <tr><td>Expanding our partnership with GSA to bring Claude to all levels of government</td><td>27 Oct 2026</td><td>Partnerships</td><td><a href="https://www.anthropic.com/news/expanding-partnership-gsa" target="_blank">Ver</a></td></tr>
+    <tr><td>Donating Agent Skills to the Agentic AI Foundation</td><td>22 Oct 2026</td><td>Product</td><td><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank">Ver</a></td></tr>
+    <tr><td>Strengthening our defenses against distillation attacks</td><td>12 Oct 2026</td><td>Seguridad</td><td><a href="https://www.anthropic.com/news/distillation-defenses" target="_blank">Ver</a></td></tr>
+    <tr><td>Introducing Claude Haiku 5.5</td><td>07 Oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank">Ver</a></td></tr>
+    <tr><td>Expanding the Cyber Verification Program</td><td>06 Oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/cyber-verification-program" target="_blank">Ver</a></td></tr>
+    <tr><td>Anthropic invests $100M to train 10,000 engineers (Claude Frontier Academy)</td><td>02 Oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/claude-frontier-academy" target="_blank">Ver</a></td></tr>
+    <tr><td>Barclays scales Claude to upgrade operations and improve client experience</td><td>01 Oct 2026</td><td>Casos de uso</td><td><a href="https://www.anthropic.com/news/barclays-scales-claude" target="_blank">Ver</a></td></tr>
+    <tr><td>Introducing Claude Sonnet 5.5</td><td>28 Sep 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank">Ver</a></td></tr>
+    <tr><td>Introducing Claude Opus 5.5</td><td>22 Sep 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-opus-5-5" target="_blank">Ver</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Release Notes Oficiales (docs.claude.com)</h2>
+<p class="note">⚠️ <code>docs.anthropic.com</code> no está disponible en la red de esta sesión (ENOTFOUND). Ver sección "Errores de Fetch". Los datos de CHANGELOG.md del repositorio se usan como sustituto para Claude Code.</p>
+
+<h3>API</h3>
+<p class="note">No disponible — docs.anthropic.com bloqueado en esta sesión.</p>
+
+<h3>Claude Code</h3>
+<table>
+  <thead><tr><th>Versión</th><th>Fecha (aprox.)</th><th>Cambio</th><th>Link</th></tr></thead>
+  <tbody>
+    <tr><td>v2.1.322</td><td>10 Nov 2026</td><td>Fast mode en Vertex (regiones global, us, eu); fallback automático si Vertex rechaza</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.322" target="_blank">Ver</a></td></tr>
+    <tr><td>v2.1.321</td><td>09 Nov 2026</td><td>Claude Fable 5.2 como modelo Fable por defecto (1M contexto, $8/$40/Mtok). Nuevas opciones: <code>--settings</code> en <code>remote-control</code>. Fixes de seguridad: MCP OAuth tokens, Bash read-only fuera del sandbox, reglas deny para cp/mv.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.321" target="_blank">Ver</a></td></tr>
+    <tr><td>v2.1.319</td><td>06 Nov 2026</td><td>Auto mode mejorado con gateways LLM. Tareas MCP en background. Nuevo setting <code>permissions.denyInsteadOfPrompting</code>. Variables <code>CLAUDE_CODE_DISABLE_FEATURE_FLAGS</code> y <code>CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND</code>.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.319" target="_blank">Ver</a></td></tr>
+    <tr><td>v2.1.318</td><td>~04 Nov 2026</td><td>Record de respuestas al activar mods. Soporte <code>assume_role</code> para upstreams gateway mantle. Fecha de expiración de sesión en <code>claude auth status</code>.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.318" target="_blank">Ver</a></td></tr>
+    <tr><td>v2.1.317</td><td>~02 Nov 2026</td><td>Warning en <code>/schedule</code> para connectors no solicitados. <code>onFailure: "block"</code> para hooks Agent SDK. Atributos OpenTelemetry. API de reporte de costos para gateways.</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.317" target="_blank">Ver</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/anthropics/claude-code/releases" target="_blank">anthropics/claude-code</a></td><td>v2.1.322</td><td>10 Nov 2026</td><td>Fast mode en Vertex (global/us/eu), fallback automático</td></tr>
+    <tr><td><a href="https://github.com/anthropics/anthropic-sdk-python/releases" target="_blank">anthropics/anthropic-sdk-python</a></td><td>v2.8.0</td><td>10 Nov 2026</td><td>Métricas Claude Tag en analytics/users; <code>reply_mode</code> para Slack. Fixes en Bedrock/Google Cloud con <code>;</code> en model IDs</td></tr>
+    <tr><td><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases" target="_blank">anthropics/anthropic-sdk-typescript</a></td><td>sdk-v1.8.0</td><td>10 Nov 2026</td><td>Métricas Claude Tag, <code>reply_mode</code> para Claude Tag Slack. Paquetes vertex y google-cloud con fixes de seguridad en model IDs</td></tr>
+    <tr><td><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases" target="_blank">anthropics/claude-agent-sdk-typescript</a></td><td>v0.3.322</td><td>10 Nov 2026</td><td>Paridad con Claude Code v2.1.322. Fast mode Vertex disponible en SDK</td></tr>
+    <tr><td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases" target="_blank">anthropics/claude-agent-sdk-python</a></td><td>v0.2.180</td><td>09 Nov 2026</td><td>Sin notas de release publicadas en esta versión</td></tr>
+    <tr><td><a href="https://github.com/anthropics/anthropic-cookbook" target="_blank">anthropics/anthropic-cookbook</a></td><td>—</td><td>—</td><td>Sin releases formales en el repositorio</td></tr>
+  </tbody>
+</table>
+
+<h3>Versiones adicionales relevantes (últimos 30 días)</h3>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td>anthropics/anthropic-sdk-python</td><td>v2.7.0</td><td>09 Nov 2026</td><td>Agrega modelos <code>claude-fable-5-2</code> y <code>claude-mythos-5-2</code>; filtrado por organización padre en reportes de uso</td></tr>
+    <tr><td>anthropics/anthropic-sdk-python</td><td>v2.6.0</td><td>05 Nov 2026</td><td>Códigos de error para ramp limits y External Key validation; firma de logout global para miembros</td></tr>
+    <tr><td>anthropics/claude-agent-sdk-typescript</td><td>v0.3.321</td><td>09 Nov 2026</td><td>Fixes de hooks PreToolUse y sesiones MCP; subagents en auto mode comparten una llamada de modelo</td></tr>
+    <tr><td>anthropics/claude-agent-sdk-typescript</td><td>v0.3.319</td><td>06 Nov 2026</td><td>Soporte de tareas MCP en background en sesiones SDK; fix OpenTelemetry session count</td></tr>
+    <tr><td>anthropics/claude-agent-sdk-python</td><td>v0.2.178</td><td>04 Nov 2026</td><td>Actualización del CLI de Claude Code a v2.1.318</td></tr>
+  </tbody>
+</table>
+
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead><tr><th>Repo</th><th>Versión</th><th>Fecha</th><th>Resumen</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/modelcontextprotocol/servers/releases" target="_blank">modelcontextprotocol/servers</a></td><td>v2.3.0</td><td>04 Nov 2026</td><td>filesystem: <code>append_file</code>, <code>copy_file</code>, <code>--read-only</code>, <code>--confine-roots</code>; git: <code>git_merge</code>, <code>git_remote</code>; fetch: <code>--allowed-hosts</code>, timeout HTTP configurable</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/inspector/releases" target="_blank">modelcontextprotocol/inspector</a></td><td>2.14.0</td><td>04 Nov 2026</td><td>Corrección de 3 vulnerabilidades privadas v2. Límites de elicitación a http(s). Upgrade: <code>npx @modelcontextprotocol/inspector@latest</code></td></tr>
+    <tr><td>modelcontextprotocol/inspector</td><td>1.0.4</td><td>04 Nov 2026</td><td>Parche de seguridad línea v1 (deprecated): regexes de <code>pattern</code> en output de herramientas ya no se evalúan desde servidores no confiables</td></tr>
+    <tr><td>modelcontextprotocol/servers</td><td>v2.2.0</td><td>28 Oct 2026</td><td>Release de seguridad: respuesta al disclosure de CA eMudhra. Actualizar Node.js a 24.22.1+ o 26.12.1+</td></tr>
+    <tr><td>modelcontextprotocol/inspector</td><td>2.13.0</td><td>28 Oct 2026</td><td>Respuesta a Node.js security releases; agrega <code>--load-max-error-rate</code>, <code>--load-max-p99</code>, <code>--load-connections</code>; actualiza a MCP TypeScript SDK 2.4.0</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases" target="_blank">modelcontextprotocol/typescript-sdk</a></td><td>v2.4.0</td><td>23 Oct 2026</td><td>Skills sobre MCP (SEP-2640): helper <code>loadSkills</code> server-side y <code>SkillsClient</code> client-side. Nuevo hook <code>scopeForRefresh</code> para auth servers</td></tr>
+    <tr><td>modelcontextprotocol/servers</td><td>v2.1.0</td><td>25 Oct 2026</td><td>Corrige 8 vulnerabilidades en 3 servidores: validación <code>Origin</code> en transports HTTP/SSE, escrituras filesystem fuera de directorio, NAT64 en mcp-server-fetch</td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/python-sdk/releases" target="_blank">modelcontextprotocol/python-sdk</a></td><td>v2.3.0</td><td>02 Oct 2026</td><td>Requiere <code>httpx2&gt;=2.10.0</code>; rechaza anotaciones <code>x-mcp-header</code> inválidas; nuevas opciones <code>max_sse_event_size</code>, <code>MCPServer(subscriptions=False)</code>, <code>get_tool_input_schema</code></td></tr>
+    <tr><td><a href="https://github.com/modelcontextprotocol/specification/releases" target="_blank">modelcontextprotocol/specification</a></td><td>2026-07-28</td><td>28 Jul 2026</td><td>Release estable de la revisión 2026-07-28 (fuera de los últimos 30 días)</td></tr>
+  </tbody>
+</table>
+
+<h2>Discusiones en Hacker News</h2>
+<p class="note">⚠️ No disponible — <code>hacker-news.firebaseio.com</code> y <code>news.ycombinator.com</code> están bloqueados en la red de esta sesión.</p>
+
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<p class="note">⚠️ No disponible — <code>www.reddit.com</code> está bloqueado en la red de esta sesión (curl Exit 56, WebFetch bloqueado).</p>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>Aceleración en el lanzamiento de nuevos modelos:</strong> En menos de dos meses (Sep-Nov 2026) Anthropic lanzó Opus 5.5, Sonnet 5.5, Haiku 5.5 y ahora Fable 5.2 + Mythos 5.2. La cadencia es significativamente más alta que en años anteriores, sugiriendo una estrategia de iteración rápida y diferenciación por caso de uso.</li>
+  <li><strong>El ecosistema agentic madura:</strong> La donación de Agent Skills a la Agentic AI Foundation y la adopción coordinada de MCP Skills (SEP-2640 en typescript-sdk v2.4.0) indican que Anthropic está apostando por estándares abiertos para interoperabilidad de agentes, en lugar de un ecosistema propietario cerrado.</li>
+  <li><strong>Seguridad como prioridad en MCP:</strong> Las versiones v2.1.0, v2.2.0, v2.3.0 de MCP Servers y las versiones 2.13.0, 2.14.0 del Inspector corrigieron numerosas vulnerabilidades en un período corto. Los usuarios de MCP Servers deben actualizar urgentemente, especialmente quienes ejecuten los transports HTTP/SSE expuestos a múltiples orígenes web.</li>
+  <li><strong>Claude Code sigue un ritmo de releases semanales:</strong> Las versiones v2.1.317 a v2.1.322 en menos de dos semanas muestran que Claude Code opera en un ciclo de desarrollo muy ágil. Las mejoras en auto mode con gateways LLM y el soporte de fast mode en Vertex reflejan adopción empresarial activa.</li>
+  <li><strong>Alianzas gubernamentales y enterprise:</strong> La expansión de la asociación con GSA (gobierno federal de EEUU), la inversión de $100M en formación de ingenieros (Claude Frontier Academy) y el caso Barclays indican que Anthropic está escalando fuertemente en enterprise y sector público, más allá del mercado de desarrolladores.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<div class="error-section">
+  <table>
+    <thead><tr><th>URL</th><th>Error</th><th>Impacto en Reporte</th></tr></thead>
+    <tbody>
+      <tr><td>docs.anthropic.com/en/release-notes/api</td><td>ENOTFOUND — dominio no permitido en red de sesión</td><td>Sección API Release Notes vacía</td></tr>
+      <tr><td>docs.anthropic.com/en/release-notes/claude-code</td><td>ENOTFOUND — dominio no permitido en red de sesión</td><td>Suplida con CHANGELOG.md del repositorio</td></tr>
+      <tr><td>hacker-news.firebaseio.com</td><td>ENOTFOUND — dominio bloqueado</td><td>Sección HackerNews no disponible</td></tr>
+      <tr><td>news.ycombinator.com</td><td>ENOTFOUND — dominio bloqueado</td><td>Sección HackerNews no disponible</td></tr>
+      <tr><td>www.reddit.com</td><td>Curl Exit 56 / WebFetch bloqueado</td><td>Sección Reddit no disponible</td></tr>
+      <tr><td>api.github.com (curl directo)</td><td>403 Forbidden vía proxy — solo repo autorizado en sesión</td><td>GitHub releases obtenidos vía páginas web de GitHub</td></tr>
+      <tr><td>GitHub MCP tools (anthropics/*, modelcontextprotocol/*)</td><td>Access denied — solo wrcp20/github-intelligence-reports en sesión</td><td>GitHub releases obtenidos vía páginas web de GitHub</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <em>Reporte generado automáticamente el 2026-11-11-021529</em>
+</footer>
+
+</body>
+</html>
