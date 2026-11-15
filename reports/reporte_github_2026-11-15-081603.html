@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte GitHub 2026-11-15</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --warn: #f85149;
+      --tag-ts: #3178c6;
+      --tag-rust: #ce422b;
+      --tag-go: #00add8;
+      --tag-java: #b07219;
+      --tag-py: #3572a5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 16px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    header .meta { color: var(--text2); font-size: 13px; }
+    section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .notice {
+      background: rgba(248, 81, 73, 0.1);
+      border: 1px solid rgba(248, 81, 73, 0.3);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #f85149;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      overflow-x: auto;
+      display: block;
+    }
+    thead tr { background: var(--bg3); }
+    th {
+      text-align: left;
+      padding: 10px 12px;
+      color: var(--text2);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg3); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nd { color: var(--text2); font-style: italic; }
+    .stars { font-weight: 600; color: #e3b341; }
+    .forks { color: var(--text2); }
+    .lang-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .lang-ts { background: rgba(49,120,198,0.2); color: #58a6ff; }
+    .lang-rust { background: rgba(206,66,43,0.2); color: #f0836d; }
+    .lang-go { background: rgba(0,173,216,0.2); color: #39c5cf; }
+    .lang-java { background: rgba(176,114,25,0.2); color: #e3b341; }
+    .lang-py { background: rgba(53,114,165,0.2); color: #79c0ff; }
+    .lang-nd { background: var(--bg3); color: var(--text2); }
+    .rank { color: var(--text2); font-weight: 600; font-size: 13px; }
+    .desc { max-width: 300px; }
+    .date { color: var(--text2); white-space: nowrap; }
+    .key-points { list-style: none; }
+    .key-points li {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: var(--bg3);
+      position: relative;
+      padding-left: 44px;
+    }
+    .key-points li::before {
+      content: attr(data-n);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 22px;
+    }
+    .key-points li strong { color: var(--accent); }
+    footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 12px;
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Reporte de Inteligencia GitHub</h1>
+    <div class="meta">Generado el 15 de noviembre de 2026 &nbsp;·&nbsp; 08:16:03 UTC &nbsp;·&nbsp; github-intelligence-reports</div>
+  </header>
+
+  <!-- REPOS MONITOREADOS -->
+  <section>
+    <h2>Repos Destacados (3 monitoreados)</h2>
+    <div class="notice">
+      ⚠️ Los tres repositorios monitoreados no pudieron ser consultados. El proxy CCR (Cloud Code Runner) restringe el acceso a repositorios externos al scope autorizado de esta sesión (<code>wrcp20/github-intelligence-reports</code>). Se recomienda ampliar el scope para habilitar el monitoreo completo.
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Repo</th>
+          <th>Descripción</th>
+          <th>Estrellas</th>
+          <th>Forks</th>
+          <th>Lenguaje</th>
+          <th>Descargas Último Release</th>
+          <th>Último Push</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td>
+          <td class="nd">Acceso restringido (Error 403 - proxy CCR)</td>
+          <td class="nd">N/D</td>
+          <td class="nd">N/D</td>
+          <td><span class="lang-badge lang-nd">N/D</span></td>
+          <td class="nd">N/D</td>
+          <td class="nd">N/D</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></td>
+          <td class="nd">Acceso restringido (Error 403 - proxy CCR)</td>
+          <td class="nd">N/D</td>
+          <td class="nd">N/D</td>
+          <td><span class="lang-badge lang-nd">N/D</span></td>
+          <td class="nd">N/D</td>
+          <td class="nd">N/D</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/openclaw/openclaw" target="_blank">openclaw/openclaw</a></td>
+          <td class="nd">Acceso restringido (Error 403 - proxy CCR)</td>
+          <td class="nd">N/D</td>
+          <td class="nd">N/D</td>
+          <td><span class="lang-badge lang-nd">N/D</span></td>
+          <td class="nd">N/D</td>
+          <td class="nd">N/D</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TOP 15 SEARCH -->
+  <section>
+    <h2>Top 15 Repos CLI+LLM+Agent (por estrellas)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Repo</th>
+          <th>Descripción</th>
+          <th>Estrellas</th>
+          <th>Forks</th>
+          <th>Lenguaje</th>
+          <th>Descargas Último Release</th>
+          <th>Último Push</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">1</td>
+          <td><a href="https://github.com/earendil-works/pi" target="_blank">earendil-works/pi</a></td>
+          <td class="desc">AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI</td>
+          <td class="stars">122.073</td>
+          <td class="forks">15.737</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td><a href="https://github.com/OpenHands/OpenHands" target="_blank">OpenHands/OpenHands</a></td>
+          <td class="desc">🙌 OpenHands: AI-Driven Development</td>
+          <td class="stars">93.493</td>
+          <td class="forks">12.517</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td><a href="https://github.com/jeecgboot/JeecgBoot" target="_blank">jeecgboot/JeecgBoot</a></td>
+          <td class="desc">Plataforma AI low-code open-source con permisos, workflows, reportes y MCP</td>
+          <td class="stars">48.484</td>
+          <td class="forks">16.218</td>
+          <td><span class="lang-badge lang-java">Java</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-11</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td><a href="https://github.com/codewhale-hq/Codewhale" target="_blank">codewhale-hq/Codewhale</a></td>
+          <td class="desc">Open-source coding agent for your terminal, written in Rust. Works with any model, can split one task across several agents</td>
+          <td class="stars">41.176</td>
+          <td class="forks">3.571</td>
+          <td><span class="lang-badge lang-rust">Rust</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td><a href="https://github.com/can1357/oh-my-pi" target="_blank">can1357/oh-my-pi</a></td>
+          <td class="desc">⌥ Coding agent with the IDE wired in. Built by Stencil Labs.</td>
+          <td class="stars">39.058</td>
+          <td class="forks">4.464</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-14</td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank">mukul975/Anthropic-Cybersecurity-Skills</a></td>
+          <td class="desc">817 structured cybersecurity skills for AI agents mapped to MITRE ATT&amp;CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, etc.</td>
+          <td class="stars">36.166</td>
+          <td class="forks">4.428</td>
+          <td><span class="lang-badge lang-py">Python</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-08-31</td>
+        </tr>
+        <tr>
+          <td class="rank">7</td>
+          <td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td>
+          <td class="desc">A reliable coding agent for complex software engineering tasks.</td>
+          <td class="stars">36.127</td>
+          <td class="forks">2.561</td>
+          <td><span class="lang-badge lang-go">Go</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-12</td>
+        </tr>
+        <tr>
+          <td class="rank">8</td>
+          <td><a href="https://github.com/iOfficeAI/AionUi" target="_blank">iOfficeAI/AionUi</a></td>
+          <td class="desc">Open-source 24/7 Cowork app for OpenClaw, Hermes, Claude Code, Codex, OpenCode and 20+ more CLI Agents</td>
+          <td class="stars">34.285</td>
+          <td class="forks">3.592</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-05</td>
+        </tr>
+        <tr>
+          <td class="rank">9</td>
+          <td><a href="https://github.com/QwenLM/qwen-code" target="_blank">QwenLM/qwen-code</a></td>
+          <td class="desc">An open-source AI coding agent that lives in your terminal.</td>
+          <td class="stars">30.441</td>
+          <td class="forks">3.524</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">10</td>
+          <td><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang/jcode</a></td>
+          <td class="desc">High performance coding agent harness written in Rust, built for heavy multi-agent dev workflows</td>
+          <td class="stars">21.780</td>
+          <td class="forks">2.542</td>
+          <td><span class="lang-badge lang-rust">Rust</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">11</td>
+          <td><a href="https://github.com/plandex-ai/plandex" target="_blank">plandex-ai/plandex</a></td>
+          <td class="desc">Open source AI coding agent. Designed for large projects and real world tasks.</td>
+          <td class="stars">15.918</td>
+          <td class="forks">1.192</td>
+          <td><span class="lang-badge lang-go">Go</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2025-10-03</td>
+        </tr>
+        <tr>
+          <td class="rank">12</td>
+          <td><a href="https://github.com/Tracer-Cloud/opensre" target="_blank">Tracer-Cloud/opensre</a></td>
+          <td class="desc">The open-source agent for CI/CD reliability.</td>
+          <td class="stars">12.830</td>
+          <td class="forks">1.883</td>
+          <td><span class="lang-badge lang-py">Python</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">13</td>
+          <td><a href="https://github.com/cobusgreyling/loop-engineering" target="_blank">cobusgreyling/loop-engineering</a></td>
+          <td class="desc">Practical patterns, starters &amp; CLI tools for loop engineering with AI coding agents</td>
+          <td class="stars">11.772</td>
+          <td class="forks">1.586</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">14</td>
+          <td><a href="https://github.com/trailhq/Trail-Code" target="_blank">trailhq/Trail-Code</a></td>
+          <td class="desc">One shared memory for every coding agent on your team. Claude Code, Cursor and Codex get a map of your code and your team's past decisions</td>
+          <td class="stars">11.282</td>
+          <td class="forks">1.010</td>
+          <td><span class="lang-badge lang-ts">TypeScript</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-11-15</td>
+        </tr>
+        <tr>
+          <td class="rank">15</td>
+          <td><a href="https://github.com/sigoden/aichat" target="_blank">sigoden/aichat</a></td>
+          <td class="desc">All-in-one LLM CLI tool featuring Shell Assistant, Chat-REPL, RAG, AI Tools &amp; Agents, with access to OpenAI, Claude, Gemini, Ollama, Groq, and more.</td>
+          <td class="stars">10.576</td>
+          <td class="forks">754</td>
+          <td><span class="lang-badge lang-rust">Rust</span></td>
+          <td class="nd">N/D</td>
+          <td class="date">2026-02-23</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PUNTOS CLAVE -->
+  <section>
+    <h2>Puntos Clave</h2>
+    <ul class="key-points">
+      <li data-n="1">
+        <strong>Dominio absoluto de earendil-works/pi:</strong> Con 122.073 estrellas es el proyecto más estrellado de la categoría CLI+LLM+Agent, con una ventaja de casi 30.000 estrellas sobre OpenHands (2.º). Su actividad el mismo día del reporte indica desarrollo muy activo.
+      </li>
+      <li data-n="2">
+        <strong>TypeScript lidera el ecosistema:</strong> De los 15 repositorios destacados, 6 están escritos en TypeScript, seguido por Rust (3) y Go (2), lo que refleja una preferencia por lenguajes modernos de alto rendimiento para agentes CLI.
+      </li>
+      <li data-n="3">
+        <strong>Alta concentración de proyectos activos hoy:</strong> Al menos 7 de los 15 repositorios tuvieron actividad el mismo 15 de noviembre de 2026, lo que señala un ecosistema muy dinámico y en plena efervescencia.
+      </li>
+      <li data-n="4">
+        <strong>Acceso restringido a repos monitoreados:</strong> Los tres repositorios de seguimiento personalizado (hermes-agent, paperclip, openclaw) no pudieron ser consultados debido a restricciones del proxy CCR. Se recomienda añadirlos al scope autorizado de la sesión para habilitar el monitoreo completo.
+      </li>
+      <li data-n="5">
+        <strong>Ecosistema de orquestación multi-agente en auge:</strong> Proyectos como iOfficeAI/AionUi (integra OpenClaw, Hermes, Claude Code, Codex y 20+ agentes) y jcode (harness multi-agente en Rust) sugieren una tendencia creciente hacia la coordinación y orquestación de múltiples agentes de coding simultáneamente.
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    Reporte generado automáticamente · 15 de noviembre de 2026 · github-intelligence-reports
+  </footer>
+
+</div>
+</body>
+</html>
