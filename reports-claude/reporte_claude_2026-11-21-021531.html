@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte Ecosistema Claude - 2026-11-21-021531</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 0 auto; padding: 20px; color: #222; background: #fafafa; }
+  h1 { color: #c0392b; border-bottom: 3px solid #c0392b; padding-bottom: 8px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #bdc3c7; padding-bottom: 4px; margin-top: 32px; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.93em; }
+  th { background: #2c3e50; color: #fff; padding: 8px 10px; text-align: left; }
+  td { padding: 7px 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
+  tr:nth-child(even) { background: #f2f4f6; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .highlight-box { background: #eaf4fb; border-left: 4px solid #2980b9; padding: 10px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; }
+  .highlight-box ul { margin: 4px 0; padding-left: 20px; }
+  .highlight-box li { margin: 6px 0; }
+  .error-note { background: #fdf2f2; border-left: 4px solid #c0392b; padding: 8px 14px; color: #7b241c; border-radius: 0 6px 6px 0; font-size: 0.9em; }
+  .unavailable { color: #888; font-style: italic; }
+  footer { margin-top: 40px; padding-top: 12px; border-top: 1px solid #ccc; font-size: 0.85em; color: #666; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+
+<h1>Reporte Ecosistema Claude — 2026-11-21-021531</h1>
+
+<h2>Highlights del Día</h2>
+<div class="highlight-box">
+<ul>
+  <li><strong>Claude Fable 5.2 y Claude Mythos 5.2 ya disponibles:</strong> Ambos modelos ofrecen ventana de contexto de 1M tokens, 128k tokens de salida máxima, razonamiento adaptativo siempre activo y precios de $8/$40 por MTok. Mythos 5.2 requiere verificación especial por Anthropic.</li>
+  <li><strong>Linked Billing (beta) lanzado el 17 nov:</strong> Los usuarios ahora pueden pagar el uso de Claude en apps de terceros directamente desde su propia organización Anthropic, habilitado con <code>billing_policy</code> en <code>/v1/messages</code>.</li>
+  <li><strong>Text Watermark en modelos Opus/Sonnet/Haiku 4.x (16 nov):</strong> Las respuestas de texto de Claude llevan marca de agua invisible de Anthropic en plataformas compatibles; no aplica cuando se personaliza temperature/top_p/top_k.</li>
+  <li><strong>Self-hosted Managed Agents disponible (12 nov):</strong> Empresas pueden correr el servicio completo de Managed Agents en su propia infraestructura, almacenando agentes, sesiones e historial localmente.</li>
+  <li><strong>Claude Code v2.1.330:</strong> Nueva función "easel" (mod de gráficos integrado), inicio de sesión para organizaciones en Enterprise Admin Console, y múltiples correcciones de estabilidad.</li>
+</ul>
+</div>
+
+<h2>Anuncios Oficiales Anthropic</h2>
+<table>
+  <thead>
+    <tr><th>Título</th><th>Fecha</th><th>Categoría</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Introducing Claude Fable 5.2 and Claude Mythos 5.2</td><td>9 nov 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank">Ver post</a></td></tr>
+    <tr><td>AI for Science expands to foundations and research institutions</td><td>28 oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions" target="_blank">Ver post</a></td></tr>
+    <tr><td>Expanding our partnership with GSA to bring Claude to all levels of government</td><td>27 oct 2026</td><td>Alianzas</td><td><a href="https://www.anthropic.com/news/expanding-partnership-gsa" target="_blank">Ver post</a></td></tr>
+    <tr><td>Early progress on accelerating drug development with Claude</td><td>27 oct 2026</td><td>Ciencia</td><td><a href="https://www.anthropic.com/research/early-progress-drug-development" target="_blank">Ver post</a></td></tr>
+    <tr><td>Donating Agent Skills to the Agentic AI Foundation</td><td>22 oct 2026</td><td>Producto</td><td><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank">Ver post</a></td></tr>
+    <tr><td>Open call for guest investigators in the life sciences</td><td>22 oct 2026</td><td>Anuncios</td><td><a href="https://www.anthropic.com/news/open-call-guest-investigators-life-sciences" target="_blank">Ver post</a></td></tr>
+    <tr><td>An update on independent evaluators</td><td>15 oct 2026</td><td>Política</td><td><a href="https://www.anthropic.com/news/an-update-on-independent-evaluators" target="_blank">Ver post</a></td></tr>
+    <tr><td>Preparing for the 2026 US midterms</td><td>14 oct 2026</td><td>Seguridad</td><td><a href="https://www.anthropic.com/news/2026-us-midterms" target="_blank">Ver post</a></td></tr>
+    <tr><td>Strengthening our defenses against distillation attacks</td><td>12 oct 2026</td><td>Seguridad</td><td><a href="https://www.anthropic.com/news/distillation-defenses" target="_blank">Ver post</a></td></tr>
+    <tr><td>Introducing the Anthropic Cyber Mission</td><td>8 oct 2026</td><td>Seguridad</td><td><a href="https://www.anthropic.com/news/anthropic-cyber-mission" target="_blank">Ver post</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Release Notes Oficiales (platform.claude.com/docs)</h2>
+
+<h3>API</h3>
+<table>
+  <thead>
+    <tr><th>Fecha</th><th>Cambio</th><th>Link</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>17 nov 2026</td>
+      <td><strong>Linked Billing (beta):</strong> Los clientes pueden pagar el uso de Claude en tu app desde su propia organización Anthropic. Usar <code>billing_policy</code> en <code>/v1/messages</code> y header <code>user-profiles-billing-2026-10-01</code>.</td>
+      <td><a href="https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>16 nov 2026</td>
+      <td><strong>Text Watermark:</strong> Texto generado por Opus 4.6, Opus 4.5, Sonnet 4.5 y Haiku 4.5 lleva marca de agua Anthropic en plataformas compatibles. No aplica con temperature/top_p/top_k no predeterminados.</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/text-watermark" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>12 nov 2026</td>
+      <td><strong>Self-hosted Claude Managed Agents:</strong> Posibilidad de ejecutar el servicio completo de Managed Agents en infraestructura propia. Requiere contactar al equipo de cuenta Anthropic.</td>
+      <td><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>9 nov 2026</td>
+      <td><strong>Claude Fable 5.2 y Mythos 5.2:</strong> Ventana de 1M tokens, 128k max output, razonamiento adaptativo. $8/$40 por MTok. Mythos 5.2 requiere verificación.</td>
+      <td><a href="https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>9 nov 2026</td>
+      <td><strong>Prefix check forzado en todas las cuentas:</strong> Reutilizar un bloque de razonamiento de un turno posterior devuelve error 400.</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/preserved-thinking#prefix-check" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>9 nov 2026</td>
+      <td><strong>Thinking blocks legibles entre modelos:</strong> Fable 5.2 y Mythos 5.2 pueden leer bloques de razonamiento de Opus 5.5, Sonnet 5.5 y Haiku 5.5 en conversaciones cross-model.</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/preserved-thinking#switching-models" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>9 nov 2026</td>
+      <td><strong>Cambio en toolset de computer use:</strong> Fable 5.2 y Mythos 5.2 requieren <code>computer_toolset_20260801</code>. Declarar <code>computer_20251124</code> devuelve error 400 (excepto Amazon Bedrock).</td>
+      <td><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool#migrate-from-computer-20251124" target="_blank">Docs</a></td>
+    </tr>
+    <tr>
+      <td>9 nov 2026</td>
+      <td><strong>Fast mode para Claude Fable 5.2:</strong> Parámetro <code>speed: "fast"</code> en la API para hasta 2.5x más tokens/seg, a $16/$80 por MTok.</td>
+      <td><a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode" target="_blank">Docs</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Claude Code (desde CHANGELOG.md)</h3>
+<table>
+  <thead>
+    <tr><th>Versión</th><th>Cambios Principales</th><th>Fuente</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>2.1.330</strong></td>
+      <td>Inicio de sesión para organizaciones en Enterprise Admin Console; mod "easel" integrado para gráficos (Pro/Max/Team/Enterprise); opción <code>start-directory</code> en runner self-hosted y nuevas métricas <code>/metrics</code>; correcciones de freezes al compactar conversaciones largas, WebFetch colgado y eliminación de worktrees; mejoras en VS Code (<code>/fork</code>, <code>/workflows</code>, nuevas configuraciones).</td>
+      <td>CHANGELOG</td>
+    </tr>
+    <tr>
+      <td><strong>2.1.329</strong></td>
+      <td>Diálogo de confianza muestra dónde están declarados los hooks; <code>/tasks</code> incluye tareas programadas, wakeups de <code>/loop</code> y forks; Code Mode funciona con eventos/métricas OpenTelemetry; correcciones de <code>~/.claude.json</code> reseteado, desconexiones macOS repetidas y <code>/terminal-setup</code> corrompiendo configuración VS Code. Nota: tareas programadas guardadas con versiones anteriores deben reprogramarse en nuevas sesiones.</td>
+      <td>CHANGELOG</td>
+    </tr>
+    <tr>
+      <td><strong>2.1.328</strong></td>
+      <td>Auto mode disponible para Opus 4.6 y Sonnet 4.6 en plataformas de terceros; hooks <code>mcp_tool</code> aceptan configuración <code>onFailure</code> que puede bloquear la acción; <code>/status</code> y <code>claude doctor</code> alertan cuando exporter OpenTelemetry carece de endpoint; runner self-hosted con nuevas opciones para carpetas de repo, etiquetas de hooks y metadatos; <code>/code-review</code> en la mayoría de modelos reporta solo bugs y violaciones de CLAUDE.md.</td>
+      <td>CHANGELOG</td>
+    </tr>
+    <tr>
+      <td><strong>2.1.327</strong></td>
+      <td>Confirmación previa a cambios de <code>/install-github-app</code>; <code>claude mcp add-json</code> puede leer JSON de servidor desde stdin; <code>/status</code> lista archivos agent, skill y command rotos; correcciones de <code>/export</code> sobreescribiendo archivos y <code>.mcp.json</code> perdiendo claves raíz; <code>ExitWorktree</code> solicita confirmación si el worktree puede tener trabajo no guardado.</td>
+      <td>CHANGELOG</td>
+    </tr>
+    <tr>
+      <td><strong>2.1.326</strong></td>
+      <td>Code Mode activable con agent teams habilitados simultáneamente; advertencia de inicio para entradas allow/deny que no parecen reglas completas; Ctrl+O muestra avisos de inicio ocultos; <code>OTEL_RESOURCE_INCLUDE_HOST</code> agrega atributos host a OpenTelemetry (desactivado por defecto); corrección de errores <code>max_tokens</code> donde Claude Code reintenta con el máximo reportado por la API.</td>
+      <td>CHANGELOG</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Releases — Claude Code y SDKs Oficiales (GitHub)</h2>
+<div class="error-note">
+  <strong>Acceso restringido:</strong> La sesión de Claude Code en la que se ejecuta este reporte solo tiene acceso al repositorio <code>wrcp20/github-intelligence-reports</code>. Los repositorios de Anthropic y MCP no están configurados para esta sesión. Se documentan como errores abajo.
+</div>
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Estado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>anthropics/claude-code</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>anthropics/anthropic-sdk-python</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>anthropics/anthropic-sdk-typescript</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>anthropics/claude-agent-sdk-python</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>anthropics/claude-agent-sdk-typescript</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>anthropics/anthropic-cookbook</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+  </tbody>
+</table>
+
+<h2>Releases — Model Context Protocol</h2>
+<table>
+  <thead>
+    <tr><th>Repo</th><th>Estado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>modelcontextprotocol/specification</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>modelcontextprotocol/python-sdk</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>modelcontextprotocol/typescript-sdk</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>modelcontextprotocol/servers</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+    <tr><td>modelcontextprotocol/inspector</td><td class="unavailable">Error de acceso — repositorio no configurado en esta sesión (Error 403)</td></tr>
+  </tbody>
+</table>
+
+<h2>Discusiones en Hacker News</h2>
+<p class="unavailable">No disponible — Los dominios <code>hacker-news.firebaseio.com</code> y <code>hn.algolia.com</code> no están permitidos en la política de red de esta sesión de Claude Code.</p>
+
+<h2>Reddit r/ClaudeAI — Top del Día</h2>
+<p class="unavailable">No disponible — El dominio <code>www.reddit.com</code> no está permitido en la política de red de esta sesión de Claude Code.</p>
+
+<h2>Tendencias y Observaciones</h2>
+<ol>
+  <li><strong>El lanzamiento de Claude Fable 5.2 y Mythos 5.2 (9 nov) marca un salto arquitectónico importante:</strong> la ventana de contexto de 1M tokens y el razonamiento adaptativo siempre activo sugieren que Anthropic apuesta por modelos que mezclan velocidad y profundidad sin que el usuario tenga que elegir. El modelo Mythos 5.2 (restringido a usuarios verificados) insinúa una segmentación de mercado hacia casos de uso de alta sensibilidad.</li>
+  <li><strong>La monetización de ecosistema se expande:</strong> Linked Billing (beta, 17 nov) permite que los propios clientes de Anthropic paguen el uso de Claude dentro de apps de terceros. Esto es un cambio de modelo de negocio relevante, que facilita la construcción de productos sobre Claude sin que el desarrollador asuma todos los costos de API.</li>
+  <li><strong>La infraestructura agentic madura rápidamente:</strong> Self-hosted Managed Agents (12 nov) y los continuos cambios en Claude Code (v2.1.326–2.1.330) reflejan que Anthropic está invirtiendo fuertemente en que las empresas puedan desplegar agentes autónomos en entornos controlados, con trazabilidad (OpenTelemetry), hooks configurables y mejoras de seguridad.</li>
+  <li><strong>Text Watermark indica preocupación por atribución y abuso:</strong> La incorporación de marca de agua de texto invisible en modelos 4.x refleja un esfuerzo proactivo para identificar contenido generado por Claude, posiblemente en anticipación a regulación o como herramienta de detección interna. Es notable que no aplique cuando se modifican parámetros de temperatura, lo que puede limitar su efectividad práctica.</li>
+  <li><strong>Claude Code se consolida como plataforma de desarrollo agentic:</strong> Las versiones recientes (v2.1.326–v2.1.330) agregan soporte para OpenTelemetry completo, hooks con lógica de fallo, mod "easel" para visualización, y múltiples mejoras de developer experience en VS Code. El ecosistema de Claude Code evoluciona de CLI a plataforma de desarrollo con capacidades de observabilidad enterprise.</li>
+</ol>
+
+<h2>Errores de Fetch</h2>
+<table>
+  <thead>
+    <tr><th>URL / Recurso</th><th>Error</th><th>Motivo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>api.github.com/repos/anthropics/*</code></td><td>Error 403</td><td>Acceso a repositorios externos no permitido; solo <code>wrcp20/github-intelligence-reports</code> está configurado</td></tr>
+    <tr><td><code>api.github.com/repos/modelcontextprotocol/*</code></td><td>Error 403</td><td>Mismo motivo anterior</td></tr>
+    <tr><td><code>hacker-news.firebaseio.com</code></td><td>DNS ENOTFOUND</td><td>Dominio no incluido en política de red de la sesión</td></tr>
+    <tr><td><code>hn.algolia.com</code></td><td>DNS ENOTFOUND</td><td>Dominio no incluido en política de red de la sesión</td></tr>
+    <tr><td><code>www.reddit.com</code></td><td>Acceso denegado</td><td>Dominio bloqueado por política de red de la sesión</td></tr>
+    <tr><td><code>docs.claude.com/en/release-notes/api</code></td><td>Redirect 301</td><td>Redirige a <code>platform.claude.com</code> — contenido obtenido desde la URL destino exitosamente</td></tr>
+    <tr><td><code>docs.claude.com/en/release-notes/claude-code</code></td><td>Redirect 307</td><td>Redirige a GitHub CHANGELOG — datos obtenidos desde <code>raw.githubusercontent.com</code></td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <em>Reporte generado automáticamente el 2026-11-21-021531</em>
+</footer>
+
+</body>
+</html>
